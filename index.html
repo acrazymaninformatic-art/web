@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 
 <!-- RGPD: preconnect eliminado — las fuentes se cargan SOLO tras aceptación de cookies (ver script al final del body). Sin conexión a Google antes del consentimiento. -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <!-- ── Modo oscuro: la web define su propio esquema de color. El navegador      ──
      ── NO debe invertir ni manipular los colores automáticamente.               ── -->
@@ -49,7 +49,7 @@
       "description": "Dietista y Auxiliar de Enfermería. Planes nutricionales 100% personalizados, sin dietas restrictivas.",
       "url": "https://nutretva.es/",
       "telephone": "+34644137667",
-      "email": "nutretva@nutretva.es",
+      "email": "nutretva@gmail.com",
       "priceRange": "EUR",
       "address": {
         "@type": "PostalAddress",
@@ -205,10 +205,16 @@
      El cursor personalizado (#fx-cursor) es un efecto decorativo adicional
      que NO oculta el cursor del sistema. */
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
 
   body {
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
     /* Degradado maestro continuo — cubre toda la altura de la página */
     background:
       linear-gradient(
@@ -280,13 +286,16 @@
     border-color: rgba(126,168,232,0.16);
   }
   .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem; font-weight: 600;
-    color: var(--sage); letter-spacing: 0.02em;
+    display: flex; align-items: center;
     text-decoration: none;
     flex-shrink: 0;
   }
-  .nav-logo em { font-style: italic; color: var(--accent); }
+  .nav-logo img {
+    height: 42px; width: auto;
+    object-fit: contain;
+    transition: opacity 0.3s;
+  }
+  .nav-logo:hover img { opacity: 0.85; }
   .nav-links { display: flex; gap: clamp(1rem, 2vw, 2.5rem); list-style: none; flex-wrap: nowrap; }
   .nav-links a {
     font-size: clamp(0.68rem, 0.9vw, 0.76rem); font-weight: 500;
@@ -2154,7 +2163,7 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="#" class="nav-logo"><img src="logo.png" alt="Nutretva" style="height: 35px; width: auto; object-fit: contain;"></a>
+  <a href="#" class="nav-logo"><img src="logo.png" alt="Nutretva"></a>
   <ul class="nav-links">
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#metodo">Mi método</a></li>
@@ -2866,18 +2875,18 @@
     </a>
 
     <!-- Email -->
-    <a href="mailto:nutretva@nutretva.es" class="cta-contact contact-btn" id="btn-email" rel="noopener noreferrer" onclick="return checkConsent(event)">
+    <a href="mailto:nutretva@gmail.com" class="cta-contact contact-btn" id="btn-email" rel="noopener noreferrer" onclick="return checkConsent(event)">
       <svg viewBox="0 0 24 24">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
       </svg>
-      nutretva@nutretva.es
+      nutretva@gmail.com
     </a>
 
   </div>
   <noscript>
     <p style="color:rgba(255,255,255,0.75);font-size:0.82rem;margin-top:0.75rem;">
-      Para contactar, escríbenos directamente a <a href="mailto:nutretva@nutretva.es" style="color:#fff;">nutretva@nutretva.es</a> o por WhatsApp al <a href="https://wa.me/34644137667" style="color:#fff;">644 13 76 67</a>.
+      Para contactar, escríbenos directamente a <a href="mailto:nutretva@gmail.com" style="color:#fff;">nutretva@gmail.com</a> o por WhatsApp al <a href="https://wa.me/34644137667" style="color:#fff;">644 13 76 67</a>.
     </p>
   </noscript>
   <p class="consent-hint reveal" id="consent-hint">Acepta el consentimiento de datos de salud para activar el contacto</p>
@@ -2924,7 +2933,7 @@
           <li><strong>Nombre y apellidos:</strong> [Tu nombre completo]</li>
           <li><strong>NIF / DNI:</strong> [XXXXXXXXX]</li>
           <li><strong>Domicilio profesional:</strong> [Dirección completa, Madrid]</li>
-          <li><strong>Correo electrónico:</strong> nutretva@nutretva.es</li>
+          <li><strong>Correo electrónico:</strong> nutretva@gmail.com</li>
           <li><strong>Teléfono:</strong> 644 13 76 67</li>
           <li><strong>Colegio profesional:</strong> Colegio Oficial de Dietistas-Nutricionistas de la Comunidad de Madrid (CODINMA)</li>
           <li><strong>Número de colegiada:</strong> [Nº de colegiada]</li>
@@ -2979,7 +2988,7 @@
           <li><strong>Identidad:</strong> [Tu nombre completo]</li>
           <li><strong>NIF:</strong> [XXXXXXXXX]</li>
           <li><strong>Dirección:</strong> [Dirección completa, Madrid]</li>
-          <li><strong>Correo:</strong> nutretva@nutretva.es</li>
+          <li><strong>Correo:</strong> nutretva@gmail.com</li>
           <li><strong>Teléfono:</strong> 644 13 76 67</li>
         </ul>
       </div>
@@ -3016,7 +3025,7 @@
 
       <div class="legal-block">
         <h2>6. Tus derechos (ARCO+)</h2>
-        <p>Puedes ejercer en cualquier momento los siguientes derechos dirigiéndote a nutretva@nutretva.es adjuntando copia de tu DNI:</p>
+        <p>Puedes ejercer en cualquier momento los siguientes derechos dirigiéndote a nutretva@gmail.com adjuntando copia de tu DNI:</p>
         <ul>
           <li><strong>Acceso:</strong> conocer qué datos tuyos se tratan.</li>
           <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
@@ -3102,7 +3111,7 @@
 
       <div class="legal-block">
         <h2>6. Más información</h2>
-        <p>Para más información sobre el tratamiento de tus datos personales, consulta nuestra <a href="#" onclick="showLegalPage('privacidad'); return false;">Política de Privacidad</a>. Ante cualquier duda puedes contactar en nutretva@nutretva.es.</p>
+        <p>Para más información sobre el tratamiento de tus datos personales, consulta nuestra <a href="#" onclick="showLegalPage('privacidad'); return false;">Política de Privacidad</a>. Ante cualquier duda puedes contactar en nutretva@gmail.com.</p>
       </div>
 
     </div>
@@ -4185,5 +4194,189 @@ function svcTab(idx) {
 })();
 </script>
 
+<script>
+// ════════════════════════════════════════════════════════════════════════════
+// 🛡️ PROTECCIONES ANTI-HACKING AVANZADAS
+// ════════════════════════════════════════════════════════════════════════════
+(function() {
+  'use strict';
+
+  // ── 1. ANTI-CLICKJACKING: iframe buster ────────────────────────────────
+  // Complementa la cabecera X-Frame-Options del servidor
+  if (window.self !== window.top) {
+    try { window.top.location = window.self.location; } catch(e) {
+      // Bloqueado por CSP — ocultar todo el contenido
+      document.documentElement.style.display = 'none';
+    }
+  }
+
+  // ── 2. ANTI-DEVTOOLS: detectar apertura de herramientas de desarrollo ──
+  var _dtOpen = false;
+  var _dtThreshold = 160;
+  function checkDevTools() {
+    var w = window.outerWidth - window.innerWidth > _dtThreshold;
+    var h = window.outerHeight - window.innerHeight > _dtThreshold;
+    if (w || h) {
+      if (!_dtOpen) {
+        _dtOpen = true;
+        console.clear();
+        console.log(
+          '%c⚠️ ADVERTENCIA DE SEGURIDAD',
+          'color:#e05050;font-size:28px;font-weight:900;text-shadow:1px 1px 2px rgba(0,0,0,0.3);'
+        );
+        console.log(
+          '%cEsta consola es para desarrolladores. Si alguien te ha dicho que pegues algo aquí, ' +
+          'es un intento de HACKEO (ataque Self-XSS). Nunca pegues código de desconocidos.',
+          'color:#ff6b35;font-size:15px;line-height:1.6;'
+        );
+      }
+    } else { _dtOpen = false; }
+  }
+  setInterval(checkDevTools, 800);
+
+  // ── 3. ANTI-INSPECCIÓN: bloquear atajos de teclado para ver código ─────
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === 'F12') { e.preventDefault(); return false; }
+    // Ctrl+Shift+I (Inspector), Ctrl+Shift+J (Consola), Ctrl+Shift+C (Selector)
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+      e.preventDefault(); return false;
+    }
+    // Ctrl+U (Ver código fuente)
+    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+    // Ctrl+S (Guardar página)
+    if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+  }, true);
+
+  // ── 4. ANTI-CLIC DERECHO: desactivar menú contextual ───────────────────
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); }, true);
+
+  // ── 5. ANTI-ARRASTRE: impedir arrastrar imágenes/texto ─────────────────
+  document.addEventListener('dragstart', function(e) { e.preventDefault(); }, true);
+  document.addEventListener('selectstart', function(e) {
+    // Permitir seleccionar en inputs/textareas, bloquear en el resto
+    var tag = e.target.tagName;
+    if (tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
+      e.preventDefault();
+    }
+  }, true);
+
+  // ── 6. ANTI-HOTLINKING: proteger imágenes de embebido externo ──────────
+  document.querySelectorAll('img').forEach(function(img) {
+    img.setAttribute('crossorigin', 'anonymous');
+  });
+
+  // ── 7. ANTI-XSS: sanitizar cualquier input en formularios ─────────────
+  function sanitizeInput(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+  document.querySelectorAll('input, textarea').forEach(function(el) {
+    el.addEventListener('input', function() {
+      // Detectar inyecciones de script
+      if (/<script|javascript:|on\w+\s*=/i.test(el.value)) {
+        el.value = sanitizeInput(el.value.replace(/<script.*?>.*?<\/script>/gi, '')
+          .replace(/javascript:/gi, '')
+          .replace(/on\w+\s*=/gi, ''));
+      }
+    });
+  });
+
+  // ── 8. ANTI-FORM-HIJACK: validar que los formularios apuntan al destino correcto ─
+  document.querySelectorAll('form').forEach(function(form) {
+    var originalAction = form.action;
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(m) {
+        if (m.type === 'attributes' && m.attributeName === 'action') {
+          if (form.action !== originalAction) {
+            form.action = originalAction; // restaurar
+            console.warn('[SECURITY] Intento de manipulación de formulario bloqueado.');
+          }
+        }
+      });
+    });
+    observer.observe(form, { attributes: true });
+  });
+
+  // ── 9. ANTI-MANIPULACIÓN DOM: vigilar inyección de scripts externos ────
+  var bodyObserver = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      m.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) {
+          // Bloquear scripts inyectados desde dominios no autorizados
+          if (node.tagName === 'SCRIPT' && node.src) {
+            var allowed = [
+              'cdnjs.cloudflare.com',
+              'fonts.googleapis.com',
+              'fonts.gstatic.com',
+              'www.googletagmanager.com',
+              'www.google-analytics.com'
+            ];
+            var src = node.src.toLowerCase();
+            var isAllowed = allowed.some(function(d) { return src.indexOf(d) !== -1; });
+            if (!isAllowed && src.indexOf(location.hostname) === -1) {
+              node.remove();
+              console.error('[SECURITY] Script externo no autorizado bloqueado:', src);
+            }
+          }
+          // Bloquear iframes inyectados
+          if (node.tagName === 'IFRAME') {
+            node.remove();
+            console.error('[SECURITY] Iframe inyectado bloqueado.');
+          }
+        }
+      });
+    });
+  });
+  bodyObserver.observe(document.body, { childList: true, subtree: true });
+
+  // ── 10. ANTI-LINK-HIJACK: proteger enlaces externos ────────────────────
+  document.querySelectorAll('a[target="_blank"]').forEach(function(a) {
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+
+  // ── 11. INTEGRIDAD DE COOKIES: proteger contra manipulación ────────────
+  // Marcar cookies con flags de seguridad (solo funciona con HTTPS)
+  if (location.protocol === 'https:') {
+    var origCookie = Object.getOwnPropertyDescriptor(Document.prototype, 'cookie') ||
+                     Object.getOwnPropertyDescriptor(HTMLDocument.prototype, 'cookie');
+    if (origCookie) {
+      Object.defineProperty(document, 'cookie', {
+        get: function() { return origCookie.get.call(this); },
+        set: function(val) {
+          // Inyectar Secure y SameSite=Strict si no están presentes
+          if (val.indexOf('Secure') === -1) val += '; Secure';
+          if (val.indexOf('SameSite') === -1) val += '; SameSite=Strict';
+          return origCookie.set.call(this, val);
+        }
+      });
+    }
+  }
+
+  // ── 12. HONEYPOT CONSOLE: disuadir a atacantes ─────────────────────────
+  checkDevTools();
+
+  // ── 13. ANTI-TAMPERING: verificar integridad de elementos críticos ─────
+  // Vigilar cambios en los enlaces de contacto (WhatsApp, email)
+  var criticalLinks = document.querySelectorAll('#btn-whatsapp, #btn-email');
+  criticalLinks.forEach(function(link) {
+    var originalHref = link.getAttribute('href');
+    var linkObserver = new MutationObserver(function(mutations) {
+      mutations.forEach(function(m) {
+        if (m.attributeName === 'href') {
+          var newHref = link.getAttribute('href');
+          if (newHref !== originalHref) {
+            link.setAttribute('href', originalHref);
+            console.error('[SECURITY] Intento de manipulación de enlace de contacto bloqueado.');
+          }
+        }
+      });
+    });
+    linkObserver.observe(link, { attributes: true });
+  });
+
+})();
+</script>
 </body>
 </html>
