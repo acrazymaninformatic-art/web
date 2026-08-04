@@ -1,0 +1,4192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<!-- RGPD: preconnect eliminado — las fuentes se cargan SOLO tras aceptación de cookies (ver script al final del body). Sin conexión a Google antes del consentimiento. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ── Modo oscuro: la web define su propio esquema de color. El navegador      ──
+     ── NO debe invertir ni manipular los colores automáticamente.               ── -->
+<meta name="color-scheme" content="dark">
+<title>Nutricional_mente Eva · Dietista</title>
+
+<!-- ── SEO & Open Graph ── -->
+<meta name="description" content="Dietista y Auxiliar de Enfermería. Planes nutricionales 100 % personalizados: sin dietas restrictivas, con hábitos reales y acompañamiento constante. Reserva tu primera consulta.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Eva · Nutricional_mente Eva">
+
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://nutricionalmenteeva.es/">
+<meta property="og:title"       content="Nutricional_mente Eva · Dietista">
+<meta property="og:description" content="Planes nutricionales 100 % personalizados. No dietas restrictivas — hábitos reales, resultados duraderos y acompañamiento constante.">
+<!-- OG IMAGE: Sube og-image.jpg (1200×630px) a la raíz del servidor para activar esta meta tag. Hasta entonces está comentada para evitar imagen rota en redes sociales. -->
+<!-- <meta property="og:image" content="https://nutricionalmenteeva.es/og-image.jpg"> -->
+<!-- <meta property="og:image:width" content="1200"> -->
+<!-- <meta property="og:image:height" content="630"> -->
+<!-- <meta property="og:image:alt" content="Nutricional_mente Eva · Dietista en Madrid"> -->
+<meta property="og:locale"      content="es_ES">
+<meta property="og:site_name"   content="Nutricional_mente Eva">
+
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Nutricional_mente Eva · Dietista">
+<meta name="twitter:description" content="Planes nutricionales 100 % personalizados. No dietas restrictivas — hábitos reales, resultados duraderos.">
+<!-- <meta name="twitter:image" content="https://nutricionalmenteeva.es/og-image.jpg"> -->
+<meta name="twitter:image:alt"  content="Nutricional_mente Eva · Dietista en Madrid">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://nutricionalmenteeva.es/">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://nutricionalmenteeva.es/#business",
+      "name": "Nutricional_mente Eva",
+      "description": "Dietista y Auxiliar de Enfermería. Planes nutricionales 100% personalizados, sin dietas restrictivas.",
+      "url": "https://nutricionalmenteeva.es/",
+      "telephone": "+34644137667",
+      "email": "nutricional_mente_eva@nutricionalmenteeva.es",
+      "priceRange": "EUR",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madrid",
+        "addressCountry": "ES"
+      },
+      "serviceType": ["Dietética", "Nutrición clínica", "Planificación nutricional personalizada"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://nutricionalmenteeva.es/#eva",
+      "name": "Eva",
+      "jobTitle": "Dietista y Auxiliar de Enfermería",
+      "worksFor": { "@id": "https://nutricionalmenteeva.es/#business" },
+      "url": "https://nutricionalmenteeva.es/"
+    }
+  ]
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     SEGURIDAD — CABECERAS HTTP (deben configurarse en el SERVIDOR, no aquí)
+     ══════════════════════════════════════════════════════════════════════════
+     Las metas http-equiv NO son equivalentes a cabeceras HTTP reales:
+       · Content-Security-Policy vía meta es ignorado por todos los navegadores modernos.
+       · Strict-Transport-Security (HSTS) vía meta no tiene efecto en ningún navegador.
+       · X-Frame-Options vía meta solo es reconocido por IE; los demás lo ignoran.
+
+     Configura estas cabeceras en tu servidor (Apache .htaccess / Nginx / Cloudflare):
+
+     Content-Security-Policy:
+       default-src 'none';
+       script-src  'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com;
+       style-src   'self' 'unsafe-inline' https://fonts.googleapis.com;
+       font-src    'self' https://fonts.gstatic.com;
+       img-src     'self' data: https://www.google-analytics.com;
+       connect-src 'self' https://www.google-analytics.com;
+       frame-src   'none';
+       object-src  'none';
+       base-uri    'self';
+       form-action 'self' mailto:;
+
+     X-Frame-Options: DENY
+     X-Content-Type-Options: nosniff
+     Referrer-Policy: no-referrer
+     Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+     Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- Impide que esta página se cargue dentro de un iframe (clickjacking) -->
+<meta http-equiv="X-Frame-Options" content="DENY">
+
+<!-- No enviar la URL de origen al hacer clic en enlaces externos -->
+<meta name="referrer" content="no-referrer">
+
+<!-- HSTS debe configurarse en el servidor (ver bloque de cabeceras arriba) -->
+
+<!-- Evita que el navegador adivine el tipo MIME de los archivos -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<!-- Desactiva funciones del navegador que no se usan en esta web -->
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
+
+<!-- Google Fonts y GSAP se cargan dinámicamente SOLO tras aceptación de cookies (RGPD) -->
+<style>
+
+  /* ─── DARK THEME (PERMANENT) ──────────────────────────────────────────────── */
+  :root {
+    color-scheme: dark;
+
+    --sage: #7ea8cc;
+    --sage-bg: #1c2a3d;
+    --sage-dark: #9dbcdc;
+    --sage-light: #1e2d40;
+    --sage-mid: #4a6880;
+    --cream: #0e1320;
+    --warm: #131929;
+    --warm-dark: #0b1019;
+    --text: #e8edf8;
+    --text-muted: #8fa4cc;
+    --accent: #7ea8e8;
+    --accent-light: #1e2d4a;
+    --white: #1a2238;
+    --nav-h: 68px;
+
+    --card-bg: #182236;
+    --card-border: rgba(126, 168, 232, 0.14);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --glass-bg: rgba(14, 19, 32, 0.65);
+    --glass-border: rgba(126, 168, 232, 0.2);
+    --modal-bg: #141c2e;
+    --admin-bg: #0d131f;
+    --admin-card: #182236;
+    --input-bg: #141c2e;
+  }
+
+  /* Universal Component Dynamic Adaptations */
+  .stat,
+  .pillar,
+  .service-card,
+  .payment-card,
+  .faq-inner,
+  .google-review-card,
+  .benefit-card,
+  .svc-panel,
+  .contact-card,
+  .faq-accordion-item {
+    background: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text) !important;
+    box-shadow: 0 4px 20px var(--shadow-color) !important;
+  }
+
+  .creator-admin-card,
+  .creator-admin-sidebar,
+  .creator-admin-main {
+    background: var(--admin-card) !important;
+    color: var(--text) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  #creator-admin-login,
+  #creator-admin-shell {
+    background: var(--admin-bg) !important;
+    color: var(--text) !important;
+  }
+
+  .legal-page-content,
+  #cookie-config-modal .cookie-modal-inner {
+    background: var(--modal-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  input, select, textarea {
+    background-color: var(--input-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  nav {
+    background: var(--glass-bg) !important;
+    border-color: var(--glass-border) !important;
+  }
+
+  .nav-drawer {
+    background: var(--admin-card) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  /* NOTA: cursor nativo del SO siempre visible para accesibilidad.
+     El cursor personalizado (#fx-cursor) es un efecto decorativo adicional
+     que NO oculta el cursor del sistema. */
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    /* Degradado maestro continuo — cubre toda la altura de la página */
+    background:
+      linear-gradient(
+        180deg,
+        #0e1320        0%,    /* hero */
+        #1a2238        8%,    /* about top */
+        #131929        16%,   /* about bottom */
+        #0e1320        22%,   /* method */
+        #131929        30%,   /* services */
+        #1a2238        38%,   /* included */
+        #0e1320        46%,   /* process */
+        #131929        52%,   /* payment */
+        #1e2d4a        60%,   /* testimonials */
+        #1a2238        68%,   /* faq */
+        #131929        76%,   /* talleres */
+        #1e2d4a        84%,   /* cta */
+        #2a3d52        100%
+      );
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 3rem);
+    max-width: 1200px;
+    z-index: 200;
+    background: rgba(14,19,32,0.40);
+    backdrop-filter: saturate(200%) blur(28px);
+    -webkit-backdrop-filter: saturate(200%) blur(28px);
+    border: 1px solid rgba(126,168,232,0.14);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(30,48,64,0.12);
+    height: var(--nav-h);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    transition:
+      background 0.4s ease,
+      box-shadow 0.4s ease,
+      top 0.4s ease,
+      padding 0.4s ease,
+      height 0.4s ease,
+      border-radius 0.4s ease,
+      width 0.4s ease,
+      border-color 0.4s ease;
+  }
+  nav.nav-scrolled {
+    top: 8px;
+    height: 48px;
+    width: calc(100% - 8rem);
+    border-radius: 50px;
+    padding: 0 1.4rem;
+    background: rgba(14,19,32,0.28);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    border-color: rgba(126,168,232,0.10);
+  }
+  nav.nav-scrolled.nav-hovered {
+    top: 14px;
+    height: var(--nav-h);
+    width: calc(100% - 3rem);
+    border-radius: 20px;
+    padding: 0 2rem;
+    background: rgba(14,19,32,0.48);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    border-color: rgba(126,168,232,0.16);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--sage); letter-spacing: 0.02em;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nav-logo em { font-style: italic; color: var(--accent); }
+  .nav-links { display: flex; gap: clamp(1rem, 2vw, 2.5rem); list-style: none; flex-wrap: nowrap; }
+  .nav-links a {
+    font-size: clamp(0.68rem, 0.9vw, 0.76rem); font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    transition: color 0.25s;
+    position: relative;
+    white-space: nowrap;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -3px; left: 0;
+    width: 0; height: 1px; background: var(--sage);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--sage); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--sage); color: var(--white);
+    padding: 0.55rem 1.4rem; border-radius: 10px;
+    font-size: 0.76rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(58,90,120,0.25);
+  }
+  .nav-cta:hover { background: var(--sage-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(58,90,120,0.35); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: calc(var(--nav-h) + 28px);
+    background: transparent;
+    width: 100%;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 6rem 4rem;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+    margin-bottom: 1.75rem;
+    opacity: 0;
+  }
+  .hero-eyebrow-line { width: 0; height: 1px; background: var(--accent); }
+  .hero-eyebrow span {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 300; line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .hero-title .line { display: block; opacity: 0; transform: translateY(60px); }
+  .hero-title em { font-style: italic; color: var(--sage); }
+  .hero-desc {
+    font-size: 1.05rem; color: var(--text-muted);
+    line-height: 1.75; max-width: 560px;
+    font-weight: 300; margin-bottom: 2.75rem;
+    opacity: 0;
+    text-align: center;
+    margin-left: auto; margin-right: auto;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; align-items: center; justify-content: center;
+    opacity: 0;
+  }
+  .btn-primary {
+    background: var(--sage); color: var(--white);
+    padding: 0.9rem 2.2rem; border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.04em; text-decoration: none;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: var(--sage-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30,48,64,0.3);
+  }
+  .btn-ghost {
+    color: var(--text-muted); font-size: 0.85rem;
+    font-weight: 400; text-decoration: none;
+    display: flex; align-items: center; gap: 0.4rem;
+    transition: color 0.25s, gap 0.25s;
+    white-space: nowrap;
+  }
+  .btn-ghost:hover { color: var(--sage); gap: 0.7rem; }
+  .hero-scroll-hint {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); opacity: 0;
+  }
+  .scroll-line {
+    width: 40px; height: 1px; background: var(--text-muted);
+    position: relative; overflow: hidden;
+  }
+  .scroll-line::after {
+    content: ''; position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: var(--sage);
+    animation: scrollline 2s ease-in-out infinite 2.5s;
+  }
+  @keyframes scrollline {
+    0% { left: -100%; }
+    50% { left: 0; }
+    100% { left: 100%; }
+  }
+
+  /* ─── SVG ICON HELPERS ─── */
+  .icon-wrap {
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon-wrap svg { display: block; }
+
+  /* ─── SECTION COMMONS ─── */
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-eyebrow span {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .section-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+  /* Eyebrow variante línea — para secciones alternas */
+  .section-eyebrow-line {
+    display: inline-flex; align-items: center; gap: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .section-eyebrow-line::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--sage-mid);
+    flex-shrink: 0;
+  }
+  .section-eyebrow-line span {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    font-weight: 300; line-height: 1.1; letter-spacing: -0.01em;
+  }
+  .section-title em { font-style: italic; color: var(--sage); }
+
+  /* ─── REVEAL BASE ─── */
+  /* .reveal elements are visible by default — JS sets opacity:0 and animates them in.
+     This ensures content is ALWAYS visible even if JS fails to load. */
+  .reveal { will-change: opacity, transform; }
+  /* .js-anim class is added by JS only, so without JS elements remain visible */
+  .js-anim { opacity: 0; transform: translateY(28px); }
+
+
+
+
+
+  /* ─── ABOUT ─── */
+  .about {
+    background: transparent;
+    padding: 9rem 4rem 7rem;
+  }
+  .about-content {
+    max-width: 780px; margin: 0 auto;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  /* Large decorative number behind About title */
+  .about-content { position: relative; }
+  .about-text {
+    color: var(--text-muted); line-height: 1.85;
+    font-weight: 300; margin-bottom: 1.25rem; font-size: 0.95rem;
+  }
+  .about-quote {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(58,90,120,0.06) 0%, rgba(85,136,170,0.04) 100%);
+    border-left: 3px solid var(--sage);
+    border-radius: 0 8px 8px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-style: italic;
+    color: var(--sage); line-height: 1.55;
+  }
+  .about-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .stat {
+    text-align: center; padding: 1.5rem 0.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid rgba(30,48,64,0.08);
+    box-shadow: 0 2px 12px rgba(30,48,64,0.06);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 600; color: var(--sage);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; font-weight: 400; }
+
+  /* ─── METHOD ─── */
+  .method { padding: 7rem 4rem 9rem; background: transparent; }
+  .method-inner { max-width: 1100px; margin: 0 auto; }
+  .method-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start; margin-bottom: 5rem;
+  }
+  .method-intro {
+    font-size: 0.95rem; color: var(--text-muted);
+    line-height: 1.8; font-weight: 300; padding-top: 1rem;
+  }
+  .method-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .pillar {
+    padding: 2.5rem 2rem 2rem; background: transparent;
+    border: none;
+    border-top: 2px solid rgba(126,168,232,0.2);
+    border-radius: 0;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .pillar::before {
+    content: ''; position: absolute;
+    top: -2px; left: 0; width: 0; height: 2px;
+    background: var(--sage);
+    transition: width 0.4s ease;
+  }
+  .pillar:hover { transform: translateY(-4px); box-shadow: none; }
+  .pillar:hover::before { width: 100%; }
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; font-weight: 300;
+    color: rgba(126,168,232,0.12); line-height: 1;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.03em;
+  }
+  .pillar:hover .pillar-num { color: rgba(126,168,232,0.22); }
+  .pillar-title { font-weight: 500; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text); }
+  .pillar-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; }
+
+  /* ─── SERVICES ─── */
+  .services { padding: 7rem 4rem; background: transparent; }
+  .services-inner { max-width: 1100px; margin: 0 auto; }
+  .services-header { text-align: center; margin-bottom: 4rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .service-card {
+    background: var(--white); border-radius: 4px;
+    border: 1px solid rgba(30,48,64,0.1);
+    padding: 2.5rem 2rem;
+    display: flex; flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; overflow: hidden;
+  }
+  .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(30,48,64,0.15); }
+  .service-card.featured {
+    background: var(--white);
+    border: none;
+    overflow: visible;
+    position: relative;
+    border-radius: 4px;
+  }
+  .service-card.featured:hover { box-shadow: 0 20px 60px rgba(85,136,170,0.2); }
+  /* Animated glowing border for featured card */
+  .service-card.featured::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 6px;
+    background: linear-gradient(
+      135deg,
+      var(--accent) 0%,
+      var(--sage-mid) 30%,
+      #b8dff5 55%,
+      var(--sage-mid) 75%,
+      var(--accent) 100%
+    );
+    background-size: 300% 300%;
+    animation: borderSpin 3s linear infinite;
+    z-index: -1;
+    border-radius: 6px;
+  }
+  @keyframes borderSpin {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .service-badge {
+    display: inline-block;
+    background: var(--accent); color: var(--white);
+    font-size: 0.65rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.25rem 0.7rem; border-radius: 2px;
+    margin-bottom: 1rem; align-self: flex-start;
+  }
+  .service-icon-wrap {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--sage-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .service-icon-wrap svg { width: 22px; height: 22px; }
+  .service-card.featured .service-icon-wrap svg { stroke: #fff; }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400;
+    margin-bottom: 0.5rem; line-height: 1.2;
+    color: var(--text);
+  }
+  .service-card.featured .service-name { color: var(--text); }
+  .service-duration {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.25rem;
+  }
+  .service-card.featured .service-duration { color: var(--accent); }
+  .service-desc {
+    font-size: 0.85rem; color: var(--text-muted);
+    line-height: 1.7; font-weight: 300; flex: 1;
+  }
+  .service-card.featured .service-desc { color: var(--text-muted); }
+  .service-divider {
+    height: 1px; background: rgba(30,48,64,0.1);
+    margin: 1.75rem 0;
+  }
+  .service-card.featured .service-divider { background: rgba(30,48,64,0.1); }
+  .service-price-row { display: flex; align-items: baseline; gap: 0.5rem; }
+  .service-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 600; color: var(--sage);
+  }
+  .service-card.featured .service-price { color: var(--sage); }
+  .service-price-note { font-size: 0.75rem; color: var(--text-muted); }
+  .service-card.featured .service-price-note { color: var(--text-muted); }
+
+  /* ─── INCLUDED ─── */
+  .included { padding: 5rem 4rem 7rem; background: transparent; }
+  .included-inner { max-width: 1100px; margin: 0 auto; }
+  .included-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; margin-top: 4rem;
+  }
+  .included-col-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(30,48,64,0.15);
+    display: flex; align-items: center; gap: 0.75rem;
+    color: var(--text);
+  }
+  .included-col-title em { font-style: italic; color: var(--sage); }
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+  .check-list li {
+    display: flex; align-items: flex-start; gap: 0.875rem;
+    font-size: 0.88rem; color: var(--text-muted);
+    line-height: 1.6; font-weight: 300;
+  }
+  .check-icon {
+    width: 20px; height: 20px; min-width: 20px;
+    border-radius: 50%;
+    background: var(--sage-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+  .check-icon svg { width: 10px; height: 10px; stroke: var(--sage); stroke-width: 2.5; fill: none; }
+
+  /* ─── PROCESS ─── */
+  .process { padding: 7rem 4rem; background: transparent; }
+  .process-inner { max-width: 1100px; margin: 0 auto; }
+  .process-header { text-align: center; margin-bottom: 5rem; }
+  .process-track {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; position: relative;
+  }
+  .process-track::before {
+    content: '';
+    position: absolute; top: 32px; left: 12%; right: 12%;
+    height: 1px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--sage-mid) 0, var(--sage-mid) 6px,
+      transparent 6px, transparent 14px
+    );
+    opacity: 0.5;
+  }
+  .process-step { text-align: center; }
+  .step-circle {
+    width: 64px; height: 64px; border-radius: 50%;
+    border: 1px solid rgba(30,48,64,0.25);
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600; color: var(--sage);
+    position: relative; z-index: 1;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+  }
+  .process-step:hover .step-circle { background: var(--sage); color: var(--white); border-color: var(--sage); }
+  .step-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.6rem; color: var(--text); }
+  .step-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; }
+
+  /* ─── PAYMENT ─── */
+  .payment { padding: 5rem 4rem; background: transparent; }
+  .payment-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .payment-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .payment-card {
+    background: var(--white); border-radius: 12px;
+    border: 1px solid rgba(30,48,64,0.08);
+    padding: 2.5rem 2rem; text-align: left;
+    box-shadow: 0 2px 16px rgba(30,48,64,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .payment-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(30,48,64,0.12); }
+  .payment-card-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--sage-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .payment-card-icon svg { width: 22px; height: 22px; stroke: var(--sage); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .payment-card-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .payment-card-text { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; font-weight: 300; }
+
+  /* ─── CTA ─── */
+  .cta {
+    padding: 8rem 4rem;
+    background: #1e2d4a;
+    box-shadow: inset 0 0 200px rgba(0,0,0,0.4);
+    text-align: center;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 80px, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 80px, black 100%);
+  }
+  /* Remove Eva watermark — only decorative pseudo */
+  .cta::before { display: none; }
+  .cta-fade-top { display: none; }
+  .cta > * { position: relative; z-index: 2; }
+  .cta-eyebrow {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.55); margin-bottom: 1.5rem;
+  }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 300; color: var(--white);
+    line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .cta-title em { font-style: italic; }
+  .cta-sub {
+    color: rgba(255,255,255,0.65); max-width: 480px;
+    margin: 0 auto 3rem; font-size: 0.95rem;
+    line-height: 1.7; font-weight: 300;
+  }
+  .cta-contacts {
+    display: flex; justify-content: center; gap: 1.25rem;
+    flex-wrap: wrap; margin-bottom: 2.5rem;
+  }
+  .cta-contact {
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    padding: 1rem 2rem;
+    border-radius: 50px; color: var(--white);
+    font-size: 0.92rem; font-weight: 500; text-decoration: none;
+    display: flex; align-items: center; gap: 0.75rem;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.25s, border-color 0.25s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .cta-contact:hover {
+    background: rgba(255,255,255,0.28);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  }
+  .cta-contact svg { width: 18px; height: 18px; stroke: rgba(255,255,255,0.95); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .btn-white {
+    background: var(--white); color: var(--sage);
+    padding: 1rem 2.75rem; border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; display: inline-block;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .btn-white:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
+  .cta-note {
+    margin-top: 2rem; font-size: 0.75rem;
+    color: rgba(255,255,255,0.4); line-height: 1.6;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #090e1a;
+    padding: 2.5rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400;
+    color: rgba(255,255,255,0.7);
+  }
+  .footer-logo em { font-style: italic; color: var(--sage-mid); }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+
+  /* Ocultar CTA en nav cuando el espacio aprieta — los links siguen visibles */
+  @media (max-width: 860px) {
+    .nav-cta { display: none; }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    nav { padding: 0 1.25rem; width: calc(100% - 2rem); border-radius: 16px; top: 10px; }
+    nav.nav-scrolled { width: calc(100% - 4rem); border-radius: 50px; height: 44px; top: 8px; padding: 0 1.1rem; }
+    nav.nav-scrolled.nav-hovered { width: calc(100% - 2rem); border-radius: 16px; height: var(--nav-h); top: 10px; padding: 0 1.25rem; }
+    .hero { min-height: 100vh; }
+    .hero-left { padding: 4rem 2rem 5rem; max-width: 100%; }
+    .hero-title { font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1.08; }
+    .scroll-line::after { animation: none; }
+    .about { padding: 5rem 2rem; }
+    .about-content { padding: 0; }
+    .about-stats { grid-template-columns: repeat(3, 1fr); }
+    .method { padding: 5rem 2rem; }
+    .method-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+    .method-pillars { grid-template-columns: 1fr; }
+    .services { padding: 5rem 2rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.15; }
+    .included { padding: 5rem 2rem; }
+    .included-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .process { padding: 5rem 2rem; }
+    .process-track { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .process-track::before { display: none; }
+    .payment { padding: 5rem 2rem; }
+    .payment-cards { grid-template-columns: 1fr; }
+    .cta { padding: 5rem 2rem; }
+    .cta::before { font-size: 14rem; }
+    .cta-title { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.15; }
+    footer { flex-direction: column; gap: 0.75rem; padding: 2rem; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    :root { --nav-h: 56px; }
+    nav { padding: 0 1rem; width: calc(100% - 1.5rem); border-radius: 14px; top: 8px; }
+    nav.nav-scrolled { width: calc(100% - 3rem); border-radius: 50px; height: 42px; top: 6px; padding: 0 0.9rem; }
+    nav.nav-scrolled.nav-hovered { width: calc(100% - 1.5rem); border-radius: 14px; height: var(--nav-h); top: 8px; padding: 0 1rem; }
+
+    /* Hero */
+    .hero-left { padding: 3rem 1.5rem 4rem; }
+    .hero-title {
+      font-size: clamp(2.6rem, 11vw, 3.8rem);
+      line-height: 1.08;
+      word-break: break-word;
+      hyphens: auto;
+    }
+    .hero-desc { font-size: 0.95rem; max-width: 100%; }
+    .hero-actions { flex-direction: column; align-items: center; gap: 0.85rem; }
+    .btn-primary { width: 100%; max-width: 340px; text-align: center; padding: 0.9rem 1.5rem; }
+
+    /* Section titles */
+    .section-title {
+      font-size: clamp(1.7rem, 8vw, 2.4rem);
+      line-height: 1.15;
+      word-break: break-word;
+      hyphens: auto;
+    }
+    .cta-title {
+      font-size: clamp(1.8rem, 9vw, 3rem);
+      line-height: 1.15;
+      word-break: break-word;
+      hyphens: auto;
+    }
+    .legal-title {
+      font-size: clamp(1.6rem, 8vw, 2.5rem);
+      line-height: 1.15;
+    }
+
+    /* About */
+    .about { padding: 3.5rem 1.25rem; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .about-quote { font-size: 1.1rem; }
+
+    /* Method */
+    .method { padding: 3.5rem 1.25rem; }
+    .method-header { gap: 1rem; margin-bottom: 2rem; }
+
+    /* Services */
+    .services { padding: 3.5rem 1.25rem; }
+    .services-header { margin-bottom: 2.5rem; }
+    .service-name { font-size: 1.35rem; }
+
+    /* Included */
+    .included { padding: 3.5rem 1.25rem; }
+    .included-col-title { font-size: 1.3rem; }
+
+    /* Process */
+    .process { padding: 3.5rem 1.25rem; }
+    .process-track { grid-template-columns: 1fr; }
+    .process-header { margin-bottom: 2.5rem; }
+
+    /* Payment */
+    .payment { padding: 3.5rem 1.25rem; }
+
+    /* CTA */
+    .cta { padding: 4rem 1.25rem; }
+    .cta::before { font-size: 8rem; }
+    .cta-contacts { flex-direction: column; align-items: center; gap: 0.75rem; }
+    .cta-contact { width: 100%; max-width: 340px; justify-content: center; border-radius: 50px; }
+    .btn-white { width: 100%; max-width: 320px; text-align: center; }
+
+    /* Cookie banner */
+    #cookie-banner { flex-direction: column; gap: 0.75rem; padding: 1rem 1.25rem; }
+    .cookie-actions { width: 100%; }
+    .cookie-btn-accept, .cookie-btn-reject { flex: 1; text-align: center; }
+
+    /* Footer */
+    footer { padding: 1.75rem 1.25rem; }
+    .footer-legal { padding: 1rem 1.25rem; gap: 0.75rem; }
+
+    /* Health consent */
+    .health-consent { font-size: 0.8rem; }
+  }
+
+  /* COOKIE BANNER */
+  #cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+    background: var(--sage-bg); color: var(--white);
+    padding: 1.25rem 2rem;
+    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+    border-top: 2px solid rgba(85,136,170,0.4);
+    font-size: 0.82rem; line-height: 1.6;
+    transition: transform 0.4s ease;
+  }
+  #cookie-banner.hidden { transform: translateY(110%); }
+  #cookie-banner p { flex: 1; min-width: 220px; color: rgba(255,255,255,0.8); margin: 0; }
+  #cookie-banner p a { color: var(--sage-mid); text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 0.75rem; flex-shrink: 0; flex-wrap: wrap; }
+  .cookie-btn-accept {
+    background: var(--accent); color: var(--white); border: none; cursor: pointer;
+    padding: 0.55rem 1.25rem; border-radius: 2px;
+    font-size: 0.8rem; font-weight: 500; font-family: inherit;
+    letter-spacing: 0.04em; transition: background 0.2s;
+  }
+  .cookie-btn-accept:hover { background: var(--sage-dark); }
+  .cookie-btn-config {
+    background: transparent; color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.45); cursor: pointer;
+    padding: 0.55rem 1.25rem; border-radius: 2px;
+    font-size: 0.8rem; font-weight: 400; font-family: inherit;
+    letter-spacing: 0.04em; transition: border-color 0.2s, color 0.2s;
+  }
+  .cookie-btn-config:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+  .cookie-btn-reject {
+    background: transparent; color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
+    padding: 0.55rem 1.25rem; border-radius: 2px;
+    font-size: 0.8rem; font-weight: 400; font-family: inherit;
+    letter-spacing: 0.04em; transition: border-color 0.2s, color 0.2s;
+  }
+  .cookie-btn-reject:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+
+  /* HEALTH CONSENT NOTICE */
+  .health-consent {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.65;
+    display: flex; gap: 0.75rem; align-items: flex-start;
+    max-width: 580px; margin-left: auto; margin-right: auto;
+    text-align: left;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  }
+  .health-consent strong { color: rgba(255,255,255,0.95); }
+  .health-consent a { color: #a8d4f0; text-decoration: underline; }
+  .health-consent-label {
+    display: flex; align-items: flex-start; gap: 0.65rem;
+    cursor: pointer; padding: 0.75rem 1rem;
+    background: rgba(255,255,255,0.08); border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.22);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .health-consent-label:hover { border-color: rgba(255,255,255,0.45); background: rgba(255,255,255,0.14); }
+  .health-consent-label input[type="checkbox"] {
+    width: 16px; height: 16px; min-width: 16px;
+    accent-color: #a8d4f0; cursor: pointer; margin-top: 2px;
+  }
+  .health-consent-label span { font-size: 0.82rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
+
+  /* Botones bloqueados hasta consentimiento */
+  .disabled-contact {
+    opacity: 0.38 !important;
+    pointer-events: none;
+    cursor: not-allowed !important;
+    filter: grayscale(0.4);
+  }
+  .disabled-contact.btn-white { background: rgba(255,255,255,0.5) !important; }
+  .consent-hint {
+    font-size: 0.72rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 1.25rem; margin-top: -0.5rem;
+    letter-spacing: 0.04em;
+  }
+  .consent-hint.hidden { display: none; }
+
+  /* FOOTER LEGAL */
+  .footer-legal {
+    background: #090e1a; padding: 1rem 4rem;
+    display: flex; align-items: center; justify-content: center;
+    gap: 2rem; flex-wrap: wrap;
+    border-top: none;
+  }
+  .footer-legal a {
+    font-size: 0.72rem; color: rgba(255,255,255,0.4);
+    text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: rgba(255,255,255,0.75); }
+  .footer-legal-sep { color: rgba(255,255,255,0.15); font-size: 0.72rem; }
+
+  /* mobile cookie/footer overrides merged into main @media (max-width:600px) above */
+
+  /* ── PÁGINAS LEGALES ─────────────────────────────────────────────────── */
+  .legal-page {
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed; inset: 0; z-index: 500;
+    background: var(--cream);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .legal-page.active {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .legal-inner {
+    max-width: 780px; margin: 0 auto;
+    padding: 2.5rem 2rem 5rem;
+  }
+
+  .legal-close {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: none; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.5rem 0; margin-bottom: 2.5rem;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .legal-close:hover { color: var(--sage); gap: 0.75rem; }
+
+  .legal-header { margin-bottom: 3rem; border-bottom: 1px solid rgba(30,48,64,0.12); padding-bottom: 2rem; }
+  .legal-tag {
+    display: inline-block;
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .legal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--text); margin-bottom: 0.5rem;
+  }
+  .legal-title em { font-style: italic; color: var(--sage); }
+  .legal-updated { font-size: 0.75rem; color: var(--text-muted); }
+
+  .legal-body { display: flex; flex-direction: column; gap: 2.5rem; }
+
+  .legal-block h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--text); margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(30,48,64,0.08);
+  }
+  .legal-block p {
+    font-size: 0.88rem; color: var(--text-muted);
+    line-height: 1.8; font-weight: 300; margin-bottom: 0.75rem;
+  }
+  .legal-block p:last-child { margin-bottom: 0; }
+  .legal-block ul {
+    list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .legal-block ul li {
+    font-size: 0.88rem; color: var(--text-muted);
+    line-height: 1.7; font-weight: 300;
+    padding-left: 1rem; position: relative;
+  }
+  .legal-block ul li::before {
+    content: '–'; position: absolute; left: 0;
+    color: var(--accent);
+  }
+  .legal-block a { color: var(--accent); text-decoration: underline; }
+
+  .legal-table-wrap { overflow-x: auto; margin-top: 0.75rem; }
+  .legal-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.82rem; color: var(--text-muted);
+  }
+  .legal-table th {
+    background: var(--sage); color: #fff;
+    padding: 0.6rem 0.85rem; text-align: left;
+    font-weight: 500; font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+  .legal-table td {
+    padding: 0.65rem 0.85rem;
+    border-bottom: 1px solid rgba(30,48,64,0.08);
+    vertical-align: top; line-height: 1.6;
+  }
+  .legal-table tr:last-child td { border-bottom: none; }
+  .legal-table tr:nth-child(even) td { background: var(--warm); }
+  .legal-table code {
+    font-family: monospace; font-size: 0.8rem;
+    background: rgba(30,48,64,0.07); padding: 0.1rem 0.3rem;
+    border-radius: 2px; color: var(--sage);
+  }
+
+  @media (max-width: 600px) {
+    .legal-inner { padding: 1.5rem 1.25rem 4rem; }
+  }
+
+  /* ─── HAMBURGER MENU ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px; height: 40px;
+    background: none; border: none;
+    cursor: pointer; padding: 6px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    z-index: 201;
+    flex-shrink: 0;
+  }
+  .nav-hamburger:hover { background: rgba(30,48,64,0.07); }
+  .nav-hamburger span {
+    display: block;
+    width: 22px; height: 1.5px;
+    background: var(--sage);
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s;
+    transform-origin: center;
+  }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .nav-drawer {
+    display: flex;
+    visibility: hidden;
+    position: fixed; inset: 0; z-index: 199;
+    flex-direction: column;
+    background: rgba(14,19,32,0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: calc(var(--nav-h) + 2rem) 2rem 3rem;
+    overflow-y: auto;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s, visibility 0s linear 0.4s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .nav-drawer.open {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s, visibility 0s linear 0s;
+  }
+  .nav-drawer ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0;
+    margin-bottom: 2rem;
+  }
+  .nav-drawer ul li a {
+    display: block;
+    font-size: 1.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(30,48,64,0.08);
+    letter-spacing: -0.01em;
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .nav-drawer ul li a:hover { color: var(--accent); padding-left: 0.5rem; }
+  .nav-drawer .drawer-cta {
+    background: var(--sage); color: var(--white);
+    padding: 1rem 2rem; border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; display: inline-block;
+    margin-top: 1rem;
+    transition: background 0.25s;
+  }
+  .nav-drawer .drawer-cta:hover { background: var(--sage-dark); }
+
+  @media (max-width: 720px) {
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
+    .nav-drawer { display: flex; }
+  }
+
+  /* ══════════════════════════════════════════════════════════════════
+     EFECTOS INTERACTIVOS — cursor, canvas de partículas, tilt 3D,
+     efecto magnético, morphing hero, texto scramble
+  ══════════════════════════════════════════════════════════════════ */
+
+  /* Cursor personalizado — efecto decorativo adicional que NO oculta el cursor del sistema.
+     Esto evita problemas de accesibilidad si el JS falla o el usuario tiene necesidades especiales. */
+  /* ELIMINADO: * { cursor: none !important; } — era una mala práctica de accesibilidad */
+  #fx-cursor {
+    position: fixed; z-index: 9998; pointer-events: none;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--sage);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s, opacity 0.2s;
+    mix-blend-mode: multiply;
+  }
+  #fx-cursor-ring {
+    position: fixed; z-index: 9997; pointer-events: none;
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid rgba(30,48,64,0.35);
+    transform: translate(-50%, -50%);
+    transition: width 0.35s cubic-bezier(.4,0,.2,1),
+                height 0.35s cubic-bezier(.4,0,.2,1),
+                border-color 0.25s, opacity 0.3s;
+  }
+  #fx-cursor.hovering      { width: 6px; height: 6px; }
+  #fx-cursor-ring.hovering { width: 56px; height: 56px; border-color: var(--accent); }
+  #fx-cursor.clicking      { width: 16px; height: 16px; background: var(--accent); }
+
+  /* Canvas de partículas (fondo hero) */
+  #fx-particles {
+    position: absolute; inset: 0; z-index: 0;
+    pointer-events: none;
+  }
+  .hero { position: relative; }
+  .hero-left { position: relative; z-index: 1; }
+
+  /* Tilt 3D en cards */
+  .tilt-card {
+    transform-style: preserve-3d;
+    transform: perspective(900px) rotateX(0deg) rotateY(0deg);
+    will-change: transform;
+    transition: box-shadow 0.4s ease;
+  }
+  .tilt-card:hover { box-shadow: 0 32px 80px rgba(30,48,64,0.18); }
+  .tilt-card .tilt-shine {
+    position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(circle at 50% 50%,
+      rgba(255,255,255,0.18) 0%, transparent 65%);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 2;
+  }
+  .tilt-card:hover .tilt-shine { opacity: 1; }
+
+  /* Efecto magnético en botones */
+  .mag-btn { display: inline-block; transition: transform 0.3s cubic-bezier(.4,0,.2,1); }
+
+  /* Texto scramble (letras que se revuelven antes de revelar) */
+  .scramble { display: inline; }
+
+  /* Morphing blob detrás del hero */
+  #fx-blob {
+    position: absolute;
+    right: -10vw; top: 50%;
+    transform: translateY(-50%);
+    width: min(65vw, 700px);
+    aspect-ratio: 1;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+  }
+  #fx-blob path { fill: var(--sage-light); }
+
+  /* Cursor táctil — se oculta en touch */
+  @media (hover: none) {
+    * { cursor: auto !important; }
+    #fx-cursor, #fx-cursor-ring { display: none; }
+  }
+
+  /* ─── CAROUSEL 3D ─── */
+  .carousel3d-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+  }
+  .carousel3d-scene {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    perspective: 1100px;
+    transform-style: preserve-3d;
+  }
+  .c3d-card {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 260px;
+    min-height: 240px;
+    margin-left: -130px;
+    background: var(--white);
+    border: 1px solid rgba(30,48,64,0.1);
+    border-radius: 8px;
+    padding: 2.25rem 1.75rem 2rem;
+    display: flex; flex-direction: column; gap: 0.75rem;
+    box-shadow: 0 8px 32px rgba(30,48,64,0.08);
+    transform-origin: center center;
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity  0.65s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.65s ease;
+    will-change: transform, opacity;
+    cursor: default;
+    user-select: none;
+  }
+  .c3d-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300; line-height: 1;
+    color: var(--sage-light);
+    margin-bottom: 0.25rem;
+  }
+  .c3d-title {
+    font-weight: 600; font-size: 1rem;
+    color: var(--text); line-height: 1.3;
+  }
+  .c3d-desc {
+    font-size: 0.85rem; color: var(--text-muted);
+    line-height: 1.65; font-weight: 300;
+  }
+  .c3d-card.c3d-active {
+    box-shadow: 0 24px 64px rgba(30,48,64,0.18);
+    z-index: 10;
+  }
+  .c3d-card.c3d-active .c3d-num { color: var(--sage-mid); }
+  .c3d-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid rgba(30,48,64,0.18);
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 20;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    color: var(--text-muted);
+  }
+  .c3d-btn svg { width: 18px; height: 18px; }
+  .c3d-btn:hover { background: var(--sage); color: var(--white); border-color: var(--sage); transform: translateY(-50%) scale(1.08); }
+  .c3d-prev { left: 0; }
+  .c3d-next { right: 0; }
+  .c3d-dots {
+    position: absolute; bottom: 1rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; gap: 0.6rem; align-items: center;
+  }
+  .c3d-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    border: none; background: rgba(30,48,64,0.2);
+    cursor: pointer; padding: 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .c3d-dot.active { background: var(--sage); transform: scale(1.3); }
+  @media (max-width: 600px) {
+    .carousel3d-scene { height: 280px; }
+    .c3d-card { width: 220px; margin-left: -110px; padding: 1.75rem 1.25rem; }
+    .c3d-btn { width: 36px; height: 36px; }
+    .c3d-prev { left: -4px; }
+    .c3d-next { right: -4px; }
+  }
+
+  /* ─── SERVICES TABS ─── */
+  .svc-tabs {
+    display: flex; gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .svc-tab {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.7rem 1.4rem; border-radius: 3px;
+    border: 1px solid rgba(30,48,64,0.18);
+    background: var(--white);
+    font-family: inherit; font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.04em; color: var(--text-muted);
+    cursor: pointer; position: relative;
+    transition: all 0.25s ease;
+  }
+  .svc-tab:hover { border-color: var(--sage); color: var(--sage); }
+  .svc-tab.active {
+    background: var(--sage); color: var(--white);
+    border-color: var(--sage);
+    box-shadow: 0 6px 20px rgba(30,48,64,0.25);
+  }
+  .svc-tab-badge {
+    font-size: 0.6rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--accent); color: #fff;
+    padding: 0.15rem 0.45rem; border-radius: 2px;
+    line-height: 1.4;
+  }
+  .svc-tab.active .svc-tab-badge { background: rgba(255,255,255,0.25); }
+
+  .svc-panels { position: relative; }
+  .svc-panel {
+    display: none;
+    animation: svcFadeIn 0.35s ease;
+  }
+  .svc-panel.active { display: block; }
+  @keyframes svcFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .svc-panel-content {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3rem; align-items: start;
+    background: var(--white);
+    border: 1px solid rgba(30,48,64,0.1);
+    border-radius: 8px; padding: 2.5rem 3rem;
+  }
+  .svc-panel-content--featured {
+    background: var(--white);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px rgba(85,136,170,0.1);
+  }
+  .svc-panel-badge {
+    display: inline-block;
+    background: var(--accent); color: var(--white);
+    font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.25rem 0.7rem; border-radius: 2px;
+    margin-bottom: 1.25rem;
+  }
+  .svc-panel-icon {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--sage-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .svc-panel-icon svg { width: 24px; height: 24px; }
+  .svc-panel-icon--featured { background: var(--sage-light); }
+  .svc-panel-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem; font-weight: 400;
+    color: var(--text); margin-bottom: 0.4rem; line-height: 1.2;
+  }
+  .svc-panel-name--featured { color: var(--text); }
+  .svc-panel-dur {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.1rem;
+  }
+  .svc-panel-dur--featured { color: var(--accent); }
+  .svc-panel-desc {
+    font-size: 0.88rem; color: var(--text-muted);
+    line-height: 1.75; font-weight: 300; margin-bottom: 1.75rem;
+  }
+  .svc-panel-desc--featured { color: var(--text-muted); }
+  .svc-panel-price-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 1.5rem; }
+  .svc-panel-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 600; color: var(--sage); line-height: 1;
+  }
+  .svc-panel-price--featured { color: var(--sage); }
+  .svc-panel-price-note { font-size: 0.75rem; color: var(--text-muted); }
+  .svc-panel-price-note--featured { color: var(--text-muted); }
+  .svc-panel-cta { display: inline-block; }
+  .svc-panel-cta--featured {
+    background: var(--sage) !important; color: var(--white) !important;
+  }
+  .svc-panel-cta--featured:hover { background: var(--sage-dark) !important; }
+
+  .svc-panel-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.85rem;
+    padding-top: 0.5rem;
+  }
+  .svc-panel-list li {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    font-size: 0.87rem; color: var(--text-muted);
+    line-height: 1.5; font-weight: 300;
+  }
+  .svc-panel-list--featured li { color: var(--text-muted); }
+  .svc-check {
+    width: 20px; height: 20px; min-width: 20px; border-radius: 50%;
+    background: var(--sage-light);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-top: 1px; flex-shrink: 0;
+  }
+  .svc-check::after {
+    content: '';
+    display: block; width: 6px; height: 4px;
+    border-left: 2px solid var(--sage); border-bottom: 2px solid var(--sage);
+    transform: rotate(-45deg) translateY(-1px);
+  }
+  .svc-check--featured { background: var(--sage-light); }
+  .svc-check--featured::after { border-color: var(--sage); }
+
+  @media (max-width: 1024px) {
+    .svc-panel-content { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .svc-tabs { gap: 0.4rem; }
+    .svc-tab { font-size: 0.76rem; padding: 0.6rem 1rem; }
+    .svc-panel-content { padding: 1.5rem; }
+    .svc-panel-name { font-size: 1.6rem; }
+  }
+
+  /* ─── FAQ ACCORDION ─── */
+  .faq { padding: 6rem 4rem 8rem; background: transparent; }
+  .faq-inner {
+    max-width: 780px; margin: 0 auto;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 3.5rem 4rem;
+    box-shadow: 0 4px 32px rgba(30,48,64,0.07);
+    border: 1px solid rgba(30,48,64,0.07);
+  }
+  .faq-header { text-align: center; margin-bottom: 3rem; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item {
+    border-bottom: 1px solid rgba(30,48,64,0.1);
+  }
+  .faq-item:first-child { border-top: 1px solid rgba(30,48,64,0.1); }
+  .faq-q {
+    width: 100%; display: flex; align-items: center;
+    justify-content: space-between; gap: 1rem;
+    padding: 1.35rem 0;
+    background: none; border: none; cursor: pointer;
+    font-family: inherit; font-size: 0.97rem; font-weight: 500;
+    color: var(--text); text-align: left;
+    transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--accent); }
+  .faq-icon {
+    width: 22px; height: 22px; min-width: 22px; border-radius: 50%;
+    border: 1px solid rgba(30,48,64,0.25);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s, border-color 0.25s, transform 0.35s ease;
+    position: relative;
+  }
+  .faq-icon::before,
+  .faq-icon::after {
+    content: ''; position: absolute;
+    background: var(--sage);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+  .faq-icon::before { width: 10px; height: 1.5px; }
+  .faq-icon::after  { width: 1.5px; height: 10px; }
+
+  .faq-q[aria-expanded="true"] .faq-icon {
+    background: var(--sage); border-color: var(--sage);
+    transform: rotate(45deg);
+  }
+  .faq-q[aria-expanded="true"] .faq-icon::before,
+  .faq-q[aria-expanded="true"] .faq-icon::after { background: var(--white); }
+
+  .faq-a {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1),
+                padding 0.35s ease;
+    padding-bottom: 0;
+  }
+  .faq-a.open {
+    max-height: 2000px;
+    padding-bottom: 1.35rem;
+  }
+  .faq-a p {
+    font-size: 0.9rem; color: var(--text-muted);
+    line-height: 1.8; font-weight: 300;
+  }
+
+  @media (max-width: 1024px) { .faq { padding: 5rem 2rem; } .faq-inner { padding: 2.5rem 2.5rem; } }
+  @media (max-width: 600px)  {
+    .faq { padding: 3.5rem 1.25rem; }
+    .faq-inner { padding: 2rem 1.5rem; border-radius: 12px; }
+    .faq-q { font-size: 0.9rem; padding: 1.1rem 0; }
+  }
+
+  /* ─── STAT COUNTER ─── */
+  .count-num { display: inline; }
+
+
+  /* ─── SERVICES TAB HINT ─── */
+  .svc-hint {
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.55;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .svc-hint::before,
+  .svc-hint::after {
+    content: '';
+    display: block;
+    width: 28px; height: 1px;
+    background: var(--text-muted);
+    opacity: 0.4;
+  }
+  /* El hint se oculta via JS en svcTab() al seleccionar cualquier servicio */
+
+  /* ─── BENEFITS GRID ─── */
+  .benefits-subtitle {
+    text-align: center; font-size: 0.8rem;
+    color: var(--text-muted); letter-spacing: 0.06em;
+    margin-bottom: 3rem; margin-top: 0.5rem;
+    opacity: 0.7;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 0;
+  }
+  .benefit-card {
+    background: var(--warm);
+    border: 1px solid rgba(30,48,64,0.08);
+    border-radius: 8px;
+    padding: 2rem 1.5rem 1.75rem;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    outline: none;
+  }
+  .benefit-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--sage);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  .benefit-card:hover,
+  .benefit-card:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(30,48,64,0.13);
+    border-color: rgba(30,48,64,0.18);
+  }
+  .benefit-card:hover::after,
+  .benefit-card:focus-visible::after { transform: scaleX(1); }
+
+  .benefit-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(30,48,64,0.1);
+    transition: background 0.3s, border-color 0.3s;
+    flex-shrink: 0;
+  }
+  .benefit-icon svg {
+    width: 22px; height: 22px;
+    stroke: var(--sage);
+    transition: stroke 0.3s, transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .benefit-card:hover .benefit-icon,
+  .benefit-card:focus-visible .benefit-icon {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+  .benefit-card:hover .benefit-icon svg,
+  .benefit-card:focus-visible .benefit-icon svg {
+    stroke: var(--white);
+    transform: scale(1.15) rotate(-4deg);
+  }
+
+  .benefit-name {
+    font-weight: 600; font-size: 0.92rem;
+    color: var(--text); margin-bottom: 0;
+    transition: color 0.25s;
+  }
+  .benefit-card:hover .benefit-name,
+  .benefit-card:focus-visible .benefit-name { color: var(--sage); }
+
+  /* Description hidden by default, revealed on hover/focus */
+  .benefit-desc {
+    font-size: 0.82rem; color: var(--text-muted);
+    line-height: 1.65; font-weight: 300;
+    margin-top: 0.65rem;
+    opacity: 1;
+  }
+  /* Estado inicial para animación de entrada de benefit cards */
+  .benefit-reveal {
+    opacity: 0;
+    transform: translateY(36px) scale(0.97);
+  }
+  .benefit-reveal.benefit-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1),
+                transform 0.55s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  @media (max-width: 1024px) {
+    .benefits-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  }
+  @media (max-width: 600px) {
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+    .benefit-card { padding: 1.5rem 1.1rem 1.35rem; }
+    .benefit-icon { width: 42px; height: 42px; }
+    .benefit-icon svg { width: 18px; height: 18px; }
+  }
+
+
+  /* ─── GOOGLE REVIEW CARD ─── */
+  .testimonials {
+    padding: 4rem 4rem 5rem;
+    background: transparent;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .testimonials-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+  .testimonials-header { text-align: center; margin-bottom: 3rem; }
+  .testimonials-header .section-eyebrow span { color: var(--accent); }
+  .testimonials-header .section-eyebrow-dot { background: var(--accent); }
+  .testimonials-header .section-title { color: var(--text); }
+  .testimonials-header .section-title em { color: var(--sage); }
+
+  .google-review-card {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 1.1rem;
+    max-width: 360px; margin: 0 auto;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2.5rem 2.5rem 2rem;
+    text-decoration: none;
+    border: 1.5px solid rgba(85,136,170,0.35);
+    box-shadow:
+      0 8px 40px rgba(30,48,64,0.14),
+      0 0 0 4px rgba(85,136,170,0.10),
+      0 2px 12px rgba(85,136,170,0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .google-review-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 60px rgba(30,48,64,0.18),
+      0 0 0 5px rgba(85,136,170,0.18),
+      0 4px 24px rgba(85,136,170,0.28);
+  }
+  .google-logo { width: 90px; height: auto; }
+  .google-review-stars {
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .google-review-stars span:first-child {
+    font-size: 1.9rem; color: #FBBC05;
+    letter-spacing: 0.05em; line-height: 1;
+  }
+  .google-review-score {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 600;
+    color: var(--text); line-height: 1;
+  }
+  .google-review-label {
+    font-size: 0.78rem; color: var(--text-muted);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin: 0;
+  }
+  .google-review-cta {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 0.25rem;
+    font-size: 0.8rem; font-weight: 500;
+    color: #4285F4;
+    letter-spacing: 0.03em;
+    transition: gap 0.2s ease;
+  }
+  .google-review-card:hover .google-review-cta { gap: 0.65rem; }
+
+  @media (max-width: 1024px) { .testimonials { padding: 5rem 2rem; } }
+  @media (max-width: 600px)  { .testimonials { padding: 3.5rem 1.25rem; } }
+
+
+
+  /* ═══════════════════════════════════════════════
+     TALLERES Y NOVEDADES SECTION
+     ═══════════════════════════════════════════════ */
+  .talleres-section {
+    padding: 7rem 4rem;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  .talleres-inner {
+    max-width: 1100px; margin: 0 auto;
+  }
+  
+  /* Layout: grid 2 columnas (talleres a izq, novedades a der) */
+  .talleres-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 4rem;
+  }
+
+  /* ─── Cards Talleres ─── */
+  .talleres-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .taller-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .taller-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px var(--shadow-color);
+  }
+  .taller-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .taller-date {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    width: 65px; height: 75px;
+    border-radius: 6px;
+    line-height: 1.1;
+  }
+  .taller-date span.day { font-size: 1.8rem; font-weight: 600; font-family: 'Cormorant Garamond', serif; }
+  .taller-date span.month { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+  .taller-status {
+    background: rgba(126,168,232,0.15);
+    color: var(--accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .taller-status.full { background: rgba(255,255,255,0.05); color: var(--text-muted); }
+  
+  .taller-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300;
+    color: var(--text); margin-bottom: 0.5rem;
+  }
+  .taller-info p {
+    font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; font-weight: 300;
+  }
+  .taller-meta {
+    display: flex; gap: 1.5rem; margin-top: 0.5rem;
+    font-size: 0.85rem; color: var(--sage-mid); font-weight: 400;
+  }
+  .taller-meta span { display: flex; align-items: center; gap: 0.4rem; }
+  .taller-meta svg { width: 16px; height: 16px; stroke: var(--sage-mid); }
+  
+  .taller-action {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .taller-price { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--text); }
+  .taller-btn {
+    background: transparent; border: 1px solid var(--sage); color: var(--text);
+    padding: 0.7rem 1.5rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500;
+    text-decoration: none; transition: background 0.3s, color 0.3s;
+  }
+  .taller-btn:hover { background: var(--sage); color: var(--white); }
+  .taller-btn.disabled { opacity: 0.5; pointer-events: none; border-color: rgba(255,255,255,0.1); }
+
+  /* ─── Novedades Timeline ─── */
+  .novedades-sidebar {
+    background: var(--warm);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+  }
+  .novedades-title {
+    font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent); margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .novedades-title svg { width: 18px; height: 18px; stroke: var(--accent); }
+  
+  .timeline {
+    position: relative;
+    padding-left: 1.2rem;
+    display: flex; flex-direction: column; gap: 1.8rem;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+  .timeline-item { position: relative; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -1.2rem; top: 0.2rem;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--sage); transform: translateX(-50%);
+    box-shadow: 0 0 0 4px var(--warm);
+  }
+  .timeline-date { font-size: 0.7rem; color: var(--sage-mid); font-weight: 600; margin-bottom: 0.3rem; }
+  .timeline-content h4 { font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
+  .timeline-content p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; font-weight: 300; }
+
+  @media (max-width: 900px) {
+    .talleres-layout { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 600px) {
+    .talleres-section { padding: 5rem 1.5rem; }
+    .taller-card { padding: 1.5rem; }
+    .taller-header { flex-direction: column; gap: 1rem; }
+    .taller-meta { flex-direction: column; gap: 0.5rem; }
+    .taller-action { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .taller-btn { width: 100%; text-align: center; }
+  }
+
+  /* --- PANEL PRIVADO CREADOR --- */
+  .creator-admin-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 12000;
+    display: none;
+    background: rgba(20, 32, 44, 0.72);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    color: var(--text);
+    padding: 1rem;
+  }
+  .creator-admin-overlay.open { display: flex; }
+  .creator-admin-shell {
+    width: min(1180px, 100%);
+    max-height: calc(100vh - 2rem);
+    margin: auto;
+    background: #f7f9fc;
+    border: 1px solid rgba(255,255,255,0.72);
+    border-radius: 8px;
+    box-shadow: 0 28px 90px rgba(0,0,0,0.34);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+  }
+  .creator-admin-sidebar {
+    background: #203447;
+    color: #fff;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .creator-admin-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    line-height: 1;
+    font-weight: 300;
+  }
+  .creator-admin-brand em { color: #b8dff5; font-style: italic; }
+  .creator-admin-note {
+    font-size: 0.76rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.72);
+  }
+  .creator-admin-tabs { display: grid; gap: 0.35rem; margin-top: 0.5rem; }
+  .creator-admin-tab {
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.75rem 0.85rem;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.84rem;
+  }
+  .creator-admin-tab.active,
+  .creator-admin-tab:hover { background: rgba(184,223,245,0.18); border-color: rgba(184,223,245,0.35); }
+  .creator-admin-main {
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding: 1.25rem;
+  }
+  .creator-admin-topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  .creator-admin-title { font-size: 1.35rem; color: var(--sage); margin-bottom: 0.2rem; }
+  .creator-admin-subtitle { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
+  .creator-admin-close {
+    border: 1px solid rgba(30,48,64,0.15);
+    background: #fff;
+    color: var(--sage);
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+  .creator-admin-login {
+    width: min(460px, 100%);
+    margin: auto;
+    background: #f7f9fc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+  }
+  .creator-admin-login h2 { color: var(--sage); margin-bottom: 0.5rem; font-size: 1.35rem; }
+  .creator-admin-login p { color: var(--text-muted); font-size: 0.84rem; line-height: 1.55; margin-bottom: 1rem; }
+  .creator-admin-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
+  .creator-admin-card {
+    background: #fff;
+    border: 1px solid rgba(30,48,64,0.1);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .creator-admin-card strong { display: block; color: var(--sage); font-size: 1.4rem; margin-bottom: 0.2rem; }
+  .creator-admin-card span { color: var(--text-muted); font-size: 0.76rem; }
+  .creator-admin-section { display: none; }
+  .creator-admin-section.active { display: block; }
+  .creator-admin-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
+  .creator-admin-field { display: grid; gap: 0.35rem; }
+  .creator-admin-field.full { grid-column: 1 / -1; }
+  .creator-admin-field label { color: var(--sage); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .creator-admin-field input,
+  .creator-admin-field select,
+  .creator-admin-field textarea {
+    width: 100%;
+    border: 1px solid rgba(30,48,64,0.16);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text);
+    padding: 0.72rem 0.8rem;
+    font: inherit;
+    font-size: 0.86rem;
+  }
+  .creator-admin-field textarea { min-height: 92px; resize: vertical; line-height: 1.5; }
+  .creator-admin-actions { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1rem; }
+  .creator-admin-btn {
+    border: 1px solid rgba(30,48,64,0.15);
+    background: #fff;
+    color: var(--sage);
+    border-radius: 6px;
+    padding: 0.72rem 0.95rem;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 700;
+  }
+  .creator-admin-btn.primary { background: var(--sage); color: #fff; border-color: var(--sage); }
+  .creator-admin-btn.danger { color: #b64040; }
+  .creator-admin-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
+  .creator-admin-table th,
+  .creator-admin-table td { padding: 0.78rem; border-bottom: 1px solid rgba(30,48,64,0.08); text-align: left; font-size: 0.82rem; vertical-align: top; }
+  .creator-admin-table th { color: var(--sage); background: #edf3f8; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .creator-admin-muted { color: var(--text-muted); font-size: 0.78rem; line-height: 1.55; }
+  .creator-admin-status { min-height: 1.2rem; margin-top: 0.75rem; color: var(--accent); font-size: 0.82rem; }
+  @media (max-width: 820px) {
+    .creator-admin-shell { grid-template-columns: 1fr; }
+    .creator-admin-sidebar { padding: 1rem; }
+    .creator-admin-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .creator-admin-form-grid,
+    .creator-admin-grid { grid-template-columns: 1fr; }
+    .creator-admin-main { max-height: 70vh; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Cursor personalizado -->
+<div id="fx-cursor"></div>
+<div id="fx-cursor-ring"></div>
+
+<!-- COOKIE BANNER (AEPD-compliant: Aceptar / Configurar / Solo esenciales) -->
+<div id="cookie-banner" role="region" aria-live="polite" aria-label="Aviso de cookies">
+  <p>
+    Esta web utiliza cookies propias (técnicas, necesarias) y de terceros (analíticas, Google Analytics).
+    Puedes elegir qué cookies aceptas o consultar nuestra
+    <a href="#" onclick="showLegalPage('cookies'); return false;">Política de Cookies</a>.
+    Las cookies técnicas no se pueden desactivar porque son necesarias para el funcionamiento del sitio.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn-accept" id="cookie-accept">Aceptar todas</button>
+    <button class="cookie-btn-config" id="cookie-config">Configurar cookies</button>
+    <button class="cookie-btn-reject" id="cookie-reject">Solo esenciales</button>
+  </div>
+</div>
+
+<!-- PANEL CONFIGURACIÓN DE COOKIES (AEPD granular) -->
+<div id="cookie-config-panel" role="dialog" aria-modal="true" aria-label="Configuración de cookies" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(30,48,64,0.55);align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#F0F3FA;border-radius:8px;max-width:520px;width:100%;padding:2rem;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.35);">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#3a5a78;margin-bottom:0.5rem;">Configuración de <em style="font-style:italic;color:#5588aa;">cookies</em></h2>
+    <p style="font-size:0.82rem;color:#5c7385;line-height:1.65;margin-bottom:1.5rem;">Puedes activar o desactivar cada categoría de cookies. Las cookies técnicas siempre están activas porque son imprescindibles para el funcionamiento del sitio.</p>
+
+    <!-- Técnicas: siempre activas -->
+    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div>
+          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies técnicas (siempre activas)</p>
+          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Guardan tu preferencia de cookies y son imprescindibles para la navegación. No requieren consentimiento (art. 22.2 LSSI-CE).</p>
+        </div>
+        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#5588aa;background:#ddeef8;padding:0.25rem 0.6rem;border-radius:3px;white-space:nowrap;flex-shrink:0;">Siempre activas</span>
+      </div>
+    </div>
+
+    <!-- Analíticas: toggle -->
+    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div style="flex:1;">
+          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies analíticas (Google Analytics)</p>
+          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Miden el tráfico y el comportamiento de navegación de forma anónima. Nos ayudan a mejorar el sitio. Solo se activan con tu consentimiento.</p>
+        </div>
+        <label style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;flex-shrink:0;" aria-label="Activar cookies analíticas">
+          <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;accent-color:#3a5a78;cursor:pointer;">
+        </label>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <button id="cookie-config-save" style="background:#3a5a78;color:#fff;border:none;cursor:pointer;padding:0.7rem 1.5rem;border-radius:3px;font-size:0.82rem;font-weight:500;font-family:inherit;letter-spacing:0.04em;transition:background 0.2s;flex:1;">Guardar preferencias</button>
+      <button id="cookie-config-cancel" style="background:transparent;color:#5c7385;border:1px solid rgba(30,48,64,0.2);cursor:pointer;padding:0.7rem 1.25rem;border-radius:3px;font-size:0.82rem;font-family:inherit;transition:border-color 0.2s;flex:1;">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">nutricional<em>_mente</em> eva</a>
+  <ul class="nav-links">
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#metodo">Mi método</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#talleres" style="color:var(--accent);font-weight:600;">Talleres</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Reservar cita</a>
+  <!-- Botón hamburguesa (visible ≤1024px) -->
+  <button class="nav-hamburger" id="nav-hamburger"
+          aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-drawer">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Drawer móvil -->
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Menú de navegación" aria-modal="true" aria-hidden="true" inert>
+  <ul>
+    <li><a href="#sobre-mi"  class="drawer-link">Sobre mí</a></li>
+    <li><a href="#metodo"    class="drawer-link">Mi método</a></li>
+    <li><a href="#servicios" class="drawer-link">Servicios</a></li>
+    <li><a href="#proceso"   class="drawer-link">Proceso</a></li>
+    <li><a href="#contacto"  class="drawer-link">Contacto</a></li>
+    <li><a href="#talleres"  class="drawer-link" style="color:var(--accent);font-weight:600;">Talleres</a></li>
+  </ul>
+  <a href="#contacto" class="drawer-cta drawer-link">Reservar cita</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <canvas id="fx-particles"></canvas>
+  <!-- Blob SVG morphing -->
+  <svg id="fx-blob" viewBox="-10 -10 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M44.3,-67.1C56.9,-61.2,66.3,-48.5,72.4,-34.1C78.5,-19.8,81.2,-3.8,78.1,10.8C75,25.4,66,38.6,54.5,48.5C43,58.4,29,65,13.8,69.2C-1.4,73.3,-17.8,74.9,-32.6,70.1C-47.4,65.4,-60.6,54.3,-68.1,40.1C-75.7,25.9,-77.5,8.6,-74.4,-7.3C-71.3,-23.2,-63.2,-37.8,-51.9,-47.7C-40.5,-57.6,-25.8,-62.8,-10.4,-64.6C4.9,-66.4,31.7,-73,44.3,-67.1Z" transform="translate(100 100)"/>
+  </svg>
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Dietista · Auxiliar de Enfermería</span>
+    </div>
+    <h1 class="hero-title" aria-label="Tu salud empieza desde dentro — Dietista personalizada en Madrid">
+      <em class="line">Tu salud</em>
+      <span class="line">empieza</span>
+      <em class="line">desde dentro</em>
+    </h1>
+    <p class="hero-desc">
+      Planes nutricionales 100% personalizados. No dietas restrictivas — hábitos reales, resultados duraderos y acompañamiento constante en cada paso de tu camino.
+    </p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary mag-btn">Reservar primera consulta</a>
+      <a href="#servicios" class="btn-ghost">Ver servicios →</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="sobre-mi">
+  <div class="about-content">
+    <div class="section-eyebrow reveal">
+      <span class="section-eyebrow-dot"></span>
+      <span>Sobre mí</span>
+    </div>
+    <h2 class="section-title reveal">Soy Eva,<br><em>tu dietista</em></h2>
+    <p class="about-text reveal">
+      Soy dietista y auxiliar de enfermería, colegiada en el CODINMA. Trabajo con un enfoque integrativo: la alimentación como herramienta de salud real, no como castigo ni restricción.
+    </p>
+    <p class="about-text reveal">
+      Cada persona llega con su historia, sus circunstancias y sus objetivos. Por eso nunca aplico protocolos genéricos — cada plan se construye desde cero para ti.
+    </p>
+    <figure>
+      <blockquote class="about-quote reveal">
+        "Comer bien no debería ser complicado. Mi trabajo es que dejes de sentirlo así."
+      </blockquote>
+      <figcaption style="display:none">Eva, Dietista · Nutricional_mente Eva</figcaption>
+    </figure>
+    <div class="about-stats">
+      <div class="stat reveal">
+        <p class="stat-num"><span class="count-num" data-target="100" data-suffix="%">0%</span></p>
+        <p class="stat-label">Planes sin restricciones</p>
+      </div>
+      <div class="stat reveal">
+        <p class="stat-num"><span class="count-num" data-target="0" data-suffix="">∞</span></p>
+        <p class="stat-label">Dietas impuestas</p>
+      </div>
+      <div class="stat reveal">
+        <p class="stat-num"><span class="count-num" data-target="24" data-suffix="h">0h</span></p>
+        <p class="stat-label">Apoyo WhatsApp disponible</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- METHOD -->
+<section class="method" id="metodo">
+  <div class="method-inner">
+    <div class="method-header">
+      <div>
+        <div class="section-eyebrow-line reveal">
+          <span>Mi método</span>
+        </div>
+        <h2 class="section-title reveal">Salud real,<br>sin <em>restricciones</em></h2>
+      </div>
+      <p class="method-intro reveal">
+        Mi método se centra en la salud y el bienestar: que te encuentres mejor por dentro y por fuera. No en hacer dietas. En cambiar hábitos: reducir molestias digestivas, mejorar la inflamación, mejorar tu relación con la comida, facilitar digestiones. Al mejorar nuestros hábitos, suele producirse una pérdida de volumen y peso — y una mejora de la composición corporal.
+      </p>
+    </div>
+    <div class="method-pillars">
+      <div class="pillar reveal tilt-card"><div class="tilt-shine"></div>
+        <div class="pillar-num">01</div>
+        <p class="pillar-title">Individualización</p>
+        <p class="pillar-desc">No existe un plan que funcione para todo el mundo. Cada persona tiene su historia, sus objetivos y su ritmo. Por eso cada plan es único.</p>
+      </div>
+      <div class="pillar reveal tilt-card"><div class="tilt-shine"></div>
+        <div class="pillar-num">02</div>
+        <p class="pillar-title">Hábitos sostenibles</p>
+        <p class="pillar-desc">Nada de restricciones extremas. Trabajamos cambios que puedas mantener de por vida, sin sentirte privado de nada que te guste.</p>
+      </div>
+      <div class="pillar reveal tilt-card"><div class="tilt-shine"></div>
+        <div class="pillar-num">03</div>
+        <p class="pillar-title">Acompañamiento real</p>
+        <p class="pillar-desc">Estoy contigo en el proceso: consultas regulares, apoyo por WhatsApp y ajustes continuos para que nunca sientas que caminas sola.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="services-inner">
+    <div class="services-header">
+      <div class="section-eyebrow reveal" style="justify-content: center;">
+        <span class="section-eyebrow-dot"></span>
+        <span>Servicios</span>
+      </div>
+      <h2 class="section-title reveal">Tu camino hacia<br><em>el bienestar</em></h2>
+    </div>
+    <!-- TABS NAV -->
+    <div class="svc-tabs reveal" role="tablist" aria-label="Servicios">
+      <button class="svc-tab active" id="svc-tab-0" role="tab" aria-selected="true" aria-controls="svc-panel-0" onclick="svcTab(0)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 22C12 22 4 17 4 10a8 8 0 0 1 16 0c0 7-8 12-8 12z"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+        Primera consulta
+      </button>
+      <button class="svc-tab" id="svc-tab-1" role="tab" aria-selected="false" aria-controls="svc-panel-1" onclick="svcTab(1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Pack popular
+        <span class="svc-tab-badge">Más popular</span>
+      </button>
+      <button class="svc-tab" id="svc-tab-2" role="tab" aria-selected="false" aria-controls="svc-panel-2" onclick="svcTab(2)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        Seguimiento
+      </button>
+    </div>
+
+    <!-- Hint -->
+    <p class="svc-hint">Selecciona un servicio para ver la información</p>
+
+    <!-- TAB PANELS -->
+    <div class="svc-panels">
+
+      <div class="svc-panel active" id="svc-panel-0" role="tabpanel" aria-labelledby="svc-tab-0">
+        <div class="svc-panel-content">
+          <div class="svc-panel-left">
+            <div class="svc-panel-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C12 22 4 17 4 10a8 8 0 0 1 16 0c0 7-8 12-8 12z"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+            </div>
+            <h3 class="svc-panel-name">Primera consulta</h3>
+            <p class="svc-panel-dur">≈ 45 minutos</p>
+            <p class="svc-panel-desc">Recogida de toda la información necesaria para elaborar tu plan: motivo de consulta, hábitos, antecedentes, objetivos, síntomas, intolerancias, alergias y preferencias alimentarias. Medidas antropométricas y valoración de composición corporal con bioimpedancia.</p>
+            <div class="svc-panel-price-row">
+              <span class="svc-panel-price">75€</span>
+              <span class="svc-panel-price-note">IVA incluido</span>
+            </div>
+            <a href="#contacto" class="btn-primary svc-panel-cta">Reservar ahora</a>
+          </div>
+          <ul class="svc-panel-list">
+            <li><span class="svc-check"></span>Entrevista personalizada en profundidad</li>
+            <li><span class="svc-check"></span>Evaluación nutricional completa</li>
+            <li><span class="svc-check"></span>Medición antropométrica (presencial)</li>
+            <li><span class="svc-check"></span>Bioimpedancia corporal (presencial)</li>
+            <li><span class="svc-check"></span>Análisis de hábitos y actividad física</li>
+            <li><span class="svc-check"></span>Plan nutricional en 5–7 días</li>
+            <li><span class="svc-check"></span>Suplementación si es necesario</li>
+            <li><span class="svc-check"></span>WhatsApp lun–vie 8:00–20:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc-panel" id="svc-panel-1" role="tabpanel" aria-labelledby="svc-tab-1">
+        <div class="svc-panel-content svc-panel-content--featured">
+          <div class="svc-panel-left">
+            <span class="svc-panel-badge">Más popular</span>
+            <div class="svc-panel-icon svc-panel-icon--featured">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="svc-panel-name svc-panel-name--featured">Pack consulta + seguimiento</h3>
+            <p class="svc-panel-dur svc-panel-dur--featured">La mejor forma de empezar</p>
+            <p class="svc-panel-desc svc-panel-desc--featured">Primera consulta completa más una sesión de seguimiento. Ideal para comenzar con un acompañamiento asegurado y ajustar el plan según tus primeros progresos.</p>
+            <div class="svc-panel-price-row">
+              <span class="svc-panel-price svc-panel-price--featured">125€</span>
+              <span class="svc-panel-price-note svc-panel-price-note--featured">IVA incluido · ahorras 5€</span>
+            </div>
+            <a href="#contacto" class="btn-primary svc-panel-cta svc-panel-cta--featured">Reservar ahora</a>
+          </div>
+          <ul class="svc-panel-list svc-panel-list--featured">
+            <li><span class="svc-check svc-check--featured"></span>Todo lo de la primera consulta</li>
+            <li><span class="svc-check svc-check--featured"></span>Sesión de seguimiento incluida</li>
+            <li><span class="svc-check svc-check--featured"></span>Reajuste del plan según progresos</li>
+            <li><span class="svc-check svc-check--featured"></span>Nueva medición y composición corporal</li>
+            <li><span class="svc-check svc-check--featured"></span>Nuevo plan nutricional actualizado</li>
+            <li><span class="svc-check svc-check--featured"></span>Acompañamiento WhatsApp continuo</li>
+            <li><span class="svc-check svc-check--featured"></span>Educación nutricional en consulta</li>
+            <li><span class="svc-check svc-check--featured"></span>Ahorro respecto a consultas por separado</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc-panel" id="svc-panel-2" role="tabpanel" aria-labelledby="svc-tab-2">
+        <div class="svc-panel-content">
+          <div class="svc-panel-left">
+            <div class="svc-panel-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <h3 class="svc-panel-name">Consulta de seguimiento</h3>
+            <p class="svc-panel-dur">20–25 min · cada 2–3 semanas</p>
+            <p class="svc-panel-desc">Revisión de pautas, evaluación del progreso y reajuste de objetivos según tus avances. Nueva medición antropométrica y composición corporal. Nuevo plan nutricional en 5–7 días. Apoyo continuo entre sesiones.</p>
+            <div class="svc-panel-price-row">
+              <span class="svc-panel-price">55€</span>
+              <span class="svc-panel-price-note">IVA incluido</span>
+            </div>
+            <a href="#contacto" class="btn-primary svc-panel-cta">Reservar ahora</a>
+          </div>
+          <ul class="svc-panel-list">
+            <li><span class="svc-check"></span>Análisis de adaptación al plan</li>
+            <li><span class="svc-check"></span>Valoración de hábitos adquiridos</li>
+            <li><span class="svc-check"></span>Reajuste de objetivos</li>
+            <li><span class="svc-check"></span>Nueva medición antropométrica</li>
+            <li><span class="svc-check"></span>Valoración composición corporal <small style="color:var(--text-muted);font-size:0.78em;">(solo presencial)</small></li>
+            <li><span class="svc-check"></span>Nuevo plan nutricional actualizado</li>
+            <li><span class="svc-check"></span>WhatsApp y correo entre sesiones</li>
+            <li><span class="svc-check"></span>Educación nutricional continua</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- INCLUDED — BENEFITS GRID -->
+<section class="included" id="que-incluye">
+  <div class="included-inner">
+    <div class="section-eyebrow-line reveal" style="justify-content: center;">
+      <span>¿Qué incluye?</span>
+    </div>
+    <h2 class="section-title reveal" style="margin-bottom: 0.75rem; text-align:center;">Todo lo que necesitas<br><em>en cada consulta</em></h2>
+    <p class="benefits-subtitle reveal">Todo incluido desde el primer día</p>
+
+    <div class="benefits-grid" id="benefits-grid">
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Entrevista personalizada</p>
+        <p class="benefit-desc">Conocemos tu historia, objetivos, hábitos, síntomas, intolerancias y preferencias en profundidad antes de diseñar nada.</p>
+      </div>
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Evaluación nutricional</p>
+        <p class="benefit-desc">Análisis completo de tu alimentación actual: calidad, cantidad, frecuencia y distribución de macronutrientes y micronutrientes.</p>
+      </div>
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Plan 100% a medida</p>
+        <p class="benefit-desc">Tu plan nutricional, entregado en 5–7 días, diseñado exclusivamente para ti: tus gustos, tu ritmo de vida y tus circunstancias.</p>
+      </div>
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12h20M2 12l4-4m-4 4 4 4M7 8v2M7 14v2M10 6v4M10 14v4M13 8v2M13 14v2M16 6v4M16 14v4M19 8v2M19 14v2"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Medición antropométrica</p>
+        <p class="benefit-desc">Toma de medidas corporales en consulta presencial para establecer una línea base objetiva y hacer un seguimiento real del progreso.</p>
+      </div>
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="12" rx="10" ry="5"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="2" y1="12" x2="22" y2="12"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Bioimpedancia corporal</p>
+        <p class="benefit-desc">Valoración de composición corporal: masa muscular, grasa, agua y metabolismo basal. Solo disponible en consulta presencial.</p>
+      </div>
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Seguimiento continuo</p>
+        <p class="benefit-desc">Revisiones cada 2–3 semanas para evaluar progresos, ajustar el plan y mantenerte motivada en el camino.</p>
+      </div>
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Apoyo por WhatsApp</p>
+        <p class="benefit-desc">Disponible de lunes a viernes de 8:00 a 20:00. Resuelvo tus dudas del día a día sin esperar a la próxima cita.</p>
+      </div>
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Suplementación</p>
+        <p class="benefit-desc">Recomendaciones de suplementos solo cuando realmente sean necesarios y útiles para tu caso concreto. Sin vender lo innecesario.</p>
+      </div>
+
+      <div class="benefit-card benefit-reveal" tabindex="0">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <p class="benefit-name">Educación nutricional</p>
+        <p class="benefit-desc">Te explico el por qué de cada decisión para que entiendas tu cuerpo y puedas tomar decisiones autónomas a largo plazo.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="process" id="proceso">
+  <div class="process-inner">
+    <div class="process-header">
+      <div class="section-eyebrow-line reveal" style="justify-content: center;">
+        <span>Cómo funciona</span>
+      </div>
+      <h2 class="section-title reveal">Un proceso <em>pensado para ti</em></h2>
+    </div>
+
+    <!-- 3D Carousel -->
+    <div class="carousel3d-wrap reveal">
+      <div class="carousel3d-scene" id="carousel3d">
+        <div class="c3d-card" data-index="0">
+          <div class="c3d-num">1</div>
+          <p class="c3d-title">Reserva tu cita</p>
+          <p class="c3d-desc">Contacta por WhatsApp o correo. Confirma el pago para asegurar tu plaza. Online o presencial.</p>
+        </div>
+        <div class="c3d-card" data-index="1">
+          <div class="c3d-num">2</div>
+          <p class="c3d-title">Primera consulta</p>
+          <p class="c3d-desc">45 minutos para conocerte en profundidad: hábitos, objetivos, medidas y composición corporal.</p>
+        </div>
+        <div class="c3d-card" data-index="2">
+          <div class="c3d-num">3</div>
+          <p class="c3d-title">Tu plan personalizado</p>
+          <p class="c3d-desc">En 5–7 días recibes tu plan nutricional adaptado exclusivamente a ti y a tus circunstancias.</p>
+        </div>
+        <div class="c3d-card" data-index="3">
+          <div class="c3d-num">4</div>
+          <p class="c3d-title">Seguimiento continuo</p>
+          <p class="c3d-desc">Revisiones cada 2–3 semanas y apoyo por WhatsApp para avanzar juntos y ajustar el camino.</p>
+        </div>
+      </div>
+
+      <!-- Nav buttons -->
+      <button class="c3d-btn c3d-prev" aria-label="Anterior" onclick="c3dMove(-1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="c3d-btn c3d-next" aria-label="Siguiente" onclick="c3dMove(1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <!-- Dots -->
+      <div class="c3d-dots" id="c3d-dots">
+        <button class="c3d-dot active" aria-label="Paso 1" onclick="c3dGoTo(0)"></button>
+        <button class="c3d-dot" aria-label="Paso 2" onclick="c3dGoTo(1)"></button>
+        <button class="c3d-dot" aria-label="Paso 3" onclick="c3dGoTo(2)"></button>
+        <button class="c3d-dot" aria-label="Paso 4" onclick="c3dGoTo(3)"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PAYMENT INFO -->
+<section class="payment">
+  <div class="payment-inner">
+    <div class="section-eyebrow-line reveal" style="justify-content: center;">
+      <span>Reserva y pago</span>
+    </div>
+    <h2 class="section-title reveal" style="margin-bottom: 0.5rem;">Condiciones para<br><em>reservar tu cita</em></h2>
+    <div class="payment-cards">
+
+      <!-- Online — icono monitor/pantalla -->
+      <div class="payment-card reveal">
+        <div class="payment-card-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <p class="payment-card-title">Consulta online</p>
+        <p class="payment-card-text">Las consultas online se abonan por Bizum al número <strong>644 13 76 67</strong> mínimo el día anterior a la sesión. Hasta entonces no se enviará el enlace para la videollamada.</p>
+      </div>
+
+      <!-- Presencial — icono edificio/clínica -->
+      <div class="payment-card reveal">
+        <div class="payment-card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <p class="payment-card-title">Consulta presencial</p>
+        <p class="payment-card-text">La consulta presencial se abona en efectivo en el propio centro al finalizar la sesión. Incluye medición antropométrica y bioimpedancia.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonios">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <div class="section-eyebrow reveal" style="justify-content: center;">
+        <span class="section-eyebrow-dot"></span>
+        <span>Opiniones reales</span>
+      </div>
+      <h2 class="section-title reveal">Lo que dicen<br><em>mis pacientes</em></h2>
+    </div>
+
+    <a class="google-review-card reveal"
+       href="https://maps.app.goo.gl/neL9Bw4dLYBrKFnV7?g_st=ic"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Ver reseñas de Eva Vidal Nutricion en Google">
+
+      <!-- Google logo SVG oficial -->
+      <svg class="google-logo" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/>
+        <path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/>
+        <path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/>
+        <path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/>
+        <path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/>
+        <path d="M35.29 41.41V32h31.31c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 35.29.36 16.69 16.32 1.23 34.86 1.23c10.5 0 17.99 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.25z" fill="#4285F4"/>
+      </svg>
+
+      <div class="google-review-stars">
+        <span>★★★★★</span>
+        <span class="google-review-score">5,0</span>
+      </div>
+      <p class="google-review-label">Reseñas en Google</p>
+      <span class="google-review-cta">Ver todas las reseñas
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- FAQ ACCORDION -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="section-eyebrow-line reveal" style="justify-content: center;">
+        <span>Preguntas frecuentes</span>
+      </div>
+      <h2 class="section-title reveal">Todo lo que necesitas<br><em>saber</em></h2>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Cuánto tiempo tarda en verse resultados?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Depende de cada persona y de su punto de partida, pero en general los primeros cambios (más energía, digestiones más cómodas, reducción de la inflamación) se notan en las primeras 2–3 semanas. Los cambios en composición corporal suelen apreciarse a partir del primer mes de seguimiento constante.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Tengo que seguir una dieta muy estricta?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>No. Mi método se basa en hábitos sostenibles, no en restricciones extremas. El plan se adapta a tus gustos, tu estilo de vida y tu cultura alimentaria. La idea es que comas bien sin sentirte privado de nada, y que puedas mantenerlo de por vida.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Puedo hacer la consulta si tengo una intolerancia o alergia alimentaria?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Absolutamente. En la primera consulta recojo toda la información sobre intolerancias, alergias y preferencias alimentarias para que el plan se adapte 100% a tu situación. Trabajo habitualmente con intolerancias al gluten, lactosa, fructosa y otras condiciones digestivas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Cómo funciona la consulta online?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Las consultas online se realizan por videollamada. Una vez confirmado el pago por Bizum el día anterior, te envío el enlace para la sesión. El seguimiento y apoyo entre consultas se realiza por WhatsApp, igual que en la modalidad presencial. La única diferencia es que la medición corporal solo se puede hacer en presencial.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Con qué frecuencia hay que hacer seguimiento?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Las consultas de seguimiento se realizan cada 2–3 semanas, que es el tiempo necesario para que el cuerpo se adapte al plan y para poder evaluar el progreso de forma significativa. Entre sesiones tienes apoyo directo por WhatsApp de lunes a viernes de 8:00 a 20:00.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Qué pasa si tengo una semana mala o no cumplo el plan?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Es parte del proceso y es completamente normal. En las consultas de seguimiento analizamos qué ha pasado y ajustamos el plan sin juicios. El objetivo no es la perfección, sino la progresión. Estoy aquí para acompañarte en las semanas buenas y en las no tan buenas.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TALLERES Y NOVEDADES SECTION
+     ═══════════════════════════════════════════════════════════ -->
+<section class="talleres-section" id="talleres">
+  <div class="talleres-inner">
+
+    <!-- Eyebrow -->
+    <div class="section-eyebrow-line reveal" style="justify-content:center;">
+      <span>Educación & Novedades</span>
+    </div>
+
+    <!-- Título -->
+    <h2 class="section-title reveal" style="text-align:center;margin-bottom:0.5rem;">
+      Talleres y<br><em>próximos eventos</em>
+    </h2>
+
+    <div class="talleres-layout reveal">
+      
+      <!-- Lista de talleres -->
+      <div class="talleres-grid">
+        
+        <div class="taller-card">
+          <div class="taller-header">
+            <div class="taller-date">
+              <span class="day">15</span>
+              <span class="month">Oct</span>
+            </div>
+            <span class="taller-status">Plazas Abiertas</span>
+          </div>
+          <div class="taller-info">
+            <h3>Batch Cooking de Otoño</h3>
+            <p>Aprende a organizar tus comidas semanales en solo 2 horas. Incluye menú, lista de la compra, y acceso al taller grabado.</p>
+            <div class="taller-meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 2 horas</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Online (Zoom)</span>
+            </div>
+          </div>
+          <div class="taller-action">
+            <span class="taller-price">25€</span>
+            <a href="#contacto" class="taller-btn">Me apunto</a>
+          </div>
+        </div>
+
+        <div class="taller-card">
+          <div class="taller-header">
+            <div class="taller-date">
+              <span class="day">28</span>
+              <span class="month">Nov</span>
+            </div>
+            <span class="taller-status full">Completo</span>
+          </div>
+          <div class="taller-info">
+            <h3>Lectura de Etiquetas</h3>
+            <p>Descubre qué hay detrás de los envases del supermercado. Una clase práctica para elegir mejores productos sin dejarte engañar por el marketing.</p>
+            <div class="taller-meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 1.5 horas</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Presencial (Madrid)</span>
+            </div>
+          </div>
+          <div class="taller-action">
+            <span class="taller-price">30€</span>
+            <a href="#" class="taller-btn disabled">Plazas Agotadas</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar Novedades -->
+      <aside class="novedades-sidebar">
+        <h4 class="novedades-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          Últimas Noticias
+        </h4>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Septiembre 2025</div>
+            <div class="timeline-content">
+              <h4>Nueva consulta online</h4>
+              <p>Ampliamos el horario de las consultas online a las tardes de los martes y jueves.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Agosto 2025</div>
+            <div class="timeline-content">
+              <h4>Programa intensivo</h4>
+              <p>Lanzamiento del programa de 8 semanas para la transición al vegetarianismo de forma saludable.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Junio 2025</div>
+            <div class="timeline-content">
+              <h4>Directos en Instagram</h4>
+              <p>Comenzamos la serie de directos mensuales respondiendo dudas comunes sobre nutrición.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta" id="contacto">
+  <p class="cta-eyebrow reveal">¿Lista para empezar?</p>
+  <h2 class="cta-title reveal">Tu cambio<br><em>empieza hoy</em></h2>
+  <p class="cta-sub reveal">Reserva tu primera consulta y da el primer paso hacia una mejor versión de ti. Estoy aquí para acompañarte en cada momento.</p>
+  <!-- Consentimiento explícito datos de salud (art. 9 RGPD) -->
+  <div class="health-consent reveal" id="health-consent-box">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(168,212,240,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>
+    <div style="flex:1;">
+      <p style="margin-bottom:0.75rem;">
+        Al contactarme compartirás datos relativos a tu salud, considerados <strong>datos especialmente protegidos</strong> según el art. 9 del RGPD.
+        Serán tratados con la máxima confidencialidad, exclusivamente para la prestación del servicio dietético, y nunca cedidos a terceros.
+        Consulta nuestra <a href="#" onclick="showLegalPage('privacidad'); return false;">Política de Privacidad</a>.
+      </p>
+      <label class="health-consent-label" id="health-consent-label">
+        <input type="checkbox" id="health-consent-check" onchange="toggleContactButtons()">
+        <span>
+          <strong>Doy mi consentimiento explícito</strong> al tratamiento de mis datos de salud con fines de prestación del servicio dietético (art. 9.2.a RGPD). Entiendo que puedo revocar este consentimiento en cualquier momento.
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="cta-contacts reveal" id="cta-contacts-wrap">
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/34644137667" class="cta-contact contact-btn" id="btn-whatsapp" rel="noopener noreferrer" onclick="return checkConsent(event)">
+      <svg viewBox="0 0 24 24">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+      WhatsApp: 644 13 76 67
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:nutricional_mente_eva@nutricionalmenteeva.es" class="cta-contact contact-btn" id="btn-email" rel="noopener noreferrer" onclick="return checkConsent(event)">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      nutricional_mente_eva@nutricionalmenteeva.es
+    </a>
+
+  </div>
+  <noscript>
+    <p style="color:rgba(255,255,255,0.75);font-size:0.82rem;margin-top:0.75rem;">
+      Para contactar, escríbenos directamente a <a href="mailto:nutricional_mente_eva@nutricionalmenteeva.es" style="color:#fff;">nutricional_mente_eva@nutricionalmenteeva.es</a> o por WhatsApp al <a href="https://wa.me/34644137667" style="color:#fff;">644 13 76 67</a>.
+    </p>
+  </noscript>
+  <p class="consent-hint reveal" id="consent-hint">Acepta el consentimiento de datos de salud para activar el contacto</p>
+  <p class="cta-note reveal">Online: pago por Bizum el día anterior · Presencial: efectivo al finalizar<br>Todos los precios incluyen IVA</p>
+</section>
+
+<footer>
+  <span class="footer-logo">nutricional<em>_mente</em> eva</span>
+  <span class="footer-copy">Dietista · Auxiliar de Enfermería · Madrid</span>
+</footer>
+<div class="footer-legal">
+  <a href="#" onclick="showLegalPage('aviso'); return false;">Aviso Legal</a>
+  <span class="footer-legal-sep">·</span>
+  <a href="#" onclick="showLegalPage('privacidad'); return false;">Política de Privacidad</a>
+  <span class="footer-legal-sep">·</span>
+  <a href="#" onclick="showLegalPage('cookies'); return false;">Política de Cookies</a>
+  <span class="footer-legal-sep">·</span>
+  <a href="#" id="cookie-settings">Gestionar cookies</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     PÁGINAS LEGALES — se muestran como overlay sobre la web principal
+     ══════════════════════════════════════════════════════════════ -->
+
+<!-- AVISO LEGAL -->
+<div id="legal-aviso" class="legal-page" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Aviso Legal">
+  <div class="legal-inner">
+    <button class="legal-close" onclick="hideLegalPage()" aria-label="Volver a la web">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Volver
+    </button>
+    <div class="legal-header">
+      <span class="legal-tag">Información legal</span>
+      <h1 class="legal-title">Aviso <em>Legal</em></h1>
+      <p class="legal-updated">Última actualización: enero 2025</p>
+    </div>
+
+    <div class="legal-body">
+
+      <div class="legal-block">
+        <h2>1. Datos identificativos del titular</h2>
+        <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos:</p>
+        <ul>
+          <li><strong>Nombre y apellidos:</strong> [Tu nombre completo]</li>
+          <li><strong>NIF / DNI:</strong> [XXXXXXXXX]</li>
+          <li><strong>Domicilio profesional:</strong> [Dirección completa, Madrid]</li>
+          <li><strong>Correo electrónico:</strong> nutricional_mente_eva@nutricionalmenteeva.es</li>
+          <li><strong>Teléfono:</strong> 644 13 76 67</li>
+          <li><strong>Colegio profesional:</strong> Colegio Oficial de Dietistas-Nutricionistas de la Comunidad de Madrid (CODINMA)</li>
+          <li><strong>Número de colegiada:</strong> [Nº de colegiada]</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h2>2. Objeto y ámbito de aplicación</h2>
+        <p>El presente Aviso Legal regula el acceso y uso del sitio web <strong>nutricionalmenteeva.es</strong> (en adelante, "el sitio web"), titularidad de la persona indicada en el punto anterior, que pone a disposición de los usuarios información sobre servicios de dietética y nutrición.</p>
+        <p>El acceso al sitio web implica la aceptación plena y sin reservas de todas las disposiciones incluidas en este Aviso Legal. Si no estás de acuerdo con alguna de ellas, debes abstenerte de usar este sitio.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>3. Propiedad intelectual e industrial</h2>
+        <p>Todos los contenidos del sitio web (textos, imágenes, logotipos, diseño gráfico, código fuente y demás elementos) son titularidad de [Tu nombre completo] o de terceros que han autorizado su uso, y están protegidos por la legislación española e internacional sobre propiedad intelectual e industrial.</p>
+        <p>Queda expresamente prohibida la reproducción, distribución, comunicación pública o transformación de cualquier contenido sin autorización expresa y por escrito del titular.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>4. Responsabilidad</h2>
+        <p>El titular no se responsabiliza de los daños o perjuicios derivados del uso incorrecto del sitio web, ni de posibles errores en los contenidos. La información publicada tiene carácter meramente informativo y no sustituye el consejo profesional individualizado.</p>
+        <p>El titular se reserva el derecho a modificar, suspender o interrumpir el acceso al sitio web en cualquier momento y sin previo aviso.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>5. Legislación aplicable y jurisdicción</h2>
+        <p>Este Aviso Legal se rige por la legislación española. Para cualquier controversia derivada del acceso o uso del sitio web, las partes se someten a los Juzgados y Tribunales de Madrid, con renuncia expresa a cualquier otro fuero que pudiera corresponderles.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- POLÍTICA DE PRIVACIDAD -->
+<div id="legal-privacidad" class="legal-page" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Política de Privacidad">
+  <div class="legal-inner">
+    <button class="legal-close" onclick="hideLegalPage()" aria-label="Volver a la web">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Volver
+    </button>
+    <div class="legal-header">
+      <span class="legal-tag">RGPD · LOPDGDD</span>
+      <h1 class="legal-title">Política de <em>Privacidad</em></h1>
+      <p class="legal-updated">Última actualización: enero 2025</p>
+    </div>
+
+    <div class="legal-body">
+
+      <div class="legal-block">
+        <h2>1. Responsable del tratamiento</h2>
+        <ul>
+          <li><strong>Identidad:</strong> [Tu nombre completo]</li>
+          <li><strong>NIF:</strong> [XXXXXXXXX]</li>
+          <li><strong>Dirección:</strong> [Dirección completa, Madrid]</li>
+          <li><strong>Correo:</strong> nutricional_mente_eva@nutricionalmenteeva.es</li>
+          <li><strong>Teléfono:</strong> 644 13 76 67</li>
+        </ul>
+      </div>
+
+      <div class="legal-block">
+        <h2>2. Datos que se tratan y finalidad</h2>
+        <p>Cuando te pones en contacto a través de WhatsApp, correo electrónico o cualquier otro medio, facilitas datos personales que son necesarios para la prestación del servicio dietético. Los datos tratados pueden incluir:</p>
+        <ul>
+          <li>Datos identificativos: nombre, apellidos, teléfono, correo electrónico.</li>
+          <li>Datos de salud (categoría especial según art. 9 RGPD): información sobre hábitos alimenticios, patologías, alergias, composición corporal y cualquier otro dato relativo a tu estado de salud que compartas voluntariamente.</li>
+        </ul>
+        <p>La finalidad del tratamiento es exclusivamente la prestación del servicio de dietética y nutrición personalizada, el seguimiento del proceso y la comunicación necesaria para ello.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>3. Base legal del tratamiento</h2>
+        <p>El tratamiento de tus datos personales se basa en:</p>
+        <ul>
+          <li><strong>Datos ordinarios:</strong> ejecución del contrato de servicios (art. 6.1.b RGPD).</li>
+          <li><strong>Datos de salud:</strong> consentimiento explícito del interesado (art. 9.2.a RGPD), que deberás otorgar de forma inequívoca antes de iniciar cualquier comunicación que implique compartir información de salud.</li>
+        </ul>
+        <p>Puedes revocar tu consentimiento en cualquier momento sin que ello afecte a la licitud del tratamiento previo a dicha revocación.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>4. Conservación de los datos</h2>
+        <p>Los datos se conservarán durante el tiempo necesario para la prestación del servicio y, una vez finalizada la relación, durante los plazos legalmente establecidos (mínimo 5 años para obligaciones fiscales y contables). Los datos de salud se conservarán conforme a la legislación sanitaria aplicable.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>5. Cesión a terceros</h2>
+        <p>Tus datos no serán cedidos a terceros salvo obligación legal. No se realizan transferencias internacionales de datos.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>6. Tus derechos (ARCO+)</h2>
+        <p>Puedes ejercer en cualquier momento los siguientes derechos dirigiéndote a nutricional_mente_eva@nutricionalmenteeva.es adjuntando copia de tu DNI:</p>
+        <ul>
+          <li><strong>Acceso:</strong> conocer qué datos tuyos se tratan.</li>
+          <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
+          <li><strong>Supresión:</strong> solicitar el borrado de tus datos ("derecho al olvido").</li>
+          <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos.</li>
+          <li><strong>Limitación:</strong> solicitar la restricción del tratamiento.</li>
+          <li><strong>Portabilidad:</strong> recibir tus datos en formato estructurado.</li>
+          <li><strong>Retirada del consentimiento:</strong> en cualquier momento para los tratamientos basados en él.</li>
+        </ul>
+        <p>Tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos</strong> (www.aepd.es) si consideras que el tratamiento no se ajusta a la normativa vigente.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- POLÍTICA DE COOKIES -->
+<div id="legal-cookies" class="legal-page" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Política de Cookies">
+  <div class="legal-inner">
+    <button class="legal-close" onclick="hideLegalPage()" aria-label="Volver a la web">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Volver
+    </button>
+    <div class="legal-header">
+      <span class="legal-tag">LSSI-CE · RGPD</span>
+      <h1 class="legal-title">Política de <em>Cookies</em></h1>
+      <p class="legal-updated">Última actualización: enero 2025</p>
+    </div>
+
+    <div class="legal-body">
+
+      <div class="legal-block">
+        <h2>1. ¿Qué son las cookies?</h2>
+        <p>Las cookies son pequeños archivos de texto que un sitio web deposita en tu dispositivo cuando lo visitas. Permiten que el sitio recuerde tus preferencias y acciones durante un período de tiempo, para que no tengas que volver a introducirlas cada vez que visitas el sitio.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>2. Cookies que utiliza este sitio</h2>
+        <div class="legal-table-wrap">
+          <table class="legal-table">
+            <thead>
+              <tr><th>Nombre</th><th>Tipo</th><th>Finalidad</th><th>Duración</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>cookie_consent</code></td>
+                <td>Propia · Técnica</td>
+                <td>Almacena tu decisión sobre el uso de cookies para no volver a preguntarte</td>
+                <td>1 año</td>
+              </tr>
+              <tr>
+                <td><code>_ga</code>, <code>_ga_*</code></td>
+                <td>Terceros · Analítica</td>
+                <td>Google Analytics: mide el tráfico y el comportamiento de los usuarios de forma anónima. <strong>Solo se activa si aceptas las cookies.</strong></td>
+                <td>2 años</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="legal-block">
+        <h2>3. Cookies técnicas (exentas de consentimiento)</h2>
+        <p>La cookie <code>cookie_consent</code> es estrictamente necesaria para recordar tu elección respecto a las cookies. No requiere consentimiento previo conforme al art. 22.2 de la LSSI-CE.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>4. Cookies analíticas (requieren consentimiento)</h2>
+        <p>Las cookies de Google Analytics solo se instalan si pulsas <strong>"Aceptar todas"</strong> en el banner de cookies. Si rechazas o no interactúas con el banner, estas cookies no se depositan en tu dispositivo y no se recoge ningún dato de navegación.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>5. Cómo gestionar o eliminar las cookies</h2>
+        <p>Puedes retirar tu consentimiento o cambiar tus preferencias en cualquier momento pulsando <strong>"Gestionar cookies"</strong> en el pie de esta página. También puedes eliminar las cookies desde la configuración de tu navegador:</p>
+        <ul>
+          <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies</li>
+          <li><strong>Firefox:</strong> Opciones → Privacidad y seguridad → Cookies</li>
+          <li><strong>Safari:</strong> Preferencias → Privacidad → Gestionar datos de sitios web</li>
+          <li><strong>Edge:</strong> Configuración → Privacidad, búsqueda y servicios → Cookies</li>
+        </ul>
+        <p>Ten en cuenta que deshabilitar las cookies puede afectar al funcionamiento de algunos sitios web.</p>
+      </div>
+
+      <div class="legal-block">
+        <h2>6. Más información</h2>
+        <p>Para más información sobre el tratamiento de tus datos personales, consulta nuestra <a href="#" onclick="showLegalPage('privacidad'); return false;">Política de Privacidad</a>. Ante cualquier duda puedes contactar en nutricional_mente_eva@nutricionalmenteeva.es.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PANEL PRIVADO DEL CREADOR: abrir con #panel-eva -->
+<div id="creator-admin" class="creator-admin-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Panel privado del creador">
+  <div class="creator-admin-login" id="creator-admin-login">
+    <h2>Panel privado</h2>
+    <p id="creator-admin-login-copy">Acceso local para Eva. La primera vez crea un PIN; después se pedirá para abrir el panel en este navegador.</p>
+    <form id="creator-admin-login-form" class="creator-admin-field">
+      <label for="creator-admin-pin">PIN de acceso</label>
+      <input id="creator-admin-pin" type="password" inputmode="numeric" autocomplete="current-password" minlength="4" required>
+      <div class="creator-admin-actions">
+        <button class="creator-admin-btn primary" type="submit">Entrar</button>
+        <button class="creator-admin-btn" type="button" data-admin-close>Cerrar</button>
+      </div>
+      <p class="creator-admin-status" id="creator-admin-login-status" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div class="creator-admin-shell" id="creator-admin-shell" hidden>
+    <aside class="creator-admin-sidebar">
+      <div class="creator-admin-brand">nutricional<em>_mente</em> eva</div>
+      <p class="creator-admin-note">Panel oculto para mantenimiento rápido. En una web estática, la protección real debe hacerse en servidor si se guardan datos sensibles.</p>
+      <div class="creator-admin-tabs" role="tablist" aria-label="Secciones del panel">
+        <button class="creator-admin-tab active" type="button" data-admin-tab="resumen">Resumen</button>
+        <button class="creator-admin-tab" type="button" data-admin-tab="contenido">Contenido</button>
+        <button class="creator-admin-tab" type="button" data-admin-tab="solicitudes">Solicitudes</button>
+        <button class="creator-admin-tab" type="button" data-admin-tab="exportar">Exportar</button>
+      </div>
+      <button class="creator-admin-btn" type="button" data-admin-close>Cerrar panel</button>
+    </aside>
+
+    <main class="creator-admin-main">
+      <div class="creator-admin-topbar">
+        <div>
+          <h2 class="creator-admin-title">Administración privada</h2>
+          <p class="creator-admin-subtitle">Edita información clave, registra solicitudes y descarga una versión actualizada del HTML cuando quieras publicar cambios.</p>
+        </div>
+        <button class="creator-admin-close" type="button" data-admin-close aria-label="Cerrar panel">&times;</button>
+      </div>
+
+      <section class="creator-admin-section active" data-admin-section="resumen">
+        <div class="creator-admin-grid">
+          <div class="creator-admin-card"><strong id="admin-count-services">3</strong><span>Servicios publicados</span></div>
+          <div class="creator-admin-card"><strong id="admin-count-requests">0</strong><span>Solicitudes privadas</span></div>
+          <div class="creator-admin-card"><strong id="admin-count-updated">Hoy</strong><span>Última revisión local</span></div>
+        </div>
+        <p class="creator-admin-muted">Acceso: añade <strong>#panel-eva</strong> al final de la URL o pulsa <strong>Ctrl + Alt + E</strong>. El enlace no aparece en la web pública.</p>
+      </section>
+
+      <section class="creator-admin-section" data-admin-section="contenido">
+        <div class="creator-admin-card">
+          <div class="creator-admin-form-grid" id="creator-admin-content-fields"></div>
+          <div class="creator-admin-actions">
+            <button class="creator-admin-btn primary" type="button" id="creator-admin-save-content">Guardar y aplicar</button>
+            <button class="creator-admin-btn" type="button" id="creator-admin-export-html">Descargar HTML actualizado</button>
+            <button class="creator-admin-btn danger" type="button" id="creator-admin-reset-content">Restaurar cambios locales</button>
+          </div>
+          <p class="creator-admin-status" id="creator-admin-content-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="creator-admin-section" data-admin-section="solicitudes">
+        <div class="creator-admin-card">
+          <div class="creator-admin-form-grid">
+            <div class="creator-admin-field"><label for="admin-lead-name">Nombre</label><input id="admin-lead-name" type="text"></div>
+            <div class="creator-admin-field"><label for="admin-lead-service">Servicio</label><select id="admin-lead-service"><option>Primera consulta</option><option>Pack consulta + seguimiento</option><option>Consulta de seguimiento</option><option>Ebook</option></select></div>
+            <div class="creator-admin-field"><label for="admin-lead-channel">Canal</label><select id="admin-lead-channel"><option>WhatsApp</option><option>Email</option><option>Instagram</option><option>Presencial</option></select></div>
+            <div class="creator-admin-field"><label for="admin-lead-status">Estado</label><select id="admin-lead-status"><option>Pendiente</option><option>Contactada</option><option>Reservada</option><option>Finalizada</option></select></div>
+            <div class="creator-admin-field full"><label for="admin-lead-notes">Notas</label><textarea id="admin-lead-notes"></textarea></div>
+          </div>
+          <div class="creator-admin-actions">
+            <button class="creator-admin-btn primary" type="button" id="admin-add-lead">Añadir solicitud</button>
+            <button class="creator-admin-btn danger" type="button" id="admin-clear-leads">Vaciar solicitudes</button>
+          </div>
+        </div>
+        <div style="overflow-x:auto;margin-top:1rem;">
+          <table class="creator-admin-table">
+            <thead><tr><th>Fecha</th><th>Nombre</th><th>Servicio</th><th>Canal</th><th>Estado</th><th>Notas</th><th></th></tr></thead>
+            <tbody id="admin-leads-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="creator-admin-section" data-admin-section="exportar">
+        <div class="creator-admin-card">
+          <p class="creator-admin-muted">Descarga una copia de seguridad de los ajustes locales del panel o genera un HTML con el contenido aplicado. Los datos de solicitudes son privados de este navegador.</p>
+          <div class="creator-admin-actions">
+            <button class="creator-admin-btn primary" type="button" id="admin-download-json">Descargar ajustes JSON</button>
+            <button class="creator-admin-btn" type="button" id="admin-copy-json">Copiar JSON</button>
+            <button class="creator-admin-btn" type="button" id="admin-download-html-2">Descargar HTML actualizado</button>
+          </div>
+          <p class="creator-admin-status" id="creator-admin-export-status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+
+<script>
+
+// --- PANEL PRIVADO CREADOR ---
+(function() {
+  var root = document.getElementById('creator-admin');
+  if (!root) return;
+  var STORAGE_PIN = 'creator_admin_pin_hash_v1';
+  var STORAGE_CONTENT = 'creator_admin_content_v1';
+  var STORAGE_LEADS = 'creator_admin_leads_v1';
+  var logged = sessionStorage.getItem('creator_admin_unlocked') === '1';
+  var login = document.getElementById('creator-admin-login');
+  var shell = document.getElementById('creator-admin-shell');
+  var pinInput = document.getElementById('creator-admin-pin');
+  var loginCopy = document.getElementById('creator-admin-login-copy');
+  var loginStatus = document.getElementById('creator-admin-login-status');
+  var contentFields = [
+    { key: 'heroDesc', label: 'Texto principal de bienvenida', selector: '.hero-desc', type: 'textarea' },
+    { key: 'ctaSub', label: 'Texto de llamada final', selector: '.cta-sub', type: 'textarea' },
+    { key: 'priceFirst', label: 'Precio primera consulta', selector: '#svc-panel-0 .svc-panel-price', type: 'text' },
+    { key: 'pricePack', label: 'Precio pack consulta + seguimiento', selector: '#svc-panel-1 .svc-panel-price', type: 'text' },
+    { key: 'priceFollow', label: 'Precio seguimiento', selector: '#svc-panel-2 .svc-panel-price', type: 'text' },
+    { key: 'whatsapp', label: 'WhatsApp internacional, solo números', selector: '#btn-whatsapp', attr: 'href', type: 'text', transform: 'wa' },
+    { key: 'email', label: 'Email de contacto', selector: '#btn-email', attr: 'href', type: 'email', transform: 'mailto' }
+  ];
+  function readJSON(key, fallback) { try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch (e) { return fallback; } }
+  function saveJSON(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+  function hashPin(pin) {
+    if (window.crypto && window.crypto.subtle && window.TextEncoder) {
+      return crypto.subtle.digest('SHA-256', new TextEncoder().encode(pin)).then(function(buf) {
+        return Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+      });
+    }
+    var h = 0; for (var i = 0; i < pin.length; i++) h = ((h << 5) - h + pin.charCodeAt(i)) | 0;
+    return Promise.resolve('fallback-' + h);
+  }
+  function getValue(field) {
+    var el = document.querySelector(field.selector); if (!el) return '';
+    if (field.attr) {
+      var attr = el.getAttribute(field.attr) || '';
+      if (field.transform === 'wa') return attr.replace(/\D/g, '');
+      if (field.transform === 'mailto') return attr.replace(/^mailto:/, '');
+      return attr;
+    }
+    return (el.textContent || '').trim();
+  }
+  function setValue(field, value) {
+    var el = document.querySelector(field.selector); if (!el || value === undefined || value === null) return;
+    if (field.attr) {
+      if (field.transform === 'wa') {
+        var phone = String(value).replace(/\D/g, '');
+        el.setAttribute('href', 'https://wa.me/' + phone);
+        el.lastChild.textContent = '\n      WhatsApp: ' + formatPhone(phone) + '\n    ';
+      } else if (field.transform === 'mailto') {
+        el.setAttribute('href', 'mailto:' + value);
+        el.lastChild.textContent = '\n      ' + value + '\n    ';
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function(a) { a.setAttribute('href', 'mailto:' + value); });
+      } else { el.setAttribute(field.attr, value); }
+    } else { el.textContent = value; }
+  }
+  function formatPhone(phone) { if (phone.indexOf('34') === 0 && phone.length === 11) phone = phone.slice(2); return phone.replace(/(\d{3})(\d{2})(\d{2})(\d{2})/, '$1 $2 $3 $4'); }
+  function getContent() { var saved = readJSON(STORAGE_CONTENT, {}), data = {}; contentFields.forEach(function(f) { data[f.key] = saved[f.key] || getValue(f); }); return data; }
+  function applyContent() { var data = readJSON(STORAGE_CONTENT, {}); contentFields.forEach(function(f) { if (Object.prototype.hasOwnProperty.call(data, f.key)) setValue(f, data[f.key]); }); updateSummary(); }
+  function buildContentForm() {
+    var wrap = document.getElementById('creator-admin-content-fields'); if (!wrap) return;
+    var data = getContent(); wrap.innerHTML = '';
+    contentFields.forEach(function(f) {
+      var row = document.createElement('div'); row.className = 'creator-admin-field' + (f.type === 'textarea' ? ' full' : '');
+      var label = document.createElement('label'); label.setAttribute('for', 'admin-field-' + f.key); label.textContent = f.label;
+      var input = document.createElement(f.type === 'textarea' ? 'textarea' : 'input'); input.id = 'admin-field-' + f.key; input.name = f.key; input.type = f.type === 'email' ? 'email' : 'text'; input.value = data[f.key] || '';
+      row.appendChild(label); row.appendChild(input); wrap.appendChild(row);
+    });
+  }
+  function collectContentForm() { var data = {}; contentFields.forEach(function(f) { var input = document.getElementById('admin-field-' + f.key); data[f.key] = input ? input.value.trim() : ''; }); return data; }
+  function openPanel() { root.classList.add('open'); root.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; logged ? showShell() : showLogin(); }
+  function closePanel() { root.classList.remove('open'); root.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; if (location.hash === '#panel-eva') history.replaceState(null, '', location.pathname + location.search); }
+  function showLogin() { shell.hidden = true; login.hidden = false; loginCopy.textContent = localStorage.getItem(STORAGE_PIN) ? 'Introduce el PIN de Eva para abrir el panel.' : 'Crea un PIN para proteger este panel en este navegador.'; loginStatus.textContent = ''; setTimeout(function() { pinInput.focus(); }, 60); }
+  function showShell() { logged = true; sessionStorage.setItem('creator_admin_unlocked', '1'); login.hidden = true; shell.hidden = false; buildContentForm(); renderLeads(); updateSummary(); }
+  function updateSummary() {
+    var services = document.querySelectorAll('.svc-panel').length, leads = readJSON(STORAGE_LEADS, []);
+    var servicesEl = document.getElementById('admin-count-services'), leadsEl = document.getElementById('admin-count-requests'), updatedEl = document.getElementById('admin-count-updated');
+    if (servicesEl) servicesEl.textContent = services; if (leadsEl) leadsEl.textContent = leads.length; if (updatedEl) updatedEl.textContent = new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
+  }
+  function escapeHTML(value) { return String(value || '').replace(/[&<>"']/g, function(ch) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]; }); }
+  function renderLeads() {
+    var tbody = document.getElementById('admin-leads-table'); if (!tbody) return;
+    var leads = readJSON(STORAGE_LEADS, []); tbody.innerHTML = '';
+    if (!leads.length) { tbody.innerHTML = '<tr><td colspan="7" class="creator-admin-muted">Todavía no hay solicitudes guardadas.</td></tr>'; updateSummary(); return; }
+    leads.forEach(function(lead, index) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + escapeHTML(lead.date) + '</td><td>' + escapeHTML(lead.name) + '</td><td>' + escapeHTML(lead.service) + '</td><td>' + escapeHTML(lead.channel) + '</td><td>' + escapeHTML(lead.status) + '</td><td>' + escapeHTML(lead.notes) + '</td><td><button class="creator-admin-btn danger" type="button" data-delete-lead="' + index + '">Borrar</button></td>';
+      tbody.appendChild(tr);
+    }); updateSummary();
+  }
+  function download(filename, content, type) { var blob = new Blob([content], { type: type || 'text/plain;charset=utf-8' }); var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; document.body.appendChild(a); a.click(); URL.revokeObjectURL(a.href); a.remove(); }
+  function downloadUpdatedHTML() { var wasOpen = root.classList.contains('open'); root.classList.remove('open'); root.setAttribute('aria-hidden', 'true'); download('nutricionalmenteeva-actualizada.html', '<!DOCTYPE html>\n' + document.documentElement.outerHTML, 'text/html;charset=utf-8'); if (wasOpen) { root.classList.add('open'); root.setAttribute('aria-hidden', 'false'); } }
+  function exportState() { return { exportedAt: new Date().toISOString(), content: readJSON(STORAGE_CONTENT, {}), leads: readJSON(STORAGE_LEADS, []) }; }
+  document.getElementById('creator-admin-login-form').addEventListener('submit', function(e) {
+    e.preventDefault(); var pin = pinInput.value.trim(); if (pin.length < 4) { loginStatus.textContent = 'Usa un PIN de al menos 4 caracteres.'; return; }
+    var savedHash = localStorage.getItem(STORAGE_PIN);
+    hashPin(pin).then(function(hash) { if (!savedHash) { localStorage.setItem(STORAGE_PIN, hash); pinInput.value = ''; showShell(); return; } if (hash === savedHash) { pinInput.value = ''; showShell(); } else { loginStatus.textContent = 'PIN incorrecto.'; } });
+  });
+  document.querySelectorAll('[data-admin-close]').forEach(function(btn) { btn.addEventListener('click', closePanel); });
+  document.querySelectorAll('[data-admin-tab]').forEach(function(btn) { btn.addEventListener('click', function() { var tab = btn.getAttribute('data-admin-tab'); document.querySelectorAll('[data-admin-tab]').forEach(function(b) { b.classList.toggle('active', b === btn); }); document.querySelectorAll('[data-admin-section]').forEach(function(section) { section.classList.toggle('active', section.getAttribute('data-admin-section') === tab); }); }); });
+  document.getElementById('creator-admin-save-content').addEventListener('click', function() { saveJSON(STORAGE_CONTENT, collectContentForm()); applyContent(); document.getElementById('creator-admin-content-status').textContent = 'Cambios guardados en este navegador y aplicados a la vista.'; });
+  document.getElementById('creator-admin-reset-content').addEventListener('click', function() { if (!confirm('¿Restaurar los cambios locales del panel?')) return; localStorage.removeItem(STORAGE_CONTENT); location.reload(); });
+  document.getElementById('creator-admin-export-html').addEventListener('click', downloadUpdatedHTML); document.getElementById('admin-download-html-2').addEventListener('click', downloadUpdatedHTML);
+  document.getElementById('admin-add-lead').addEventListener('click', function() { var leads = readJSON(STORAGE_LEADS, []), name = document.getElementById('admin-lead-name').value.trim(); if (!name) { document.getElementById('admin-lead-name').focus(); return; } leads.unshift({ date: new Date().toLocaleDateString('es-ES'), name: name, service: document.getElementById('admin-lead-service').value, channel: document.getElementById('admin-lead-channel').value, status: document.getElementById('admin-lead-status').value, notes: document.getElementById('admin-lead-notes').value.trim() }); saveJSON(STORAGE_LEADS, leads); document.getElementById('admin-lead-name').value = ''; document.getElementById('admin-lead-notes').value = ''; renderLeads(); });
+  document.getElementById('admin-leads-table').addEventListener('click', function(e) { var btn = e.target.closest('[data-delete-lead]'); if (!btn) return; var leads = readJSON(STORAGE_LEADS, []); leads.splice(parseInt(btn.getAttribute('data-delete-lead'), 10), 1); saveJSON(STORAGE_LEADS, leads); renderLeads(); });
+  document.getElementById('admin-clear-leads').addEventListener('click', function() { if (!confirm('¿Vaciar todas las solicitudes privadas?')) return; localStorage.removeItem(STORAGE_LEADS); renderLeads(); });
+  document.getElementById('admin-download-json').addEventListener('click', function() { download('panel-eva-backup.json', JSON.stringify(exportState(), null, 2), 'application/json;charset=utf-8'); });
+  document.getElementById('admin-copy-json').addEventListener('click', function() { var status = document.getElementById('creator-admin-export-status'), text = JSON.stringify(exportState(), null, 2); if (navigator.clipboard) navigator.clipboard.writeText(text).then(function() { status.textContent = 'JSON copiado al portapapeles.'; }); else status.textContent = text; });
+  window.addEventListener('hashchange', function() { if (location.hash === '#panel-eva') openPanel(); });
+  document.addEventListener('keydown', function(e) { if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'e') { e.preventDefault(); openPanel(); } if (e.key === 'Escape' && root.classList.contains('open')) { e.preventDefault(); e.stopPropagation(); closePanel(); } }, true);
+  applyContent(); if (location.hash === '#panel-eva') openPanel();
+})();
+
+// ════════════════════════════════════════════════════════════════════════════
+// SEGURIDAD Y RGPD
+//
+// Ningún recurso externo (Google Fonts, GSAP, Analytics, píxeles) se carga
+// hasta que el usuario acepta activamente las cookies.
+//
+// IMPORTANTE PARA EL SERVIDOR: replica estas cabeceras HTTP en tu servidor
+// web (Apache .htaccess, Nginx, Cloudflare, etc.) para máxima protección:
+//
+//   Content-Security-Policy: [ver directiva completa en el bloque de comentarios del <head>]
+//   X-Frame-Options: DENY
+//   X-Content-Type-Options: nosniff
+//   Referrer-Policy: no-referrer
+//   Permissions-Policy: camera=(), microphone=(), geolocation=()
+//   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+// ════════════════════════════════════════════════════════════════════════════
+
+// ── Fallback sin animaciones (se aplica si el usuario rechaza o aún no decide)
+function applyNoAnimationFallback() {
+  document.querySelectorAll('.reveal, .hero-eyebrow, .hero-title .line, .hero-desc, .hero-actions, .hero-scroll-hint').forEach(function(el) {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
+  document.querySelectorAll('.benefit-reveal').forEach(function(el) {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
+}
+
+// ── Inicializar animaciones GSAP + efectos interactivos avanzados ────────────
+function initAnimations() {
+  if (typeof gsap === 'undefined') { applyNoAnimationFallback(); return; }
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ── Nav entrada ──────────────────────────────────────────────────────────────
+  gsap.from('#main-nav', { y: -80, opacity: 0, duration: 0.8, ease: 'power3.out' });
+
+  ScrollTrigger.create({
+    start: 'top -80',
+    onUpdate: (self) => {
+      document.querySelector('nav').style.borderBottomColor =
+        self.progress > 0 ? 'rgba(30,48,64,0.22)' : 'rgba(30,48,64,0.12)';
+    }
+  });
+
+  // ── Hero timeline ────────────────────────────────────────────────────────────
+  const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  heroTl
+    .to('.hero-eyebrow', { opacity: 1, duration: 0.6, delay: 0.4 })
+    .to('.hero-eyebrow-line', { width: 32, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+    .to('.hero-title .line', { opacity: 1, y: 0, duration: 0.9, stagger: 0.15, ease: 'power4.out' }, '-=0.2')
+    .to('.hero-desc', { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
+    .to('.hero-actions', { opacity: 1, y: 0, duration: 0.6 }, '-=0.35')
+    .to('.hero-scroll-hint', { opacity: 1, duration: 0.5 }, '-=0.2');
+
+  // ── Blob morphing continuo ───────────────────────────────────────────────────
+  const blobPath = document.querySelector('#fx-blob path');
+  if (blobPath) {
+    const blobs = [
+      'M44.3,-67.1C56.9,-61.2,66.3,-48.5,72.4,-34.1C78.5,-19.8,81.2,-3.8,78.1,10.8C75,25.4,66,38.6,54.5,48.5C43,58.4,29,65,13.8,69.2C-1.4,73.3,-17.8,74.9,-32.6,70.1C-47.4,65.4,-60.6,54.3,-68.1,40.1C-75.7,25.9,-77.5,8.6,-74.4,-7.3C-71.3,-23.2,-63.2,-37.8,-51.9,-47.7C-40.5,-57.6,-25.8,-62.8,-10.4,-64.6C4.9,-66.4,31.7,-73,44.3,-67.1Z',
+      'M38.9,-58.3C52.7,-53.2,67.5,-46.3,73.8,-34.8C80.1,-23.3,77.9,-7.2,73.5,7.4C69.1,22,62.4,35,52.1,44.3C41.8,53.6,27.8,59.2,13,64.2C-1.8,69.2,-17.4,73.6,-31.4,69.7C-45.4,65.8,-57.7,53.6,-65.3,39.1C-72.9,24.6,-75.8,7.8,-72.6,-7.5C-69.4,-22.8,-60.1,-36.5,-48.1,-41.5C-36.1,-46.5,-21.3,-42.8,-8.2,-52.6C4.9,-62.4,25.1,-63.4,38.9,-58.3Z',
+      'M51.6,-74.5C64.8,-68.2,72.6,-52.5,77.4,-36.4C82.2,-20.2,83.9,-3.6,79.8,11.3C75.7,26.2,65.8,39.5,53.8,49.8C41.8,60.1,27.7,67.4,12.4,70.6C-2.9,73.8,-19.4,72.9,-34.8,67.1C-50.2,61.3,-64.5,50.6,-71.4,36.4C-78.2,22.2,-77.5,4.5,-72.8,-11C-68.1,-26.5,-59.3,-39.8,-47.5,-46.5C-35.7,-53.2,-20.9,-53.3,-4.9,-47C11.1,-40.7,38.4,-80.8,51.6,-74.5Z'
+    ];
+    let bi = 0;
+    function morphBlob() {
+      bi = (bi + 1) % blobs.length;
+      gsap.to(blobPath, {
+        attr: { d: blobs[bi] },
+        duration: 6, ease: 'power1.inOut',
+        onComplete: morphBlob
+      });
+    }
+    gsap.to('#fx-blob', { opacity: 0.55, duration: 1.2, delay: 0.5 });
+    morphBlob();
+
+    // Parallax leve del blob al scroll
+    gsap.to('#fx-blob', {
+      y: 120, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    });
+  }
+
+  // ── Canvas de partículas flotantes ───────────────────────────────────────────
+  (function() {
+    var canvas = document.getElementById('fx-particles');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var hero = document.querySelector('.hero');
+    var W, H, pts;
+
+    function resize() {
+      W = canvas.width  = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Leer el color de partículas desde la paleta CSS para mantener coherencia visual
+    var particleColor = getComputedStyle(document.documentElement)
+      .getPropertyValue('--sage').trim() || '58,91,120';
+    // Convertir hex a rgb si es necesario (--sage suele ser hex)
+    function hexToRgb(hex) {
+      var r = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex.replace(/\s/g,''));
+      return r ? parseInt(r[1],16)+','+parseInt(r[2],16)+','+parseInt(r[3],16) : null;
+    }
+    var ptRgb = hexToRgb(particleColor) || '80,110,90';
+
+    var N = Math.min(55, Math.floor(W / 22));
+    pts = Array.from({ length: N }, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      r: 1 + Math.random() * 2.5,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      a: 0.3 + Math.random() * 0.5
+    }));
+
+    var mx = W / 2, my = H / 2;
+    function onMouseMove(e) {
+      var rect = hero.getBoundingClientRect();
+      mx = e.clientX - rect.left;
+      my = e.clientY - rect.top;
+    }
+    hero.addEventListener('mousemove', onMouseMove);
+
+    var raf;
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      // Conexiones entre puntos cercanos
+      for (var i = 0; i < pts.length; i++) {
+        for (var j = i + 1; j < pts.length; j++) {
+          var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+          var dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(30,48,64,' + (0.06 * (1 - dist/120)) + ')';
+            ctx.lineWidth = 0.8;
+            ctx.moveTo(pts[i].x, pts[i].y);
+            ctx.lineTo(pts[j].x, pts[j].y);
+            ctx.stroke();
+          }
+        }
+        // Atracción suave hacia cursor
+        var ddx = mx - pts[i].x, ddy = my - pts[i].y;
+        var dd = Math.sqrt(ddx*ddx + ddy*ddy);
+        if (dd < 180) {
+          pts[i].vx += ddx / dd * 0.012;
+          pts[i].vy += ddy / dd * 0.012;
+        }
+        pts[i].vx *= 0.98; pts[i].vy *= 0.98;
+        pts[i].x += pts[i].vx; pts[i].y += pts[i].vy;
+        if (pts[i].x < 0) pts[i].x = W;
+        if (pts[i].x > W) pts[i].x = 0;
+        if (pts[i].y < 0) pts[i].y = H;
+        if (pts[i].y > H) pts[i].y = 0;
+
+        ctx.beginPath();
+        ctx.arc(pts[i].x, pts[i].y, pts[i].r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + ptRgb + ',' + pts[i].a + ')';
+        ctx.fill();
+      }
+      raf = requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Pausar cuando el hero no es visible (perf)
+    var io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) { if (!raf) draw(); }
+      else { cancelAnimationFrame(raf); raf = null; }
+    });
+    io.observe(hero);
+    // Limpiar listener si el canvas se destruye (p.ej. rechazar cookies antes de initAnimations)
+    window.addEventListener('pagehide', function() {
+      hero.removeEventListener('mousemove', onMouseMove);
+      cancelAnimationFrame(raf);
+      raf = null;
+    }, { once: true });
+  })();
+
+  // ── Stats pop-in ─────────────────────────────────────────────────────────────
+  document.querySelectorAll('.stat').forEach(stat => {
+    ScrollTrigger.create({
+      trigger: stat, start: 'top 88%', once: true,
+      onEnter: () => gsap.from(stat, { scale: 0.85, duration: 0.5, ease: 'back.out(1.5)' })
+    });
+  });
+
+  // ── Reveal genérico ──────────────────────────────────────────────────────────
+  document.fonts.ready.then(() => ScrollTrigger.refresh());
+  window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+
+  gsap.utils.toArray('.reveal').forEach(el => {
+    // Only hide if not already visible in viewport
+    var rect = el.getBoundingClientRect();
+    var inView = rect.top < window.innerHeight * 0.92;
+    if (inView) {
+      // Already visible on load — animate in immediately
+      gsap.from(el, { opacity: 0, y: 28, duration: 0.75, ease: 'power3.out' });
+    } else {
+      gsap.set(el, { opacity: 0, y: 28 });
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 0.75, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none none' }
+      });
+    }
+  });
+
+  // ── Animación escalonada de benefit cards al hacer scroll ────────────────────
+  (function() {
+    var cards = Array.from(document.querySelectorAll('.benefit-reveal'));
+    if (!cards.length) return;
+
+    // Columnas según ancho actual
+    function getCols() {
+      var w = window.innerWidth;
+      if (w <= 600) return 2;
+      return 3;
+    }
+
+    var triggered = false;
+
+    ScrollTrigger.create({
+      trigger: '#benefits-grid',
+      start: 'top 82%',
+      onEnter: function() {
+        if (triggered) return;
+        triggered = true;
+        var cols = getCols();
+        cards.forEach(function(card, i) {
+          var row = Math.floor(i / cols);
+          var col = i % cols;
+          var delay = row * 0.13 + col * 0.07;
+          setTimeout(function() {
+            card.classList.add('benefit-visible');
+          }, delay * 1000);
+        });
+      }
+    });
+
+    // Fallback sin GSAP / si el grid ya está en viewport al cargar
+    var rect = document.getElementById('benefits-grid').getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.82) {
+      triggered = true;
+      var cols = getCols();
+      cards.forEach(function(card, i) {
+        var row = Math.floor(i / cols);
+        var col = i % cols;
+        var delay = row * 0.13 + col * 0.07;
+        setTimeout(function() { card.classList.add('benefit-visible'); }, delay * 1000);
+      });
+    }
+  })();
+  var isMobile = window.matchMedia('(hover: none)').matches;
+  if (!isMobile) {
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', function(e) {
+        var r = card.getBoundingClientRect();
+        var nx = (e.clientX - r.left) / r.width  - 0.5; // -0.5..0.5
+        var ny = (e.clientY - r.top)  / r.height - 0.5;
+        var MAX = 12;
+        gsap.to(card, {
+          rotateY: nx * MAX * 2,
+          rotateX: -ny * MAX,
+          transformPerspective: 900,
+          ease: 'power2.out', duration: 0.4
+        });
+        var shine = card.querySelector('.tilt-shine');
+        if (shine) {
+          shine.style.background = 'radial-gradient(circle at '
+            + ((nx + 0.5) * 100) + '% ' + ((ny + 0.5) * 100) + '%,'
+            + ' rgba(255,255,255,0.18) 0%, transparent 65%)';
+        }
+      });
+      card.addEventListener('mouseleave', function() {
+        gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6, ease: 'elastic.out(1,0.5)' });
+      });
+    });
+  }
+
+  // ── Efecto magnético en botones CTA ──────────────────────────────────────────
+  if (!isMobile) {
+    document.querySelectorAll('.mag-btn').forEach(btn => {
+      btn.addEventListener('mousemove', function(e) {
+        var r = btn.getBoundingClientRect();
+        var cx = r.left + r.width  / 2;
+        var cy = r.top  + r.height / 2;
+        var dx = (e.clientX - cx) * 0.38;
+        var dy = (e.clientY - cy) * 0.38;
+        gsap.to(btn, { x: dx, y: dy, duration: 0.3, ease: 'power2.out' });
+      });
+      btn.addEventListener('mouseleave', function() {
+        gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.5)' });
+      });
+    });
+  }
+
+  // ── Fade-in suave en títulos de sección ──────────────────────────────────────
+  // section-title also has .reveal so it's already handled by the reveal loop above
+
+  // ── Cursor personalizado ──────────────────────────────────────────────────────
+  if (!isMobile) {
+    var cur  = document.getElementById('fx-cursor');
+    var ring = document.getElementById('fx-cursor-ring');
+    var cx = window.innerWidth/2, cy = window.innerHeight/2;
+    var rx = cx, ry = cy;
+
+    document.addEventListener('mousemove', function(e) {
+      cx = e.clientX; cy = e.clientY;
+      gsap.to(cur, { left: cx, top: cy, duration: 0.08, ease: 'none' });
+    });
+
+    // Ring sigue con lag suave
+    (function ringLoop() {
+      rx += (cx - rx) * 0.12;
+      ry += (cy - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(ringLoop);
+    })();
+
+    // Hover state en links/botones
+    document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+      el.addEventListener('mouseenter', () => { cur.classList.add('hovering'); ring.classList.add('hovering'); });
+      el.addEventListener('mouseleave', () => { cur.classList.remove('hovering'); ring.classList.remove('hovering'); });
+    });
+    document.addEventListener('mousedown', () => cur.classList.add('clicking'));
+    document.addEventListener('mouseup',   () => cur.classList.remove('clicking'));
+  }
+
+  // ── Parallax en secciones eliminado: mover secciones enteras con yPercent
+  // provoca superposición de contenido y CLS elevado (Core Web Vitals).
+  // El parallax se mantiene solo en elementos decorativos sin contenido
+  // (blob) donde el impacto en CLS es nulo.
+}
+
+// ── Carga de recursos externos de terceros (solo tras aceptación)
+var _thirdPartyLoaded = false;
+function loadThirdPartyResources(callback) {
+  if (_thirdPartyLoaded) { if (callback) callback(); return; }
+  _thirdPartyLoaded = true;
+
+  // 1. Google Fonts
+  var link = document.createElement('link');
+  link.rel  = 'stylesheet';
+  link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap';
+  document.head.appendChild(link);
+
+  // 2. GSAP + ScrollTrigger (carga encadenada)
+  var gsapScript = document.createElement('script');
+  gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+  gsapScript.onload = function() {
+    var stScript = document.createElement('script');
+    stScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+    stScript.onload = function() { if (callback) callback(); };
+    document.head.appendChild(stScript);
+  };
+  document.head.appendChild(gsapScript);
+
+  // 3. Google Analytics se carga SOLO si el usuario acepta cookies analíticas
+  //    (ver función loadAnalytics() dentro del bloque COOKIE CONSENT más abajo)
+}
+
+// ── COOKIE CONSENT (AEPD-compliant: granular config panel) ──────────────────
+(function() {
+  var banner      = document.getElementById('cookie-banner');
+  var configPanel = document.getElementById('cookie-config-panel');
+  var consent     = localStorage.getItem('cookie_consent');
+
+  // Limpiar valores inválidos o de versión anterior
+  if (consent !== null && consent !== 'accepted' && consent !== 'rejected' && consent !== 'custom') {
+    localStorage.removeItem('cookie_consent');
+    consent = null;
+  }
+
+  function hideBanner() { banner.classList.add('hidden'); }
+  function showBanner() { banner.classList.remove('hidden'); }
+  function hidePanel()  { configPanel.style.display = 'none'; }
+  function showPanel()  {
+    var analyticsAllowed = localStorage.getItem('cookie_analytics') === '1';
+    var toggle = document.getElementById('cookie-analytics-toggle');
+    if (toggle) toggle.checked = analyticsAllowed;
+    configPanel.style.display = 'flex';
+    configPanel.focus && configPanel.focus();
+  }
+
+  function loadAnalytics() {
+    // ── Google Analytics — PENDIENTE DE CONFIGURAR ──────────────────────────
+    // Sustituye G-XXXXXXXXXX por tu ID real de medición antes de activar.
+    // Mientras no lo hagas, la cookie `_ga` no se instalará aunque el usuario
+    // acepte cookies analíticas. La tabla de cookies de la Política de Cookies
+    // documenta `_ga` como existente; activa este bloque antes de publicar.
+    //
+    // var gaScript = document.createElement('script');
+    // gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    // gaScript.async = true;
+    // document.head.appendChild(gaScript);
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){ dataLayer.push(arguments); }
+    // gtag('js', new Date());
+    // gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  }
+
+  if (consent === 'accepted') {
+    hideBanner();
+    localStorage.setItem('cookie_analytics', '1');
+    loadThirdPartyResources(initAnimations);
+    loadAnalytics();
+  } else if (consent === 'rejected') {
+    hideBanner();
+    applyNoAnimationFallback();
+  } else if (consent === 'custom') {
+    hideBanner();
+    loadThirdPartyResources(initAnimations);
+    if (localStorage.getItem('cookie_analytics') === '1') loadAnalytics();
+  } else {
+    showBanner();
+    applyNoAnimationFallback();
+  }
+
+  // Aceptar todas
+  document.getElementById('cookie-accept').addEventListener('click', function() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    localStorage.setItem('cookie_analytics', '1');
+    hideBanner();
+    loadThirdPartyResources(initAnimations);
+    loadAnalytics();
+  });
+
+  // Solo esenciales
+  document.getElementById('cookie-reject').addEventListener('click', function() {
+    localStorage.setItem('cookie_consent', 'rejected');
+    localStorage.setItem('cookie_analytics', '0');
+    hideBanner();
+    applyNoAnimationFallback();
+  });
+
+  // Abrir panel de configuración
+  document.getElementById('cookie-config').addEventListener('click', function() {
+    showPanel();
+  });
+
+  // Guardar preferencias desde panel
+  var saveBtn = document.getElementById('cookie-config-save');
+  if (saveBtn) {
+    saveBtn.addEventListener('click', function() {
+      var analyticsOn = document.getElementById('cookie-analytics-toggle').checked;
+      localStorage.setItem('cookie_consent', 'custom');
+      localStorage.setItem('cookie_analytics', analyticsOn ? '1' : '0');
+      hidePanel();
+      hideBanner();
+      loadThirdPartyResources(initAnimations);
+      if (analyticsOn) loadAnalytics();
+      else applyNoAnimationFallback();
+    });
+  }
+
+  // Cancelar panel
+  var cancelBtn = document.getElementById('cookie-config-cancel');
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', function() {
+      hidePanel();
+    });
+  }
+
+  // Botón "Gestionar cookies" en el pie
+  var settingsBtn = document.getElementById('cookie-settings');
+  if (settingsBtn) {
+    settingsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      showPanel();
+    });
+  }
+})();
+
+// ── CONSENTIMIENTO DATOS DE SALUD (art. 9 RGPD) ─────────────────────────────
+// Los botones arrancan sin clase disabled — JS los deshabilita al cargarse.
+// Así, si JS no está disponible, los botones son accesibles directamente.
+(function() {
+  var btns = document.querySelectorAll('.contact-btn');
+  var hint = document.getElementById('consent-hint');
+  btns.forEach(function(btn) { btn.classList.add('disabled-contact'); });
+  if (hint) hint.classList.remove('hidden');
+})();
+
+function toggleContactButtons() {
+  var checked  = document.getElementById('health-consent-check').checked;
+  var btns     = document.querySelectorAll('.contact-btn');
+  var hint     = document.getElementById('consent-hint');
+
+  btns.forEach(function(btn) {
+    if (checked) {
+      btn.classList.remove('disabled-contact');
+      btn.style.pointerEvents = '';
+    } else {
+      btn.classList.add('disabled-contact');
+    }
+  });
+
+  if (hint) hint.classList.toggle('hidden', checked);
+}
+
+function checkConsent(e) {
+  var checked = document.getElementById('health-consent-check') &&
+                document.getElementById('health-consent-check').checked;
+  if (!checked) {
+    e.preventDefault();
+    // Resaltar visualmente el checkbox para orientar al usuario
+    var label = document.getElementById('health-consent-label');
+    if (label) {
+      label.style.borderColor = '#e05050';
+      label.style.background  = 'rgba(224,80,80,0.08)';
+      setTimeout(function() {
+        label.style.borderColor = '';
+        label.style.background  = '';
+      }, 1800);
+    }
+    document.getElementById('health-consent-box').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  }
+  return true;
+}
+
+// ── NAVEGACIÓN PÁGINAS LEGALES ───────────────────────────────────────────────
+//
+// PROBLEMA ORIGINAL: history.pushState({ legal: page }, '', '#aviso') colisiona
+// con los enlaces ancla nativos (#contacto, #servicios…). Cuando el usuario pulsa
+// "atrás", el evento popstate se dispara para TODOS los cambios de URL —incluidos
+// los de anclas—, lo que provocaba que el handler intentase abrir/cerrar páginas
+// legales en momentos incorrectos y congelaba la navegación normal.
+//
+// SOLUCIÓN: eliminar pushState/popstate por completo para la gestión de legales.
+// Las páginas legales son overlays de UI, no rutas reales. El botón nativo "atrás"
+// no debe interferir con ellas. En su lugar:
+//   · showLegalPage  →  abre el overlay y guarda el scroll, sin tocar el historial.
+//   · hideLegalPage  →  cierra el overlay y restaura el scroll, sin pushState.
+//   · El título del documento se actualiza para feedback visual, pero la URL no cambia.
+//   · Si alguien llega con #aviso/#privacidad/#cookies en la URL (enlace externo,
+//     marcador), el bloque de inicialización lo detecta y abre el overlay correcto.
+//
+var _legalScrollPos = 0;
+var _LEGAL_MAP      = { aviso: 'legal-aviso', privacidad: 'legal-privacidad', cookies: 'legal-cookies' };
+var _LEGAL_TITLES   = { aviso: 'Aviso Legal', privacidad: 'Política de Privacidad', cookies: 'Política de Cookies' };
+
+function _closeAllLegal() {
+  document.querySelectorAll('.legal-page').forEach(function(p) {
+    p.classList.remove('active');
+    p.setAttribute('aria-hidden', 'true');
+  });
+}
+
+function showLegalPage(page) {
+  var id = _LEGAL_MAP[page];
+  if (!id) return;
+
+  _legalScrollPos = window.scrollY;
+  document.body.style.overflow = 'hidden';
+
+  _closeAllLegal();
+
+  var el = document.getElementById(id);
+  if (el) {
+    el.classList.add('active');
+    el.setAttribute('aria-hidden', 'false');
+    el.scrollTop = 0;
+    document.title = _LEGAL_TITLES[page] + ' · Nutricional_mente Eva';
+    // Sin pushState: no contaminamos el historial de navegación.
+    // El overlay es estado de UI puro, no una ruta.
+  }
+}
+
+function hideLegalPage() {
+  _closeAllLegal();
+  document.body.style.overflow = '';
+  document.title = 'Nutricional_mente Eva · Dietista';
+  // Sin pushState: simplemente cerramos el overlay.
+  window.scrollTo({ top: _legalScrollPos, behavior: 'instant' });
+}
+
+// Soporte para llegada directa con hash en la URL
+// (p.ej. enlace desde email: miweb.es/#privacidad)
+(function() {
+  var hash = window.location.hash.replace('#', '');
+  if (_LEGAL_MAP[hash]) showLegalPage(hash);
+})();
+
+// Cerrar overlays con Escape — manejador único para evitar doble disparo
+// Prioridad: panel cookies > páginas legales (overlay superior) > drawer móvil
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Escape') return;
+  var configPanel = document.getElementById('cookie-config-panel');
+  if (configPanel && configPanel.style.display === 'flex') { configPanel.style.display = 'none'; return; }
+  var anyLegal = document.querySelector('.legal-page.active');
+  if (anyLegal) { hideLegalPage(); return; }
+  var drawer = document.getElementById('nav-drawer');
+  if (drawer && drawer.classList.contains('open')) {
+    var btn = document.getElementById('nav-hamburger');
+    if (btn) {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      drawer.setAttribute('inert', '');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menú');
+      if (!document.querySelector('.legal-page.active')) document.body.style.overflow = '';
+      btn.focus();
+    }
+  }
+});
+
+// ── MENÚ HAMBURGUESA ─────────────────────────────────────────────────────────
+(function() {
+  var btn    = document.getElementById('nav-hamburger');
+  var drawer = document.getElementById('nav-drawer');
+  if (!btn || !drawer) return;
+
+  var FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  function getFocusable() {
+    return Array.from(drawer.querySelectorAll(FOCUSABLE));
+  }
+
+  function trapFocus(e) {
+    var focusable = getFocusable();
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last  = focusable[focusable.length - 1];
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+      }
+    }
+  }
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    drawer.removeAttribute('inert');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Cerrar menú');
+    document.body.style.overflow = 'hidden';
+    drawer.addEventListener('keydown', trapFocus);
+    // Foco al primer elemento tras completar la transición de entrada
+    var first = getFocusable()[0];
+    if (first) setTimeout(function() { first.focus(); }, 50);
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    drawer.setAttribute('inert', '');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Abrir menú');
+    drawer.removeEventListener('keydown', trapFocus);
+    // Solo restaurar scroll si no hay página legal abierta
+    if (!document.querySelector('.legal-page.active')) {
+      document.body.style.overflow = '';
+    }
+    btn.focus();
+  }
+
+  btn.addEventListener('click', function() {
+    btn.getAttribute('aria-expanded') === 'true' ? closeDrawer() : openDrawer();
+  });
+
+  // Cerrar al hacer clic en un enlace del drawer
+  drawer.querySelectorAll('.drawer-link').forEach(function(link) {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  // Cerrar si se redimensiona a escritorio
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 720 && btn.getAttribute('aria-expanded') === 'true') {
+      closeDrawer();
+    }
+  });
+})();
+
+
+// ── SERVICES TABS ────────────────────────────────────────────────────────────
+function svcTab(idx) {
+  document.querySelectorAll('.svc-tab').forEach(function(t, i) {
+    t.classList.toggle('active', i === idx);
+    t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+  });
+  document.querySelectorAll('.svc-panel').forEach(function(p, i) {
+    p.classList.toggle('active', i === idx);
+  });
+  // Ocultar el hint en cuanto el usuario selecciona cualquier tab
+  var hint = document.querySelector('.svc-hint');
+  if (hint) hint.style.display = 'none';
+}
+// El primer tab ya está activo por defecto — ocultar el hint desde el inicio
+(function() {
+  var hint = document.querySelector('.svc-hint');
+  if (hint) hint.style.display = 'none';
+})();
+
+// ── FAQ ACCORDION ────────────────────────────────────────────────────────────
+(function() {
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    var answer = btn.nextElementSibling;
+    if (answer) {
+      var answerId = 'faq-a-' + Math.random().toString(36).slice(2, 7);
+      answer.id = answerId;
+      btn.setAttribute('aria-controls', answerId);
+    }
+    btn.addEventListener('click', function() {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-q').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        var a = document.getElementById(b.getAttribute('aria-controls'));
+        if (a) a.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        var a = document.getElementById(btn.getAttribute('aria-controls'));
+        if (a) a.classList.add('open');
+      }
+    });
+  });
+})();
+
+// ── STAT COUNTERS ────────────────────────────────────────────────────────────
+(function() {
+  var counters = document.querySelectorAll('.count-num');
+  if (!counters.length) return;
+
+  function animateCounter(el) {
+    var target = parseInt(el.dataset.target, 10);
+    var suffix = el.dataset.suffix || '';
+    if (target === 0) return; // ∞ — already shows symbol, skip
+    var start = 0;
+    var duration = 1800;
+    var startTime = null;
+
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var val = Math.round(easeOut(progress) * target);
+      el.textContent = val + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Trigger when stats section enters viewport
+  var triggered = false;
+  var observer = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !triggered) {
+      triggered = true;
+      counters.forEach(function(el) { animateCounter(el); });
+    }
+  }, { threshold: 0.4 });
+
+  var statsWrap = document.querySelector('.about-stats');
+  if (statsWrap) observer.observe(statsWrap);
+})();
+
+
+// ── CARRUSEL 3D ──────────────────────────────────────────────────────────────
+(function() {
+  var cards = Array.from(document.querySelectorAll('.c3d-card'));
+  var dots  = Array.from(document.querySelectorAll('.c3d-dot'));
+  var n     = cards.length;
+  var cur   = 0;
+  var autoTimer;
+
+  // Offsets: posición, rotY, escala, opacidad para cada slot relativo al activo
+  var slots = [
+    { z: 0,    ry: 0,   s: 1,    o: 1   },   // centro (activo)
+    { z: -140, ry: 38,  s: 0.82, o: 0.6 },   // derecha
+    { z: -260, ry: 55,  s: 0.65, o: 0.3 },   // más derecha
+    { z: -140, ry: -38, s: 0.82, o: 0.6 }    // izquierda
+  ];
+
+  function getSlot(cardIdx) {
+    var diff = ((cardIdx - cur) % n + n) % n;
+    // Slot 0 = activo, 1 = derecha inmediata, n-1 = izquierda inmediata, resto atrás
+    if (diff === 0) return slots[0];
+    if (diff === 1) return slots[1];
+    if (diff === n - 1) return slots[3];
+    return slots[2];
+  }
+
+  function render() {
+    cards.forEach(function(card, i) {
+      var sl = getSlot(i);
+      card.style.transform = 'translateX(0) translateZ(' + sl.z + 'px) rotateY(' + sl.ry + 'deg) scale(' + sl.s + ')';
+      card.style.opacity   = sl.o;
+      card.style.zIndex    = (i === cur) ? 10 : (sl.z === slots[1].z || sl.z === slots[3].z) ? 5 : 1;
+      card.classList.toggle('c3d-active', i === cur);
+    });
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === cur); });
+  }
+
+  window.c3dMove = function(dir) {
+    cur = ((cur + dir) % n + n) % n;
+    render();
+    resetAuto();
+  };
+  window.c3dGoTo = function(idx) {
+    cur = idx;
+    render();
+    resetAuto();
+  };
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { c3dMove(1); }, 4200);
+  }
+
+  // Swipe táctil
+  var touchX = null;
+  var scene = document.getElementById('carousel3d');
+  if (scene) {
+    scene.addEventListener('touchstart', function(e) { touchX = e.touches[0].clientX; }, { passive: true });
+    scene.addEventListener('touchend', function(e) {
+      if (touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 40) c3dMove(dx < 0 ? 1 : -1);
+      touchX = null;
+    }, { passive: true });
+  }
+
+  render();
+  resetAuto();
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) { clearInterval(autoTimer); autoTimer = null; }
+    else if (!autoTimer) resetAuto();
+  });
+})();
+
+// ── NAV SCROLL SHRINK / EXPAND ───────────────────────────────────────────────
+(function() {
+  var nav = document.getElementById('main-nav');
+  if (!nav) return;
+  var THRESHOLD = 60; // px de scroll para contraer
+
+  function update() {
+    var scrolled = window.scrollY > THRESHOLD;
+    nav.classList.toggle('nav-scrolled', scrolled);
+    // Si volvemos al top, quitamos también el hover forzado
+    if (!scrolled) nav.classList.remove('nav-hovered');
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+
+  nav.addEventListener('mouseenter', function() {
+    if (nav.classList.contains('nav-scrolled')) {
+      nav.classList.add('nav-hovered');
+    }
+  });
+  nav.addEventListener('mouseleave', function() {
+    nav.classList.remove('nav-hovered');
+  });
+
+  update(); // estado inicial
+})();
+</script>
+
+</body>
+</html>
