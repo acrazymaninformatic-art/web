@@ -164,12 +164,12 @@ function initAnimations() {
   // ── Hero timeline ────────────────────────────────────────────────────────────
   const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
   heroTl
-    .to('.hero-eyebrow', { opacity: 1, duration: 0.6, delay: 0.4 })
-    .to('.hero-eyebrow-line', { width: 32, duration: 0.5, ease: 'power2.out' }, '-=0.3')
-    .to('.hero-title .line', { opacity: 1, y: 0, duration: 0.9, stagger: 0.15, ease: 'power4.out' }, '-=0.2')
-    .to('.hero-desc', { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
-    .to('.hero-actions', { opacity: 1, y: 0, duration: 0.6 }, '-=0.35')
-    .to('.hero-scroll-hint', { opacity: 1, duration: 0.5 }, '-=0.2');
+    .from('.hero-eyebrow', { opacity: 0, duration: 0.6, clearProps: 'all' })
+    .from('.hero-eyebrow-line', { width: 0, duration: 0.5, ease: 'power2.out', clearProps: 'all' }, '-=0.3')
+    .from('.hero-title .line', { opacity: 0, y: 24, duration: 0.8, stagger: 0.12, ease: 'power4.out', clearProps: 'all' }, '-=0.2')
+    .from('.hero-desc', { opacity: 0, y: 16, duration: 0.6, clearProps: 'all' }, '-=0.35')
+    .from('.hero-actions', { opacity: 0, y: 12, duration: 0.5, clearProps: 'all' }, '-=0.3')
+    .from('.hero-scroll-hint', { opacity: 0, duration: 0.5, clearProps: 'all' }, '-=0.2');
 
   // ── Blob morphing continuo ───────────────────────────────────────────────────
   const blobPath = document.querySelector('#fx-blob path');
