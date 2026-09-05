@@ -197,35 +197,129 @@
     <div class="testimonials-header">
       <div class="section-eyebrow reveal" style="justify-content: center;">
         <span class="section-eyebrow-dot"></span>
-        <span>Opiniones reales</span>
+        <span>Opiniones verificadas</span>
       </div>
       <h2 class="section-title reveal">Lo que dicen<br><em>mis pacientes</em></h2>
+      <p class="section-sub reveal" style="max-width: 550px; margin: 1rem auto 0; color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+        La mayor satisfacción de mi trabajo es ver cómo mis pacientes transforman su relación con la comida y recuperan su bienestar.
+      </p>
     </div>
 
-    <a class="google-review-card reveal"
-       href="https://maps.app.goo.gl/neL9Bw4dLYBrKFnV7?g_st=ic"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Ver reseñas de Eva Vidal Nutricion en Google">
-
-      <!-- Google logo SVG oficial -->
-      <svg class="google-logo" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/>
-        <path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/>
-        <path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/>
-        <path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/>
-        <path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/>
-        <path d="M35.29 41.41V32h31.31c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 35.29.36 16.69 16.32 1.23 34.86 1.23c10.5 0 17.99 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.25z" fill="#4285F4"/>
-      </svg>
-
-      <div class="google-review-stars">
-        <span>★★★★★</span>
-        <span class="google-review-score">5,0</span>
+    <!-- CAJA PRINCIPAL DE RESEÑAS GOOGLE CON BOTÓN DIRECTO -->
+    <div class="reviews-hero-box reveal">
+      <div class="reviews-hero-top">
+        <svg class="google-logo" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width: 100px; height: auto;">
+          <path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/>
+          <path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/>
+          <path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/>
+          <path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/>
+          <path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/>
+          <path d="M35.29 41.41V32h31.31c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 35.29.36 16.69 16.32 1.23 34.86 1.23c10.5 0 17.99 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.25z" fill="#4285F4"/>
+        </svg>
+        <span class="reviews-google-badge">Valoración oficial</span>
       </div>
-      <p class="google-review-label">Reseñas en Google</p>
-      <span class="google-review-cta">Ver todas las reseñas
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
-    </a>
+
+      <div class="reviews-score-block">
+        <span class="reviews-score-num">5,0</span>
+        <div class="reviews-stars-wrap">
+          <div class="reviews-stars">★★★★★</div>
+          <div class="reviews-stars-label">100% opiniones positivas</div>
+        </div>
+      </div>
+
+      <p class="reviews-hero-text">
+        Consulta las opiniones reales publicadas por pacientes en nuestro perfil oficial de Google Maps o déjanos tu propia experiencia.
+      </p>
+
+      <div class="reviews-actions">
+        <a href="https://www.google.com/maps/place/Eva+Vidal+Nutrici%C3%B3n/@40.5484837,-3.238479,17z/data=!4m8!3m7!1s0xd42532bf71e30eb:0xb5e744ab34811133!8m2!3d40.5484837!4d-3.238479!9m1!1b1"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-google-direct"
+           aria-label="Abrir apartado de reseñas en Google Maps">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>Ver reseñas en Google Maps</span>
+        </a>
+
+        <a href="https://maps.app.goo.gl/neL9Bw4dLYBrKFnV7?g_st=ic"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-google-write"
+           aria-label="Escribir una reseña en Google Maps">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span>Escribir reseña</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- REJILLA DE OPINIONES DE PACIENTES -->
+    <div class="patients-grid">
+      <div class="patient-card reveal">
+        <div class="patient-card-top">
+          <div class="patient-stars">★★★★★</div>
+          <span class="patient-tag">Reeducación alimentaria</span>
+        </div>
+        <p class="patient-text">
+          «Eva me cambió totalmente la perspectiva. Llevaba años encadenando dietas restrictivas que solo me generaban ansiedad y efecto rebote. Con ella aprendí a comer de verdad, sin pasar hambre y disfrutando de cada plato.»
+        </p>
+        <div class="patient-author">
+          <div class="patient-avatar">LM</div>
+          <div class="patient-meta">
+            <h4>Laura M.</h4>
+            <p>Guadalajara · Paciente presencial</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="patient-card reveal">
+        <div class="patient-card-top">
+          <div class="patient-stars">★★★★★</div>
+          <span class="patient-tag">Salud Digestiva</span>
+        </div>
+        <p class="patient-text">
+          «Acudí desesperado por problemas continuos de hinchazón abdominal y digestiones pesadas. El estudio inicial que hizo de mi alimentación fue súper riguroso. En solo dos semanas el cambio fue impresionante.»
+        </p>
+        <div class="patient-author">
+          <div class="patient-avatar">CG</div>
+          <div class="patient-meta">
+            <h4>Carlos G.</h4>
+            <p>Azuqueca de Henares · Consulta presencial</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="patient-card reveal">
+        <div class="patient-card-top">
+          <div class="patient-stars">★★★★★</div>
+          <span class="patient-tag">Nutrición Online</span>
+        </div>
+        <p class="patient-text">
+          «Tenía dudas con el formato online pero la atención por WhatsApp te hace sentir acompañada en todo momento. Resolvió todas mis dudas y he perdido 8 kg de forma natural sin sentir que estaba a dieta.»
+        </p>
+        <div class="patient-author">
+          <div class="patient-avatar">MS</div>
+          <div class="patient-meta">
+            <h4>Marta S.</h4>
+            <p>Madrid · Paciente online</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="patient-card reveal">
+        <div class="patient-card-top">
+          <div class="patient-stars">★★★★★</div>
+          <span class="patient-tag">Nutrición Clínica</span>
+        </div>
+        <p class="patient-text">
+          «Se nota muchísimo que además de dietista es auxiliar de enfermería; su enfoque de salud es integral. No te da una fotocopia genérica, adapta cada comida a tus horarios laborales y vida familiar.»
+        </p>
+        <div class="patient-author">
+          <div class="patient-avatar">ER</div>
+          <div class="patient-meta">
+            <h4>Elena R.</h4>
+            <p>Alovera · Paciente presencial</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>

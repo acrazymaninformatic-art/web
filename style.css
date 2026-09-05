@@ -1867,6 +1867,213 @@
   @media (max-width: 1024px) { .testimonials { padding: 5rem 2rem; } }
   @media (max-width: 600px)  { .testimonials { padding: 3.5rem 1.25rem; } }
 
+  /* ─── GOOGLE REVIEWS SECTION ENHANCED ─── */
+  .reviews-hero-box {
+    max-width: 680px;
+    margin: 0 auto 4rem;
+    background: linear-gradient(135deg, rgba(22, 32, 51, 0.9) 0%, rgba(13, 20, 36, 0.95) 100%);
+    border: 1.5px solid rgba(136, 180, 240, 0.25);
+    border-radius: 20px;
+    padding: 2.75rem 2.5rem;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .reviews-hero-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .reviews-google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .reviews-score-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .reviews-score-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.4rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1;
+  }
+  .reviews-stars-wrap {
+    text-align: left;
+  }
+  .reviews-stars {
+    font-size: 1.4rem;
+    color: #FBBC05;
+    letter-spacing: 0.08em;
+    line-height: 1;
+  }
+  .reviews-stars-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+  .reviews-hero-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+  }
+  .reviews-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-google-direct {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: #1a73e8;
+    color: #ffffff !important;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.35);
+  }
+  .btn-google-direct:hover {
+    background: #1557b0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26, 115, 232, 0.45);
+    color: #ffffff !important;
+  }
+  .btn-google-direct svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+  .btn-google-write {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(126, 168, 204, 0.12);
+    border: 1.5px solid rgba(136, 180, 240, 0.35);
+    color: #ffffff !important;
+    padding: 0.85rem 1.6rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .btn-google-write:hover {
+    background: rgba(126, 168, 204, 0.22);
+    border-color: var(--sage);
+    transform: translateY(-2px);
+    color: #ffffff !important;
+  }
+
+  /* Grid de testimonios de pacientes */
+  .patients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .patient-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .patient-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--sage);
+    box-shadow: 0 16px 40px var(--shadow-color);
+  }
+  .patient-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .patient-stars {
+    color: #FBBC05;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+  }
+  .patient-tag {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    background: rgba(136, 180, 240, 0.1);
+    color: var(--accent);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .patient-text {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: var(--text);
+    font-weight: 300;
+    font-style: italic;
+    margin: 0;
+  }
+  .patient-author {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    border-top: 1px solid rgba(136, 180, 240, 0.1);
+    padding-top: 1.25rem;
+  }
+  .patient-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage-bg) 0%, var(--card-bg) 100%);
+    border: 1px solid var(--sage);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+  .patient-meta h4 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.15rem 0;
+  }
+  .patient-meta p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
 
 
   /* ═══════════════════════════════════════════════
