@@ -418,8 +418,9 @@ function initAnimations() {
   if (!isMobile) {
     var cur  = document.getElementById('fx-cursor');
     var ring = document.getElementById('fx-cursor-ring');
-    var cx = window.innerWidth/2, cy = window.innerHeight/2;
-    var rx = cx, ry = cy;
+    if (cur && ring) {
+      var cx = window.innerWidth/2, cy = window.innerHeight/2;
+      var rx = cx, ry = cy;
 
     document.addEventListener('mousemove', function(e) {
       cx = e.clientX; cy = e.clientY;
@@ -442,6 +443,7 @@ function initAnimations() {
     });
     document.addEventListener('mousedown', () => cur.classList.add('clicking'));
     document.addEventListener('mouseup',   () => cur.classList.remove('clicking'));
+    }
   }
 
   // ── Parallax en secciones eliminado: mover secciones enteras con yPercent
@@ -969,79 +971,12 @@ function svcTab(idx) {
 // ══════════════════════════════════════════
 
 // ════════════════════════════════════════════════════════════════════════════
-// 🛡️ PROTECCIONES ANTI-HACKING AVANZADAS
+// 🛡️ SEGURIDAD Y PROTECCIÓN DE DATOS
 // ════════════════════════════════════════════════════════════════════════════
 (function() {
   'use strict';
 
-  // ── 1. ANTI-CLICKJACKING: iframe buster ────────────────────────────────
-  // Complementa la cabecera X-Frame-Options del servidor
-  if (window.self !== window.top) {
-    try { window.top.location = window.self.location; } catch(e) {
-      // Bloqueado por CSP — ocultar todo el contenido
-      document.documentElement.style.display = 'none';
-    }
-  }
-
-  // ── 2. ANTI-DEVTOOLS: detectar apertura de herramientas de desarrollo ──
-  var _dtOpen = false;
-  var _dtThreshold = 160;
-  function checkDevTools() {
-    var w = window.outerWidth - window.innerWidth > _dtThreshold;
-    var h = window.outerHeight - window.innerHeight > _dtThreshold;
-    if (w || h) {
-      if (!_dtOpen) {
-        _dtOpen = true;
-        console.clear();
-        console.log(
-          '%c⚠️ ADVERTENCIA DE SEGURIDAD',
-          'color:#e05050;font-size:28px;font-weight:900;text-shadow:1px 1px 2px rgba(0,0,0,0.3);'
-        );
-        console.log(
-          '%cEsta consola es para desarrolladores. Si alguien te ha dicho que pegues algo aquí, ' +
-          'es un intento de HACKEO (ataque Self-XSS). Nunca pegues código de desconocidos.',
-          'color:#ff6b35;font-size:15px;line-height:1.6;'
-        );
-      }
-    } else { _dtOpen = false; }
-  }
-  setInterval(checkDevTools, 800);
-
-  // ── 3. ANTI-INSPECCIÓN: bloquear atajos de teclado para ver código ─────
-  document.addEventListener('keydown', function(e) {
-    // F12
-    if (e.key === 'F12') { e.preventDefault(); return false; }
-    // Ctrl+Shift+I (Inspector), Ctrl+Shift+J (Consola), Ctrl+Shift+C (Selector)
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
-      e.preventDefault(); return false;
-    }
-    // Ctrl+U (Ver código fuente)
-    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
-    // Ctrl+S (Guardar página)
-    if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
-  }, true);
-
-  // ── 4. ANTI-CLIC DERECHO: desactivar menú contextual ───────────────────
-  document.addEventListener('contextmenu', function(e) { e.preventDefault(); }, true);
-
-  // ── 5. ANTI-ARRASTRE: impedir arrastrar imágenes/texto ─────────────────
-  document.addEventListener('dragstart', function(e) { e.preventDefault(); }, true);
-  document.addEventListener('selectstart', function(e) {
-    // Permitir seleccionar en inputs/textareas, bloquear en el resto
-    var tag = e.target.tagName;
-    if (tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
-      e.preventDefault();
-    }
-  }, true);
-
-  // ── 6. ANTI-HOTLINKING: proteger imágenes de embebido externo ──────────
-  if (location.protocol !== 'file:') {
-    document.querySelectorAll('img').forEach(function(img) {
-      img.setAttribute('crossorigin', 'anonymous');
-    });
-  }
-
-  // ── 7. ANTI-XSS: sanitizar cualquier input en formularios ─────────────
+  // ── 1. ANTI-XSS: sanitizar cualquier input en formularios ─────────────
   function sanitizeInput(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -1049,7 +984,6 @@ function svcTab(idx) {
   }
   document.querySelectorAll('input, textarea').forEach(function(el) {
     el.addEventListener('input', function() {
-      // Detectar inyecciones de script
       if (/<script|javascript:|on\w+\s*=/i.test(el.value)) {
         el.value = sanitizeInput(el.value.replace(/<script.*?>.*?<\/script>/gi, '')
           .replace(/javascript:/gi, '')
@@ -1058,15 +992,15 @@ function svcTab(idx) {
     });
   });
 
-  // ── 8. ANTI-FORM-HIJACK: validar que los formularios apuntan al destino correcto ─
+  // ── 2. ANTI-FORM-HIJACK: validar que los formularios apuntan al destino correcto ─
   document.querySelectorAll('form').forEach(function(form) {
     var originalAction = form.action;
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(m) {
         if (m.type === 'attributes' && m.attributeName === 'action') {
           if (form.action !== originalAction) {
-            form.action = originalAction; // restaurar
-            console.warn('[SECURITY] Intento de manipulación de formulario bloqueado.');
+            form.action = originalAction;
+            console.warn('[SECURITY] Intento de manipulación de formulario corregido.');
           }
         }
       });
@@ -1074,45 +1008,12 @@ function svcTab(idx) {
     observer.observe(form, { attributes: true });
   });
 
-  // ── 9. ANTI-MANIPULACIÓN DOM: vigilar inyección de scripts externos ────
-  var bodyObserver = new MutationObserver(function(mutations) {
-    mutations.forEach(function(m) {
-      m.addedNodes.forEach(function(node) {
-        if (node.nodeType === 1) {
-          // Bloquear scripts inyectados desde dominios no autorizados
-          if (node.tagName === 'SCRIPT' && node.src) {
-            var allowed = [
-              'cdnjs.cloudflare.com',
-              'fonts.googleapis.com',
-              'fonts.gstatic.com',
-              'www.googletagmanager.com',
-              'www.google-analytics.com'
-            ];
-            var src = node.src.toLowerCase();
-            var isAllowed = allowed.some(function(d) { return src.indexOf(d) !== -1; });
-            if (!isAllowed && src.indexOf(location.hostname) === -1) {
-              node.remove();
-              console.error('[SECURITY] Script externo no autorizado bloqueado:', src);
-            }
-          }
-          // Bloquear iframes inyectados
-          if (node.tagName === 'IFRAME') {
-            node.remove();
-            console.error('[SECURITY] Iframe inyectado bloqueado.');
-          }
-        }
-      });
-    });
-  });
-  bodyObserver.observe(document.body, { childList: true, subtree: true });
-
-  // ── 10. ANTI-LINK-HIJACK: proteger enlaces externos ────────────────────
+  // ── 3. ANTI-LINK-HIJACK: proteger enlaces externos ────────────────────
   document.querySelectorAll('a[target="_blank"]').forEach(function(a) {
     a.setAttribute('rel', 'noopener noreferrer');
   });
 
-  // ── 11. INTEGRIDAD DE COOKIES: proteger contra manipulación ────────────
-  // Marcar cookies con flags de seguridad (solo funciona con HTTPS)
+  // ── 4. INTEGRIDAD DE COOKIES: proteger contra manipulación ────────────
   if (location.protocol === 'https:') {
     var origCookie = Object.getOwnPropertyDescriptor(Document.prototype, 'cookie') ||
                      Object.getOwnPropertyDescriptor(HTMLDocument.prototype, 'cookie');
@@ -1120,7 +1021,6 @@ function svcTab(idx) {
       Object.defineProperty(document, 'cookie', {
         get: function() { return origCookie.get.call(this); },
         set: function(val) {
-          // Inyectar Secure y SameSite=Strict si no están presentes
           if (val.indexOf('Secure') === -1) val += '; Secure';
           if (val.indexOf('SameSite') === -1) val += '; SameSite=Strict';
           return origCookie.set.call(this, val);
@@ -1129,11 +1029,7 @@ function svcTab(idx) {
     }
   }
 
-  // ── 12. HONEYPOT CONSOLE: disuadir a atacantes ─────────────────────────
-  checkDevTools();
-
-  // ── 13. ANTI-TAMPERING: verificar integridad de elementos críticos ─────
-  // Vigilar cambios en los enlaces de contacto (WhatsApp, email)
+  // ── 5. ANTI-TAMPERING: verificar integridad de enlaces críticos ────────
   var criticalLinks = document.querySelectorAll('#btn-whatsapp, #btn-email');
   criticalLinks.forEach(function(link) {
     var originalHref = link.getAttribute('href');
