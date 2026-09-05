@@ -783,9 +783,26 @@
     .btn-white { width: 100%; max-width: 320px; text-align: center; }
 
     /* Cookie banner */
-    #cookie-banner { flex-direction: column; gap: 0.75rem; padding: 1rem 1.25rem; }
-    .cookie-actions { width: 100%; }
-    .cookie-btn-accept, .cookie-btn-reject { flex: 1; text-align: center; }
+    #cookie-banner { flex-direction: column; gap: 0.85rem; padding: 1rem 1.25rem; }
+    .cookie-actions {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .cookie-btn-accept {
+      grid-column: 1 / -1;
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+    }
+    .cookie-btn-config, .cookie-btn-reject {
+      width: 100%;
+      text-align: center;
+      padding: 0.6rem 0.5rem;
+      font-size: 0.78rem;
+    }
 
     /* Footer */
     footer { padding: 1.75rem 1.25rem; }
