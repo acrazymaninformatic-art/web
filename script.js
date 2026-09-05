@@ -669,19 +669,20 @@ function showLegalPage(page) {
   var id = _LEGAL_MAP[page];
   if (!id) return;
 
-  _legalScrollPos = window.scrollY;
-  document.body.style.overflow = 'hidden';
-
-  _closeAllLegal();
-
   var el = document.getElementById(id);
   if (el) {
+    _legalScrollPos = window.scrollY;
+    document.body.style.overflow = 'hidden';
+    _closeAllLegal();
     el.classList.add('active');
     el.setAttribute('aria-hidden', 'false');
     el.scrollTop = 0;
     document.title = _LEGAL_TITLES[page] + ' · Eva Vidal Nutrición';
-    // Sin pushState: no contaminamos el historial de navegación.
-    // El overlay es estado de UI puro, no una ruta.
+  } else {
+    var prefix = window.location.pathname.includes('/blog/') ? '../' : '';
+    if (page === 'aviso') window.location.href = prefix + 'aviso-legal.html';
+    else if (page === 'privacidad') window.location.href = prefix + 'politica-privacidad.html';
+    else if (page === 'cookies') window.location.href = prefix + 'politica-cookies.html';
   }
 }
 
