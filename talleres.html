@@ -151,89 +151,71 @@
 
     <div class="talleres-layout reveal">
       
-      <!-- Lista de talleres -->
-      <div class="talleres-grid">
-        
-        <div class="taller-card">
-          <div class="taller-header">
-            <div class="taller-date">
-              <span class="day">15</span>
-              <span class="month">Oct</span>
-            </div>
-            <span class="taller-status">Plazas Abiertas</span>
-          </div>
-          <div class="taller-info">
-            <h3>?????</h3>
-            <p>????????</p>
-            <div class="taller-meta">
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 2 horas</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Online (Zoom)</span>
-            </div>
-          </div>
-          <div class="taller-action">
-            <span class="taller-price">25€</span>
-            <a href="contacto.html" class="taller-btn">Me apunto</a>
-          </div>
-        </div>
-
-        <div class="taller-card">
-          <div class="taller-header">
-            <div class="taller-date">
-              <span class="day">28</span>
-              <span class="month">Nov</span>
-            </div>
-            <span class="taller-status full">Completo</span>
-          </div>
-          <div class="taller-info">
-            <h3>????</h3>
-            <p>????.</p>
-            <div class="taller-meta">
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 1.5 horas</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Presencial (Guadalajara)</span>
-            </div>
-          </div>
-          <div class="taller-action">
-            <span class="taller-price">30€</span>
-            <a href="#" class="taller-btn disabled">Plazas Agotadas</a>
-          </div>
-        </div>
-
+      <!-- Las tarjetas se generan automáticamente desde talleres-config.js -->
+      <div class="talleres-grid" id="talleres-grid">
+        <!-- Cargando talleres... -->
       </div>
 
-      <!-- Sidebar Novedades -->
-      <aside class="novedades-sidebar">
-        <h4 class="novedades-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-          Últimas Noticias
-        </h4>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">Septiembre 2025</div>
-            <div class="timeline-content">
-              <h4>????</h4>
-              <p>????</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Agosto 2025</div>
-            <div class="timeline-content">
-              <h4>????</h4>
-              <p>????</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Junio 2025</div>
-            <div class="timeline-content">
-              <h4>????</h4>
-              <p>????</p>
-            </div>
-          </div>
-        </div>
-      </aside>
-
     </div>
+
+    <!-- Mensaje cuando no hay talleres -->
+    <div id="talleres-empty" style="display:none; text-align:center; padding:3rem 1rem;">
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+        No hay talleres programados actualmente.<br>
+        <span style="font-size: 0.9rem;">Sígueme en redes o consulta próximamente para novedades.</span>
+      </p>
+    </div>
+
   </div>
 </section>
+
+<!-- Sistema de talleres dinámico -->
+<script src="talleres-config.js"></script>
+<script>
+(function() {
+  const grid = document.getElementById('talleres-grid');
+  const emptyMsg = document.getElementById('talleres-empty');
+  
+  if (!window.TALLERES || TALLERES.length === 0) {
+    grid.style.display = 'none';
+    emptyMsg.style.display = 'block';
+    return;
+  }
+
+  grid.innerHTML = TALLERES.map(function(t) {
+    const esCompleto = t.estado === 'completo';
+    const statusClass = esCompleto ? 'taller-status full' : 'taller-status';
+    const statusText = esCompleto ? 'Completo' : 'Plazas Abiertas';
+    const btnClass = esCompleto ? 'taller-btn disabled' : 'taller-btn';
+    const btnText = esCompleto ? 'Plazas Agotadas' : 'Me apunto';
+    const btnHref = esCompleto ? '#' : 'contacto.html';
+
+    // Iconos SVG
+    const clockSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>';
+    
+    const isOnline = t.modalidad.toLowerCase().includes('online');
+    const locationSVG = isOnline
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
+
+    return '<div class="taller-card">'
+      + '<div class="taller-header">'
+      +   '<div class="taller-date"><span class="day">' + t.dia + '</span><span class="month">' + t.mes + '</span></div>'
+      +   '<span class="' + statusClass + '">' + statusText + '</span>'
+      + '</div>'
+      + '<div class="taller-info">'
+      +   '<h3>' + t.titulo + '</h3>'
+      +   '<p>' + t.descripcion + '</p>'
+      +   '<div class="taller-meta"><span>' + clockSVG + ' ' + t.duracion + '</span><span>' + locationSVG + ' ' + t.modalidad + '</span></div>'
+      + '</div>'
+      + '<div class="taller-action">'
+      +   '<span class="taller-price">' + t.precio + '€</span>'
+      +   '<a href="' + btnHref + '" class="' + btnClass + '">' + btnText + '</a>'
+      + '</div>'
+      + '</div>';
+  }).join('');
+})();
+</script>
 
 
 <footer class="site-footer">
