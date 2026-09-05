@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /index_original.html
+
+Sitemap: https://evavidalnutricion.com/sitemap.xml
