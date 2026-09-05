@@ -161,15 +161,25 @@ function initAnimations() {
     }
   });
 
-  // ── Hero timeline ────────────────────────────────────────────────────────────
-  const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-  heroTl
-    .from('.hero-eyebrow', { opacity: 0, duration: 0.6, clearProps: 'all' })
-    .from('.hero-eyebrow-line', { width: 0, duration: 0.5, ease: 'power2.out', clearProps: 'all' }, '-=0.3')
-    .from('.hero-title .line', { opacity: 0, y: 24, duration: 0.8, stagger: 0.12, ease: 'power4.out', clearProps: 'all' }, '-=0.2')
-    .from('.hero-desc', { opacity: 0, y: 16, duration: 0.6, clearProps: 'all' }, '-=0.35')
-    .from('.hero-actions', { opacity: 0, y: 12, duration: 0.5, clearProps: 'all' }, '-=0.3')
-    .from('.hero-scroll-hint', { opacity: 0, duration: 0.5, clearProps: 'all' }, '-=0.2');
+  // ── Hero timeline (activo al entrar y al volver a subir) ────────────────────
+  if (document.querySelector('.hero')) {
+    const heroTl = gsap.timeline({
+      defaults: { ease: 'power3.out' },
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top 85%',
+        end: 'bottom 15%',
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+    heroTl
+      .fromTo('.hero-eyebrow', { opacity: 0 }, { opacity: 1, duration: 0.6 })
+      .fromTo('.hero-eyebrow-line', { width: 0 }, { width: 32, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+      .fromTo('.hero-title .line', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: 'power4.out' }, '-=0.2')
+      .fromTo('.hero-desc', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.35')
+      .fromTo('.hero-actions', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.3')
+      .fromTo('.hero-scroll-hint', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2');
+  }
 
   // ── Blob morphing continuo ───────────────────────────────────────────────────
   const blobPath = document.querySelector('#fx-blob path');
@@ -294,32 +304,37 @@ function initAnimations() {
     }, { once: true });
   })();
 
-  // ── Stats pop-in ─────────────────────────────────────────────────────────────
+  // ── Stats pop-in (siempre activo al hacer scroll) ────────────────────────────
   document.querySelectorAll('.stat').forEach(stat => {
     ScrollTrigger.create({
-      trigger: stat, start: 'top 88%', once: true,
-      onEnter: () => gsap.from(stat, { scale: 0.85, duration: 0.5, ease: 'back.out(1.5)' })
+      trigger: stat,
+      start: 'top 90%',
+      end: 'bottom top',
+      toggleActions: 'play reverse play reverse',
+      animation: gsap.fromTo(stat,
+        { scale: 0.85, opacity: 0.5 },
+        { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.5)' }
+      )
     });
   });
 
-  // ── Reveal genérico ──────────────────────────────────────────────────────────
+  // ── Reveal genérico (siempre activo al subir y bajar en scroll) ──────────────
   document.fonts.ready.then(() => ScrollTrigger.refresh());
   window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
 
   gsap.utils.toArray('.reveal').forEach(el => {
-    // Only hide if not already visible in viewport
-    var rect = el.getBoundingClientRect();
-    var inView = rect.top < window.innerHeight * 0.92;
-    if (inView) {
-      // Already visible on load — animate in immediately
-      gsap.from(el, { opacity: 0, y: 28, duration: 0.75, ease: 'power3.out' });
-    } else {
-      gsap.set(el, { opacity: 0, y: 28 });
-      gsap.to(el, {
+    gsap.fromTo(el,
+      { opacity: 0, y: 28 },
+      {
         opacity: 1, y: 0, duration: 0.75, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none none' }
-      });
-    }
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 92%',
+          end: 'bottom top',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    );
   });
 
   // ── Animación escalonada de benefit cards al hacer scroll ────────────────────
@@ -327,45 +342,20 @@ function initAnimations() {
     var cards = Array.from(document.querySelectorAll('.benefit-reveal'));
     if (!cards.length) return;
 
-    // Columnas según ancho actual
-    function getCols() {
-      var w = window.innerWidth;
-      if (w <= 600) return 2;
-      return 3;
-    }
-
-    var triggered = false;
-
-    ScrollTrigger.create({
-      trigger: '#benefits-grid',
-      start: 'top 82%',
-      onEnter: function() {
-        if (triggered) return;
-        triggered = true;
-        var cols = getCols();
-        cards.forEach(function(card, i) {
-          var row = Math.floor(i / cols);
-          var col = i % cols;
-          var delay = row * 0.13 + col * 0.07;
-          setTimeout(function() {
-            card.classList.add('benefit-visible');
-          }, delay * 1000);
-        });
-      }
+    cards.forEach(function(card) {
+      gsap.fromTo(card,
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1, y: 0, duration: 0.65, ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 88%',
+            end: 'bottom top',
+            toggleActions: 'play reverse play reverse'
+          }
+        }
+      );
     });
-
-    // Fallback sin GSAP / si el grid ya está en viewport al cargar
-    var rect = document.getElementById('benefits-grid').getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.82) {
-      triggered = true;
-      var cols = getCols();
-      cards.forEach(function(card, i) {
-        var row = Math.floor(i / cols);
-        var col = i % cols;
-        var delay = row * 0.13 + col * 0.07;
-        setTimeout(function() { card.classList.add('benefit-visible'); }, delay * 1000);
-      });
-    }
   })();
   var isMobile = window.matchMedia('(hover: none)').matches;
   if (!isMobile) {
