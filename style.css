@@ -954,6 +954,11 @@
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--card-border);
   }
+  .legal-block h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.96rem; font-weight: 500;
+    color: var(--text); margin-top: 1.1rem; margin-bottom: 0.45rem;
+  }
   .legal-block p {
     font-size: 0.88rem; color: var(--text-muted);
     line-height: 1.8; font-weight: 300; margin-bottom: 0.75rem;
