@@ -2,6 +2,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "web",
   "compatibility_date": "2026-09-03",
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "evavidalnutricion.com", "custom_domain": true },
+    { "pattern": "www.evavidalnutricion.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "."
   }
