@@ -13,7 +13,7 @@
 .blog-index {
   max-width: 900px;
   margin: 0 auto;
-  padding: calc(var(--nav-h) + 60px) 2rem 5rem;
+  padding: calc(var(--nav-h) + 80px) 2rem 5rem;
 }
 .blog-index-header {
   text-align: center;
@@ -73,11 +73,16 @@
   border-left: 3px solid var(--sage);
 }
 @media (max-width: 768px) {
-  .blog-index { padding: calc(var(--nav-h) + 40px) 1.25rem 3rem; }
+  .blog-index { padding: calc(var(--nav-h) + 60px) 1.25rem 3rem; }
 }
 </style>
 </head>
 <body>
+
+<!-- Cursor personalizado -->
+<div id="fx-cursor"></div>
+<div id="fx-cursor-ring"></div>
+
 
 <nav id="main-nav">
   <a href="../index.html" class="nav-logo"><img src="../logo.png" alt="Eva Vidal Nutricion"></a>
@@ -107,7 +112,7 @@
 </div>
 
 <div class="blog-index">
-  <div class="blog-index-header">
+  <div class="blog-index-header reveal">
     <div class="section-eyebrow" style="justify-content:center;">
       <span class="section-eyebrow-dot"></span>
       <span>Blog</span>
@@ -117,28 +122,28 @@
 
   <div class="blog-cards">
 
-    <a href="reeducacion-alimentaria-guia.html" class="blog-card blog-card-pillar">
+    <a href="reeducacion-alimentaria-guia.html" class="blog-card blog-card-pillar reveal">
       <span class="blog-card-tag">Guia completa</span>
       <h3>Reeducacion Alimentaria: Guia Completa para Cambiar tu Relacion con la Comida</h3>
       <p>Que es la reeducacion alimentaria, por que las dietas restrictivas no funcionan y como empezar un cambio de habitos real y duradero.</p>
       <span class="blog-card-meta">12 min de lectura</span>
     </a>
 
-    <a href="por-que-las-dietas-no-funcionan.html" class="blog-card">
+    <a href="por-que-las-dietas-no-funcionan.html" class="blog-card reveal">
       <span class="blog-card-tag">Perdida de peso</span>
       <h3>Por que las Dietas Milagro No Funcionan (y Que Hacer en su Lugar)</h3>
       <p>El efecto yo-yo, el metabolismo ralentizado y la perdida de musculo. Que le pasa a tu cuerpo con las dietas extremas y cual es la alternativa real.</p>
       <span class="blog-card-meta">7 min de lectura</span>
     </a>
 
-    <a href="cambiar-habitos-sin-hambre.html" class="blog-card">
+    <a href="cambiar-habitos-sin-hambre.html" class="blog-card reveal">
       <span class="blog-card-tag">Reeducacion alimentaria</span>
       <h3>Como Cambiar tus Habitos Alimenticios sin Pasar Hambre</h3>
       <p>5 estrategias practicas para mejorar tu alimentacion sin restricciones, sin ansiedad y sin que tu cuerpo se rebele.</p>
       <span class="blog-card-meta">6 min de lectura</span>
     </a>
 
-    <a href="hinchaz%C3%B3n-abdominal-que-comer.html" class="blog-card">
+    <a href="hinchaz%C3%B3n-abdominal-que-comer.html" class="blog-card reveal">
       <span class="blog-card-tag">Salud digestiva</span>
       <h3>Hinchazon Abdominal: Que Comer para Reducirla</h3>
       <p>Causas de la hinchazon, alimentos que ayudan, alimentos que la empeoran y habitos para mejorar tu digestion dia a dia.</p>
