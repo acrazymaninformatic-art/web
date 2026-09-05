@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -15,6 +15,9 @@
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Eva Vidal Nutricion">
 <link rel="canonical" href="https://evavidalnutricion.com/blog/hinchazón-abdominal-que-comer.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {
@@ -183,6 +186,58 @@
 <div id="fx-cursor"></div>
 <div id="fx-cursor-ring"></div>
 
+<!-- COOKIE BANNER (AEPD-compliant: Aceptar / Configurar / Solo esenciales) -->
+<div id="cookie-banner" role="region" aria-live="polite" aria-label="Aviso de cookies">
+  <p>
+    Esta web utiliza cookies propias (técnicas, necesarias) y de terceros (analíticas, Google Analytics).
+    Puedes elegir qué cookies aceptas o consultar nuestra
+    <a href="#" onclick="showLegalPage('cookies'); return false;">Política de Cookies</a>.
+    Las cookies técnicas no se pueden desactivar porque son necesarias para el funcionamiento del sitio.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn-accept" id="cookie-accept">Aceptar todas</button>
+    <button class="cookie-btn-config" id="cookie-config">Configurar cookies</button>
+    <button class="cookie-btn-reject" id="cookie-reject">Solo esenciales</button>
+  </div>
+</div>
+
+<!-- PANEL CONFIGURACIÓN DE COOKIES (AEPD granular) -->
+<div id="cookie-config-panel" role="dialog" aria-modal="true" aria-label="Configuración de cookies" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(30,48,64,0.55);align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#F0F3FA;border-radius:8px;max-width:520px;width:100%;padding:2rem;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.35);">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#3a5a78;margin-bottom:0.5rem;">Configuración de <em style="font-style:italic;color:#5588aa;">cookies</em></h2>
+    <p style="font-size:0.82rem;color:#5c7385;line-height:1.65;margin-bottom:1.5rem;">Puedes activar o desactivar cada categoría de cookies. Las cookies técnicas siempre están activas porque son imprescindibles para el funcionamiento del sitio.</p>
+
+    <!-- Técnicas: siempre activas -->
+    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div>
+          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies técnicas (siempre activas)</p>
+          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Guardan tu preferencia de cookies y son imprescindibles para la navegación. No requieren consentimiento (art. 22.2 LSSI-CE).</p>
+        </div>
+        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#5588aa;background:#ddeef8;padding:0.25rem 0.6rem;border-radius:3px;white-space:nowrap;flex-shrink:0;">Siempre activas</span>
+      </div>
+    </div>
+
+    <!-- Analíticas: toggle -->
+    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div style="flex:1;">
+          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies analíticas (Google Analytics)</p>
+          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Miden el tráfico y el comportamiento de navegación de forma anónima. Nos ayudan a mejorar el sitio. Solo se activan con tu consentimiento.</p>
+        </div>
+        <label style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;flex-shrink:0;" aria-label="Activar cookies analíticas">
+          <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;accent-color:#3a5a78;cursor:pointer;">
+        </label>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <button id="cookie-config-save" style="background:#3a5a78;color:#fff;border:none;cursor:pointer;padding:0.7rem 1.5rem;border-radius:3px;font-size:0.82rem;font-weight:500;font-family:inherit;letter-spacing:0.04em;transition:background 0.2s;flex:1;">Guardar preferencias</button>
+      <button id="cookie-config-cancel" style="background:transparent;color:#5c7385;border:1px solid rgba(30,48,64,0.2);cursor:pointer;padding:0.7rem 1.25rem;border-radius:3px;font-size:0.82rem;font-family:inherit;transition:border-color 0.2s;flex:1;">Cancelar</button>
+    </div>
+  </div>
+</div>
+
 
 <nav id="main-nav">
   <a href="../index.html" class="nav-logo"><img src="../logo.png" alt="Eva Vidal Nutricion"></a>
@@ -212,11 +267,11 @@
 </div>
 
 <article class="blog-article">
-  <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+  <div class="blog-breadcrumb" aria-label="Breadcrumb">
     <a href="../index.html">Inicio</a> <span>/</span>
     <a href="../blog/index.html">Blog</a> <span>/</span>
     <span>Hinchazon abdominal</span>
-  </nav>
+  </div>
   
 <span class="blog-tag reveal">Salud Digestiva</span>
 <h1>Hinchazon Abdominal: <em>Que Comer</em> para Reducirla</h1>
@@ -226,13 +281,13 @@
   <span>6 min de lectura</span>
 </div>
 
-<p>"Despues de comer se me hincha la tripa como un globo." Es una de las frases que mas escucho en consulta. La hinchazon abdominal es increiblemente comun y, aunque puede tener muchas causas, <strong>en la gran mayoria de casos la alimentacion juega un papel fundamental</strong>.</p>
+<p class="reveal">"Despues de comer se me hincha la tripa como un globo." Es una de las frases que mas escucho en consulta. La hinchazon abdominal es increiblemente comun y, aunque puede tener muchas causas, <strong>en la gran mayoria de casos la alimentacion juega un papel fundamental</strong>.</p>
 
-<h2>Por que se hincha la tripa despues de comer</h2>
+<h2 class="reveal">Por que se hincha la tripa despues de comer</h2>
 
-<p>La hinchazon abdominal suele producirse por una acumulacion de gas en el intestino. Las causas mas frecuentes son:</p>
+<p class="reveal">La hinchazon abdominal suele producirse por una acumulacion de gas en el intestino. Las causas mas frecuentes son:</p>
 
-<ul>
+<ul class="reveal">
   <li><strong>Comer demasiado rapido:</strong> tragamos aire sin darnos cuenta</li>
   <li><strong>Intolerancias no diagnosticadas:</strong> lactosa, fructosa, gluten</li>
   <li><strong>Exceso de alimentos ultraprocesados:</strong> aditivos, edulcorantes, exceso de sodio</li>
@@ -241,23 +296,23 @@
   <li><strong>Combinaciones alimentarias</strong> que no le sientan bien a tu sistema digestivo</li>
 </ul>
 
-<h2>Alimentos que Ayudan a Reducir la Hinchazon</h2>
+<h2 class="reveal">Alimentos que Ayudan a Reducir la Hinchazon</h2>
 
 <h3>Infusiones digestivas</h3>
-<p>El jengibre, la menta, la manzanilla y el hinojo son aliados naturales para la digestion. Tomalos despues de las comidas principales.</p>
+<p class="reveal">El jengibre, la menta, la manzanilla y el hinojo son aliados naturales para la digestion. Tomalos despues de las comidas principales.</p>
 
 <h3>Verduras cocinadas (en lugar de crudas)</h3>
-<p>Si notas hinchazon con las ensaladas, prueba a cocinar las verduras: al vapor, al horno o salteadas. La coccion rompe parte de la fibra y facilita la digestion sin perder nutrientes importantes.</p>
+<p class="reveal">Si notas hinchazon con las ensaladas, prueba a cocinar las verduras: al vapor, al horno o salteadas. La coccion rompe parte de la fibra y facilita la digestion sin perder nutrientes importantes.</p>
 
 <h3>Frutas de facil digestion</h3>
-<p>Platano maduro, papaya, pina y pera suelen sentarse bien. Si las frutas crudas te hinchan, pruebalas asadas o en compota.</p>
+<p class="reveal">Platano maduro, papaya, pina y pera suelen sentarse bien. Si las frutas crudas te hinchan, pruebalas asadas o en compota.</p>
 
 <h3>Proteinas magras</h3>
-<p>Pollo, pavo, pescado blanco, huevos. Las proteinas rara vez causan hinchazon y te ayudan a sentirte saciada.</p>
+<p class="reveal">Pollo, pavo, pescado blanco, huevos. Las proteinas rara vez causan hinchazon y te ayudan a sentirte saciada.</p>
 
-<h2>Alimentos que Suelen Empeorar la Hinchazon</h2>
+<h2 class="reveal">Alimentos que Suelen Empeorar la Hinchazon</h2>
 
-<ul>
+<ul class="reveal">
   <li>Bebidas carbonatadas y con gas</li>
   <li>Chicles y caramelos (tragar aire + edulcorantes)</li>
   <li>Legumbres sin remojar o mal cocinadas</li>
@@ -266,11 +321,11 @@
   <li>Cruciferas crudas en exceso (brocoli, coliflor, col)</li>
 </ul>
 
-<p><strong>Importante:</strong> esto no significa que debas eliminar estos alimentos. A veces basta con cocinarlos de otra forma, reducir la cantidad o combinarlos mejor. En consulta analizamos tu caso concreto y encontramos la causa real de la hinchazon.</p>
+<p class="reveal"><strong>Importante:</strong> esto no significa que debas eliminar estos alimentos. A veces basta con cocinarlos de otra forma, reducir la cantidad o combinarlos mejor. En consulta analizamos tu caso concreto y encontramos la causa real de la hinchazon.</p>
 
-<h2>5 Habitos para Mejorar tu Digestion</h2>
+<h2 class="reveal">5 Habitos para Mejorar tu Digestion</h2>
 
-<ol>
+<ol class="reveal">
   <li><strong>Come despacio y mastica bien:</strong> la digestion empieza en la boca</li>
   <li><strong>No bebas demasiado liquido durante las comidas:</strong> un vaso esta bien, pero evita grandes cantidades</li>
   <li><strong>Muevete despues de comer:</strong> un paseo de 10 minutos favorece el transito intestinal</li>
@@ -278,32 +333,34 @@
   <li><strong>Lleva un registro de sintomas:</strong> apunta que comes y como te sientes despues; en consulta lo analizamos juntas</li>
 </ol>
 
-<h2>Cuando acudir a un dietista</h2>
+<h2 class="reveal">Cuando acudir a un dietista</h2>
 
-<p>Si la hinchazon es frecuente (mas de 3-4 veces por semana), interfiere en tu vida diaria o viene acompanada de otros sintomas (dolor, alteracion del transito intestinal, fatiga), es importante que un profesional valore tu caso. En mi <a href="../servicios.html">primera consulta</a> recogemos toda la informacion sobre tus sintomas, habitos y antecedentes para disenarte un plan que mejore tu digestion de verdad.</p>
+<p class="reveal">Si la hinchazon es frecuente (mas de 3-4 veces por semana), interfiere en tu vida diaria o viene acompanada de otros sintomas (dolor, alteracion del transito intestinal, fatiga), es importante que un profesional valore tu caso. En mi <a href="../servicios.html">primera consulta</a> recogemos toda la informacion sobre tus sintomas, habitos y antecedentes para disenarte un plan que mejore tu digestion de verdad.</p>
 
 <div class="blog-cta-box reveal">
   <h3>Harta de la hinchazon? Vamos a buscar la causa.</h3>
-  <p>Analizo tu caso y disenamos un plan para que vuelvas a sentirte bien despues de comer.</p>
+  <p class="reveal">Analizo tu caso y disenamos un plan para que vuelvas a sentirte bien despues de comer.</p>
   <a href="../contacto.html" class="btn-primary">Reservar consulta</a>
 </div>
 
-<nav class="blog-related reveal" aria-label="Articulos relacionados">
+<aside class="blog-related reveal" aria-label="Articulos relacionados">
   <h3>Sigue leyendo</h3>
-  <ul>
+  <ul class="reveal">
     <li><a href="reeducacion-alimentaria-guia.html">Guia completa de reeducacion alimentaria</a></li>
     <li><a href="cambiar-habitos-sin-hambre.html">Como cambiar habitos sin pasar hambre</a></li>
     <li><a href="por-que-las-dietas-no-funcionan.html">Por que las dietas milagro no funcionan</a></li>
   </ul>
-</nav>
+</aside>
 
 </article>
 
 <footer>
-  <span class="footer-logo"><img src="../logo.png" alt="Eva Vidal Nutricion" style="height:45px;width:auto;object-fit:contain;"></span>
+  <span class="footer-logo"><img src="../logo.png" alt="Eva Vidal Nutricion" loading="lazy" style="height:45px;width:auto;object-fit:contain;"></span>
   <span class="footer-copy">Dietista - Auxiliar de Enfermeria - Guadalajara</span>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

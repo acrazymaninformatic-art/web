@@ -148,13 +148,16 @@ function initAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   // ── Nav entrada ──────────────────────────────────────────────────────────────
-  gsap.from('#main-nav', { y: -80, opacity: 0, duration: 0.8, ease: 'power3.out' });
+  gsap.from('#main-nav', { y: -80, opacity: 0, duration: 0.8, ease: 'power3.out', clearProps: 'transform' });
 
   ScrollTrigger.create({
     start: 'top -80',
     onUpdate: (self) => {
-      document.querySelector('nav').style.borderBottomColor =
-        self.progress > 0 ? 'rgba(30,48,64,0.22)' : 'rgba(30,48,64,0.12)';
+      var mainNav = document.querySelector('#main-nav');
+      if (mainNav) {
+        mainNav.style.borderBottomColor =
+          self.progress > 0 ? 'rgba(30,48,64,0.22)' : 'rgba(30,48,64,0.12)';
+      }
     }
   });
 
@@ -447,11 +450,11 @@ function initAnimations() {
   // (blob) donde el impacto en CLS es nulo.
 }
 
-// ── Carga de recursos externos de terceros (solo tras aceptación)
-var _thirdPartyLoaded = false;
-function loadThirdPartyResources(callback) {
-  if (_thirdPartyLoaded) { if (callback) callback(); return; }
-  _thirdPartyLoaded = true;
+// ── Carga de recursos visuales esenciales (Fonts + GSAP para animaciones)
+var _coreResourcesLoaded = false;
+function loadCoreResources(callback) {
+  if (_coreResourcesLoaded) { if (callback) callback(); return; }
+  _coreResourcesLoaded = true;
 
   // 1. Google Fonts
   var link = document.createElement('link');
@@ -460,21 +463,28 @@ function loadThirdPartyResources(callback) {
   document.head.appendChild(link);
 
   // 2. GSAP + ScrollTrigger (carga encadenada)
-  var gsapScript = document.createElement('script');
-  gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
-  gsapScript.onload = function() {
-    var stScript = document.createElement('script');
-    stScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
-    stScript.onload = function() { if (callback) callback(); };
-    document.head.appendChild(stScript);
-  };
-  document.head.appendChild(gsapScript);
-
-  // 3. Google Analytics se carga SOLO si el usuario acepta cookies analíticas
-  //    (ver función loadAnalytics() dentro del bloque COOKIE CONSENT más abajo)
+  if (typeof gsap === 'undefined') {
+    var gsapScript = document.createElement('script');
+    gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+    gsapScript.onload = function() {
+      var stScript = document.createElement('script');
+      stScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+      stScript.onload = function() { if (callback) callback(); };
+      document.head.appendChild(stScript);
+    };
+    gsapScript.onerror = function() {
+      applyNoAnimationFallback();
+    };
+    document.head.appendChild(gsapScript);
+  } else {
+    if (callback) callback();
+  }
 }
 
-// ── COOKIE CONSENT (AEPD-compliant: granular config panel) ──────────────────
+// Iniciar recursos visuales y animaciones inmediatamente
+loadCoreResources(initAnimations);
+
+// ── COOKIE CONSENT (AEPD-compliant: granular config panel para Analytics) ────
 (function() {
   var banner      = document.getElementById('cookie-banner');
   var configPanel = document.getElementById('cookie-config-panel');
@@ -486,72 +496,65 @@ function loadThirdPartyResources(callback) {
     consent = null;
   }
 
-  function hideBanner() { banner.classList.add('hidden'); }
-  function showBanner() { banner.classList.remove('hidden'); }
-  function hidePanel()  { configPanel.style.display = 'none'; }
+  function hideBanner() { if (banner) banner.classList.add('hidden'); }
+  function showBanner() { if (banner) banner.classList.remove('hidden'); }
+  function hidePanel()  { if (configPanel) configPanel.style.display = 'none'; }
   function showPanel()  {
     var analyticsAllowed = localStorage.getItem('cookie_analytics') === '1';
     var toggle = document.getElementById('cookie-analytics-toggle');
     if (toggle) toggle.checked = analyticsAllowed;
-    configPanel.style.display = 'flex';
-    configPanel.focus && configPanel.focus();
+    if (configPanel) {
+      configPanel.style.display = 'flex';
+      configPanel.focus && configPanel.focus();
+    }
   }
 
   function loadAnalytics() {
     // ── Google Analytics — PENDIENTE DE CONFIGURAR ──────────────────────────
     // Sustituye G-XXXXXXXXXX por tu ID real de medición antes de activar.
-    // Mientras no lo hagas, la cookie `_ga` no se instalará aunque el usuario
-    // acepte cookies analíticas. La tabla de cookies de la Política de Cookies
-    // documenta `_ga` como existente; activa este bloque antes de publicar.
-    //
-    // var gaScript = document.createElement('script');
-    // gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-    // gaScript.async = true;
-    // document.head.appendChild(gaScript);
-    // window.dataLayer = window.dataLayer || [];
-    // function gtag(){ dataLayer.push(arguments); }
-    // gtag('js', new Date());
-    // gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
   }
 
   if (consent === 'accepted') {
     hideBanner();
     localStorage.setItem('cookie_analytics', '1');
-    loadThirdPartyResources(initAnimations);
     loadAnalytics();
   } else if (consent === 'rejected') {
     hideBanner();
-    applyNoAnimationFallback();
   } else if (consent === 'custom') {
     hideBanner();
-    loadThirdPartyResources(initAnimations);
     if (localStorage.getItem('cookie_analytics') === '1') loadAnalytics();
   } else {
     showBanner();
-    applyNoAnimationFallback();
   }
 
   // Aceptar todas
-  document.getElementById('cookie-accept').addEventListener('click', function() {
-    localStorage.setItem('cookie_consent', 'accepted');
-    localStorage.setItem('cookie_analytics', '1');
-    hideBanner();
-    loadThirdPartyResources(initAnimations);
-    loadAnalytics();
-  });
+  var btnAccept = document.getElementById('cookie-accept');
+  if (btnAccept) {
+    btnAccept.addEventListener('click', function() {
+      localStorage.setItem('cookie_consent', 'accepted');
+      localStorage.setItem('cookie_analytics', '1');
+      hideBanner();
+      loadAnalytics();
+    });
+  }
 
   // Solo esenciales
-  document.getElementById('cookie-reject').addEventListener('click', function() {
-    localStorage.setItem('cookie_consent', 'rejected');
-    localStorage.setItem('cookie_analytics', '0');
-    hideBanner();
-    applyNoAnimationFallback();
-  });
+  var btnReject = document.getElementById('cookie-reject');
+  if (btnReject) {
+    btnReject.addEventListener('click', function() {
+      localStorage.setItem('cookie_consent', 'rejected');
+      localStorage.setItem('cookie_analytics', '0');
+      hideBanner();
+    });
+  }
 
   // Abrir panel de configuración
-  document.getElementById('cookie-config').addEventListener('click', function() {
-    showPanel();
-  });
+  var btnConfig = document.getElementById('cookie-config');
+  if (btnConfig) {
+    btnConfig.addEventListener('click', function() {
+      showPanel();
+    });
+  }
 
   // Guardar preferencias desde panel
   var saveBtn = document.getElementById('cookie-config-save');
@@ -562,9 +565,7 @@ function loadThirdPartyResources(callback) {
       localStorage.setItem('cookie_analytics', analyticsOn ? '1' : '0');
       hidePanel();
       hideBanner();
-      loadThirdPartyResources(initAnimations);
       if (analyticsOn) loadAnalytics();
-      else applyNoAnimationFallback();
     });
   }
 
@@ -948,31 +949,18 @@ function svcTab(idx) {
   });
 })();
 
-// ── NAV SCROLL SHRINK / EXPAND ───────────────────────────────────────────────
+// ── NAV SCROLL COMPACT ───────────────────────────────────────────────────────
 (function() {
   var nav = document.getElementById('main-nav');
   if (!nav) return;
-  var THRESHOLD = 60; // px de scroll para contraer
+  var THRESHOLD = 50;
 
   function update() {
-    var scrolled = window.scrollY > THRESHOLD;
-    nav.classList.toggle('nav-scrolled', scrolled);
-    // Si volvemos al top, quitamos también el hover forzado
-    if (!scrolled) nav.classList.remove('nav-hovered');
+    nav.classList.toggle('nav-scrolled', window.scrollY > THRESHOLD);
   }
 
   window.addEventListener('scroll', update, { passive: true });
-
-  nav.addEventListener('mouseenter', function() {
-    if (nav.classList.contains('nav-scrolled')) {
-      nav.classList.add('nav-hovered');
-    }
-  });
-  nav.addEventListener('mouseleave', function() {
-    nav.classList.remove('nav-hovered');
-  });
-
-  update(); // estado inicial
+  update();
 })();
 
 
@@ -1047,9 +1035,11 @@ function svcTab(idx) {
   }, true);
 
   // ── 6. ANTI-HOTLINKING: proteger imágenes de embebido externo ──────────
-  document.querySelectorAll('img').forEach(function(img) {
-    img.setAttribute('crossorigin', 'anonymous');
-  });
+  if (location.protocol !== 'file:') {
+    document.querySelectorAll('img').forEach(function(img) {
+      img.setAttribute('crossorigin', 'anonymous');
+    });
+  }
 
   // ── 7. ANTI-XSS: sanitizar cualquier input en formularios ─────────────
   function sanitizeInput(str) {

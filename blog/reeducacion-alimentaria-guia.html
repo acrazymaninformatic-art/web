@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -15,6 +15,9 @@
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Eva Vidal Nutricion">
 <link rel="canonical" href="https://evavidalnutricion.com/blog/reeducacion-alimentaria-guia.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {
@@ -25,6 +28,19 @@
     {"@type":"ListItem","position":2,"name":"Blog","item":"https://evavidalnutricion.com/blog/"},
     {"@type":"ListItem","position":3,"name":"Reeducacion Alimentaria","item":"https://evavidalnutricion.com/blog/reeducacion-alimentaria-guia.html"}
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Reeducacion Alimentaria: Guia Completa",
+  "description": "Que es la reeducacion alimentaria, por que las dietas restrictivas no funcionan y como cambiar tus habitos alimenticios de verdad. Guia de dietista colegiada en Guadalajara.",
+  "author": {
+    "@type": "Person",
+    "name": "Eva Vidal Nutricion",
+    "url": "https://evavidalnutricion.com/"
+  }
 }
 </script>
 <style>
@@ -183,6 +199,58 @@
 <div id="fx-cursor"></div>
 <div id="fx-cursor-ring"></div>
 
+<!-- COOKIE BANNER (AEPD-compliant: Aceptar / Configurar / Solo esenciales) -->
+<div id="cookie-banner" role="region" aria-live="polite" aria-label="Aviso de cookies">
+  <p>
+    Esta web utiliza cookies propias (técnicas, necesarias) y de terceros (analíticas, Google Analytics).
+    Puedes elegir qué cookies aceptas o consultar nuestra
+    <a href="#" onclick="showLegalPage('cookies'); return false;">Política de Cookies</a>.
+    Las cookies técnicas no se pueden desactivar porque son necesarias para el funcionamiento del sitio.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn-accept" id="cookie-accept">Aceptar todas</button>
+    <button class="cookie-btn-config" id="cookie-config">Configurar cookies</button>
+    <button class="cookie-btn-reject" id="cookie-reject">Solo esenciales</button>
+  </div>
+</div>
+
+<!-- PANEL CONFIGURACIÓN DE COOKIES (AEPD granular) -->
+<div id="cookie-config-panel" role="dialog" aria-modal="true" aria-label="Configuración de cookies" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(30,48,64,0.55);align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#F0F3FA;border-radius:8px;max-width:520px;width:100%;padding:2rem;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.35);">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#3a5a78;margin-bottom:0.5rem;">Configuración de <em style="font-style:italic;color:#5588aa;">cookies</em></h2>
+    <p style="font-size:0.82rem;color:#5c7385;line-height:1.65;margin-bottom:1.5rem;">Puedes activar o desactivar cada categoría de cookies. Las cookies técnicas siempre están activas porque son imprescindibles para el funcionamiento del sitio.</p>
+
+    <!-- Técnicas: siempre activas -->
+    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div>
+          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies técnicas (siempre activas)</p>
+          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Guardan tu preferencia de cookies y son imprescindibles para la navegación. No requieren consentimiento (art. 22.2 LSSI-CE).</p>
+        </div>
+        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#5588aa;background:#ddeef8;padding:0.25rem 0.6rem;border-radius:3px;white-space:nowrap;flex-shrink:0;">Siempre activas</span>
+      </div>
+    </div>
+
+    <!-- Analíticas: toggle -->
+    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div style="flex:1;">
+          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies analíticas (Google Analytics)</p>
+          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Miden el tráfico y el comportamiento de navegación de forma anónima. Nos ayudan a mejorar el sitio. Solo se activan con tu consentimiento.</p>
+        </div>
+        <label style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;flex-shrink:0;" aria-label="Activar cookies analíticas">
+          <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;accent-color:#3a5a78;cursor:pointer;">
+        </label>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <button id="cookie-config-save" style="background:#3a5a78;color:#fff;border:none;cursor:pointer;padding:0.7rem 1.5rem;border-radius:3px;font-size:0.82rem;font-weight:500;font-family:inherit;letter-spacing:0.04em;transition:background 0.2s;flex:1;">Guardar preferencias</button>
+      <button id="cookie-config-cancel" style="background:transparent;color:#5c7385;border:1px solid rgba(30,48,64,0.2);cursor:pointer;padding:0.7rem 1.25rem;border-radius:3px;font-size:0.82rem;font-family:inherit;transition:border-color 0.2s;flex:1;">Cancelar</button>
+    </div>
+  </div>
+</div>
+
 
 <nav id="main-nav">
   <a href="../index.html" class="nav-logo"><img src="../logo.png" alt="Eva Vidal Nutricion"></a>
@@ -212,11 +280,11 @@
 </div>
 
 <article class="blog-article">
-  <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+  <div class="blog-breadcrumb" aria-label="Breadcrumb">
     <a href="../index.html">Inicio</a> <span>/</span>
     <a href="../blog/index.html">Blog</a> <span>/</span>
     <span>Reeducacion Alimentaria</span>
-  </nav>
+  </div>
   
 <span class="blog-tag reveal">Reeducacion Alimentaria</span>
 <h1>Reeducacion Alimentaria: Guia Completa para <em>Cambiar tu Relacion con la Comida</em></h1>
@@ -226,70 +294,70 @@
   <span>12 min de lectura</span>
 </div>
 
-<p>Si has pasado por varias dietas, has perdido peso y lo has recuperado, o sientes que tu relacion con la comida es de amor-odio, este articulo es para ti. La reeducacion alimentaria no es otra dieta mas: es aprender a comer de forma que puedas mantener de por vida, sin restricciones, sin culpa y sin pasar hambre.</p>
+<p class="reveal">Si has pasado por varias dietas, has perdido peso y lo has recuperado, o sientes que tu relacion con la comida es de amor-odio, este articulo es para ti. La reeducacion alimentaria no es otra dieta mas: es aprender a comer de forma que puedas mantener de por vida, sin restricciones, sin culpa y sin pasar hambre.</p>
 
-<p>Como dietista colegiada en el CODINMA, trabajo cada dia con personas que llegan cansadas de hacer dietas. Y lo primero que les digo es: <strong>el problema no eres tu, es el enfoque</strong>.</p>
+<p class="reveal">Como dietista colegiada en el CODINMA, trabajo cada dia con personas que llegan cansadas de hacer dietas. Y lo primero que les digo es: <strong>el problema no eres tu, es el enfoque</strong>.</p>
 
-<h2>Que es la Reeducacion Alimentaria</h2>
+<h2 class="reveal">Que es la Reeducacion Alimentaria</h2>
 
-<p>La reeducacion alimentaria es un proceso en el que aprendes a entender tu cuerpo, identificar lo que necesita y construir habitos alimentarios sostenibles. No se trata de eliminar alimentos ni de contar calorias de forma obsesiva, sino de hacer cambios graduales que se integren en tu vida real.</p>
+<p class="reveal">La reeducacion alimentaria es un proceso en el que aprendes a entender tu cuerpo, identificar lo que necesita y construir habitos alimentarios sostenibles. No se trata de eliminar alimentos ni de contar calorias de forma obsesiva, sino de hacer cambios graduales que se integren en tu vida real.</p>
 
 <h3>Diferencia entre dieta y reeducacion alimentaria</h3>
 
-<p>Una <strong>dieta restrictiva</strong> te dice que comer y que no. Tiene fecha de inicio y fecha de fin. Te genera ansiedad, hambre y la sensacion de estar privandote. Por eso, cuando la dejas, vuelves a los habitos anteriores y recuperas el peso (y a veces mas).</p>
+<p class="reveal">Una <strong>dieta restrictiva</strong> te dice que comer y que no. Tiene fecha de inicio y fecha de fin. Te genera ansiedad, hambre y la sensacion de estar privandote. Por eso, cuando la dejas, vuelves a los habitos anteriores y recuperas el peso (y a veces mas).</p>
 
-<p>La <strong>reeducacion alimentaria</strong> no tiene fecha de fin. Es un proceso de aprendizaje donde cambias gradualmente tu forma de comer respetando tus gustos, tu ritmo de vida y tu cultura alimentaria. No hay alimentos prohibidos.</p>
+<p class="reveal">La <strong>reeducacion alimentaria</strong> no tiene fecha de fin. Es un proceso de aprendizaje donde cambias gradualmente tu forma de comer respetando tus gustos, tu ritmo de vida y tu cultura alimentaria. No hay alimentos prohibidos.</p>
 
 <h3>Por que las dietas restrictivas no funcionan a largo plazo</h3>
 
-<ul>
+<ul class="reveal">
   <li><strong>Efecto rebote:</strong> El cuerpo interpreta la restriccion severa como escasez y baja el metabolismo. Cuando vuelves a comer normal, almacena mas grasa como "reserva".</li>
   <li><strong>Relacion toxica con la comida:</strong> Clasificar alimentos en "buenos" y "malos" genera culpa, ansiedad y atracones.</li>
   <li><strong>Insostenible:</strong> Nadie puede vivir toda la vida sin pasta, sin pan o comiendo solo pollo y lechuga.</li>
 </ul>
 
-<h2>Senales de que Necesitas Reeducar tu Alimentacion</h2>
+<h2 class="reveal">Senales de que Necesitas Reeducar tu Alimentacion</h2>
 
 <h3>Comes "bien" pero no te sientes bien</h3>
-<p>Hinchazon despues de comer, gases frecuentes, fatiga, pesadez digestiva. A veces no es cuestion de que comes, sino de como lo combinas, cuanto masticas o como gestionas el estres alrededor de la comida. Si te sientes identificada, quizas te interese leer sobre <a href="hinchazón-abdominal-que-comer.html">como reducir la hinchazon abdominal con alimentacion</a>.</p>
+<p class="reveal">Hinchazon despues de comer, gases frecuentes, fatiga, pesadez digestiva. A veces no es cuestion de que comes, sino de como lo combinas, cuanto masticas o como gestionas el estres alrededor de la comida. Si te sientes identificada, quizas te interese leer sobre <a href="hinchazón-abdominal-que-comer.html">como reducir la hinchazon abdominal con alimentacion</a>.</p>
 
 <h3>Efecto yo-yo: pierdes y recuperas peso continuamente</h3>
-<p>Si has hecho mas de 3 dietas en los ultimos anos y siempre acabas en el mismo punto (o peor), tu cuerpo te esta pidiendo un cambio de enfoque. <a href="por-que-las-dietas-no-funcionan.html">Las dietas milagro no funcionan</a> porque atacan el sintoma, no la raiz del problema.</p>
+<p class="reveal">Si has hecho mas de 3 dietas en los ultimos anos y siempre acabas en el mismo punto (o peor), tu cuerpo te esta pidiendo un cambio de enfoque. <a href="por-que-las-dietas-no-funcionan.html">Las dietas milagro no funcionan</a> porque atacan el sintoma, no la raiz del problema.</p>
 
 <h3>Ansiedad, culpa o miedo alrededor de la comida</h3>
-<p>Sentir culpa por comerte un trozo de pizza o ansiedad por "haber comido demasiado" no es normal. Una relacion sana con la comida implica disfrutar sin juicio. <a href="cambiar-habitos-sin-hambre.html">Cambiar habitos sin pasar hambre</a> es posible y es la unica forma de conseguir resultados duraderos.</p>
+<p class="reveal">Sentir culpa por comerte un trozo de pizza o ansiedad por "haber comido demasiado" no es normal. Una relacion sana con la comida implica disfrutar sin juicio. <a href="cambiar-habitos-sin-hambre.html">Cambiar habitos sin pasar hambre</a> es posible y es la unica forma de conseguir resultados duraderos.</p>
 
-<h2>Los 3 Pilares del Cambio de Habitos</h2>
+<h2 class="reveal">Los 3 Pilares del Cambio de Habitos</h2>
 
-<p>En mi consulta trabajo con tres pilares fundamentales que aplico a cada persona:</p>
+<p class="reveal">En mi consulta trabajo con tres pilares fundamentales que aplico a cada persona:</p>
 
 <h3>1. Individualizacion</h3>
-<p>No existe un plan que funcione para todo el mundo. Cada persona tiene su historia, sus objetivos, su metabolismo, sus circunstancias familiares y laborales. Por eso <strong>cada plan que diseno se construye desde cero</strong> para ti. Nada de PDFs genericos ni protocolos copiados.</p>
+<p class="reveal">No existe un plan que funcione para todo el mundo. Cada persona tiene su historia, sus objetivos, su metabolismo, sus circunstancias familiares y laborales. Por eso <strong>cada plan que diseno se construye desde cero</strong> para ti. Nada de PDFs genericos ni protocolos copiados.</p>
 
 <h3>2. Habitos sostenibles</h3>
-<p>Nada de restricciones extremas. Trabajamos cambios que puedas mantener de por vida, sin sentirte privada de nada que te guste. Si te encanta el chocolate, el chocolate sigue en tu plan. La clave esta en el equilibrio, no en la prohibicion.</p>
+<p class="reveal">Nada de restricciones extremas. Trabajamos cambios que puedas mantener de por vida, sin sentirte privada de nada que te guste. Si te encanta el chocolate, el chocolate sigue en tu plan. La clave esta en el equilibrio, no en la prohibicion.</p>
 
 <h3>3. Acompanamiento real</h3>
-<p>Estoy contigo en el proceso: consultas regulares cada 2-3 semanas, apoyo por WhatsApp de lunes a viernes de 8:00 a 20:00 y ajustes continuos para que nunca sientas que caminas sola.</p>
+<p class="reveal">Estoy contigo en el proceso: consultas regulares cada 2-3 semanas, apoyo por WhatsApp de lunes a viernes de 8:00 a 20:00 y ajustes continuos para que nunca sientas que caminas sola.</p>
 
-<blockquote>"Comer bien no deberia ser complicado. Mi trabajo es que dejes de sentirlo asi."</blockquote>
+<blockquote class="reveal">"Comer bien no deberia ser complicado. Mi trabajo es que dejes de sentirlo asi."</blockquote>
 
-<h2>Como Funciona la Reeducacion Alimentaria Conmigo</h2>
+<h2 class="reveal">Como Funciona la Reeducacion Alimentaria Conmigo</h2>
 
 <h3>Primera consulta (45 minutos)</h3>
-<p>Recogemos toda la informacion: motivo de consulta, habitos actuales, antecedentes, objetivos, sintomas, intolerancias, alergias y preferencias. En consulta presencial, ademas, realizamos medicion antropometrica y valoracion de composicion corporal con bioimpedancia.</p>
+<p class="reveal">Recogemos toda la informacion: motivo de consulta, habitos actuales, antecedentes, objetivos, sintomas, intolerancias, alergias y preferencias. En consulta presencial, ademas, realizamos medicion antropometrica y valoracion de composicion corporal con bioimpedancia.</p>
 
 <h3>Tu plan nutricional personalizado</h3>
-<p>En 5-7 dias recibes tu plan, disenado exclusivamente para ti. No es un menu rigido: es una guia flexible que se adapta a tus gustos, tu ritmo de vida y tus circunstancias reales.</p>
+<p class="reveal">En 5-7 dias recibes tu plan, disenado exclusivamente para ti. No es un menu rigido: es una guia flexible que se adapta a tus gustos, tu ritmo de vida y tus circunstancias reales.</p>
 
 <h3>Seguimiento continuo</h3>
-<p>Cada 2-3 semanas revisamos juntas como va el proceso. Ajustamos lo que haga falta, celebramos los avances y trabajamos las dificultades. Entre sesiones, me tienes disponible por WhatsApp para cualquier duda del dia a dia.</p>
+<p class="reveal">Cada 2-3 semanas revisamos juntas como va el proceso. Ajustamos lo que haga falta, celebramos los avances y trabajamos las dificultades. Entre sesiones, me tienes disponible por WhatsApp para cualquier duda del dia a dia.</p>
 
-<h2>Mejoras que Notaras</h2>
+<h2 class="reveal">Mejoras que Notaras</h2>
 
-<p>Las personas que inician un proceso de reeducacion alimentaria suelen notar:</p>
+<p class="reveal">Las personas que inician un proceso de reeducacion alimentaria suelen notar:</p>
 
-<ul>
+<ul class="reveal">
   <li><strong>Mas energia y menos fatiga</strong> desde las primeras 2-3 semanas</li>
   <li><strong>Mejor digestion:</strong> menos hinchazon, gases y pesadez</li>
   <li><strong>Reduccion de la inflamacion</strong> corporal</li>
@@ -298,11 +366,11 @@
   <li><strong>Mejor descanso</strong> y estado de animo general</li>
 </ul>
 
-<h2>Casos Especiales</h2>
+<h2 class="reveal">Casos Especiales</h2>
 
-<p>La reeducacion alimentaria se adapta a cualquier situacion. Trabajo habitualmente con personas que tienen:</p>
+<p class="reveal">La reeducacion alimentaria se adapta a cualquier situacion. Trabajo habitualmente con personas que tienen:</p>
 
-<ul>
+<ul class="reveal">
   <li>Intolerancias alimentarias (lactosa, gluten, fructosa)</li>
   <li>Problemas digestivos cronicos (hinchazon, colon irritable)</li>
   <li>Necesidad de <a href="../servicios.html">perder peso de forma saludable</a>, sin efecto rebote</li>
@@ -310,31 +378,31 @@
   <li>Fatiga cronica o falta de energia</li>
 </ul>
 
-<h2>Preguntas Frecuentes</h2>
+<h2 class="reveal">Preguntas Frecuentes</h2>
 
 <h3>Cuanto tiempo dura el proceso?</h3>
-<p>No hay una duracion fija. Depende de cada persona y sus objetivos. Algunas personas notan cambios significativos en 2-3 meses, pero la reeducacion alimentaria es, en realidad, un aprendizaje para toda la vida. El seguimiento regular suele durar entre 3 y 6 meses.</p>
+<p class="reveal">No hay una duracion fija. Depende de cada persona y sus objetivos. Algunas personas notan cambios significativos en 2-3 meses, pero la reeducacion alimentaria es, en realidad, un aprendizaje para toda la vida. El seguimiento regular suele durar entre 3 y 6 meses.</p>
 
 <h3>Puedo seguir comiendo lo que me gusta?</h3>
-<p>Si. No elimino ningun alimento de tu vida. El objetivo es que aprendas a integrar todo tipo de alimentos de forma equilibrada, sin culpa y sin obsesion.</p>
+<p class="reveal">Si. No elimino ningun alimento de tu vida. El objetivo es que aprendas a integrar todo tipo de alimentos de forma equilibrada, sin culpa y sin obsesion.</p>
 
 <h3>Funciona para hombres tambien?</h3>
-<p>Absolutamente. Aunque muchas de mis pacientes son mujeres, la reeducacion alimentaria funciona exactamente igual para hombres. El plan se adapta a cada persona independientemente de su genero.</p>
+<p class="reveal">Absolutamente. Aunque muchas de mis pacientes son mujeres, la reeducacion alimentaria funciona exactamente igual para hombres. El plan se adapta a cada persona independientemente de su genero.</p>
 
 <div class="blog-cta-box reveal">
   <h3>Da el primer paso hacia una mejor relacion con la comida</h3>
-  <p>Reserva tu primera consulta conmigo. Online o presencial en Guadalajara.</p>
+  <p class="reveal">Reserva tu primera consulta conmigo. Online o presencial en Guadalajara.</p>
   <a href="../contacto.html" class="btn-primary">Reservar primera consulta</a>
 </div>
 
-<nav class="blog-related reveal" aria-label="Articulos relacionados">
+<aside class="blog-related reveal" aria-label="Articulos relacionados">
   <h3>Sigue leyendo</h3>
-  <ul>
+  <ul class="reveal">
     <li><a href="cambiar-habitos-sin-hambre.html">Como cambiar tus habitos alimenticios sin pasar hambre</a></li>
     <li><a href="por-que-las-dietas-no-funcionan.html">Por que las dietas milagro no funcionan (y que hacer en su lugar)</a></li>
     <li><a href="hinchazón-abdominal-que-comer.html">Hinchazon abdominal: que comer para reducirla</a></li>
   </ul>
-</nav>
+</aside>
 
 </article>
 
@@ -343,6 +411,8 @@
   <span class="footer-copy">Dietista - Auxiliar de Enfermeria - Guadalajara</span>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>

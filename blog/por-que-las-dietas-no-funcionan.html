@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -15,6 +15,9 @@
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Eva Vidal Nutricion">
 <link rel="canonical" href="https://evavidalnutricion.com/blog/por-que-las-dietas-no-funcionan.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {
@@ -183,6 +186,58 @@
 <div id="fx-cursor"></div>
 <div id="fx-cursor-ring"></div>
 
+<!-- COOKIE BANNER (AEPD-compliant: Aceptar / Configurar / Solo esenciales) -->
+<div id="cookie-banner" role="region" aria-live="polite" aria-label="Aviso de cookies">
+  <p>
+    Esta web utiliza cookies propias (técnicas, necesarias) y de terceros (analíticas, Google Analytics).
+    Puedes elegir qué cookies aceptas o consultar nuestra
+    <a href="#" onclick="showLegalPage('cookies'); return false;">Política de Cookies</a>.
+    Las cookies técnicas no se pueden desactivar porque son necesarias para el funcionamiento del sitio.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn-accept" id="cookie-accept">Aceptar todas</button>
+    <button class="cookie-btn-config" id="cookie-config">Configurar cookies</button>
+    <button class="cookie-btn-reject" id="cookie-reject">Solo esenciales</button>
+  </div>
+</div>
+
+<!-- PANEL CONFIGURACIÓN DE COOKIES (AEPD granular) -->
+<div id="cookie-config-panel" role="dialog" aria-modal="true" aria-label="Configuración de cookies" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(30,48,64,0.55);align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#F0F3FA;border-radius:8px;max-width:520px;width:100%;padding:2rem;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.35);">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#3a5a78;margin-bottom:0.5rem;">Configuración de <em style="font-style:italic;color:#5588aa;">cookies</em></h2>
+    <p style="font-size:0.82rem;color:#5c7385;line-height:1.65;margin-bottom:1.5rem;">Puedes activar o desactivar cada categoría de cookies. Las cookies técnicas siempre están activas porque son imprescindibles para el funcionamiento del sitio.</p>
+
+    <!-- Técnicas: siempre activas -->
+    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div>
+          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies técnicas (siempre activas)</p>
+          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Guardan tu preferencia de cookies y son imprescindibles para la navegación. No requieren consentimiento (art. 22.2 LSSI-CE).</p>
+        </div>
+        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#5588aa;background:#ddeef8;padding:0.25rem 0.6rem;border-radius:3px;white-space:nowrap;flex-shrink:0;">Siempre activas</span>
+      </div>
+    </div>
+
+    <!-- Analíticas: toggle -->
+    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div style="flex:1;">
+          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies analíticas (Google Analytics)</p>
+          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Miden el tráfico y el comportamiento de navegación de forma anónima. Nos ayudan a mejorar el sitio. Solo se activan con tu consentimiento.</p>
+        </div>
+        <label style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;flex-shrink:0;" aria-label="Activar cookies analíticas">
+          <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;accent-color:#3a5a78;cursor:pointer;">
+        </label>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <button id="cookie-config-save" style="background:#3a5a78;color:#fff;border:none;cursor:pointer;padding:0.7rem 1.5rem;border-radius:3px;font-size:0.82rem;font-weight:500;font-family:inherit;letter-spacing:0.04em;transition:background 0.2s;flex:1;">Guardar preferencias</button>
+      <button id="cookie-config-cancel" style="background:transparent;color:#5c7385;border:1px solid rgba(30,48,64,0.2);cursor:pointer;padding:0.7rem 1.25rem;border-radius:3px;font-size:0.82rem;font-family:inherit;transition:border-color 0.2s;flex:1;">Cancelar</button>
+    </div>
+  </div>
+</div>
+
 
 <nav id="main-nav">
   <a href="../index.html" class="nav-logo"><img src="../logo.png" alt="Eva Vidal Nutricion"></a>
@@ -212,11 +267,11 @@
 </div>
 
 <article class="blog-article">
-  <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+  <div class="blog-breadcrumb" aria-label="Breadcrumb">
     <a href="../index.html">Inicio</a> <span>/</span>
     <a href="../blog/index.html">Blog</a> <span>/</span>
     <span>Las dietas no funcionan</span>
-  </nav>
+  </div>
   
 <span class="blog-tag reveal">Perdida de Peso</span>
 <h1>Por que las Dietas Milagro <em>No Funcionan</em> (y Que Hacer en su Lugar)</h1>
@@ -226,28 +281,28 @@
   <span>7 min de lectura</span>
 </div>
 
-<p>Dieta del pepino, dieta keto, dieta del ayuno intermitente estricto, dieta detox... Cada mes aparece una nueva dieta "revolucionaria" que promete resultados rapidos. Y la realidad es que <strong>el 95% de las personas que hacen dietas restrictivas recuperan el peso perdido en menos de 2 anos</strong>.</p>
+<p class="reveal">Dieta del pepino, dieta keto, dieta del ayuno intermitente estricto, dieta detox... Cada mes aparece una nueva dieta "revolucionaria" que promete resultados rapidos. Y la realidad es que <strong>el 95% de las personas que hacen dietas restrictivas recuperan el peso perdido en menos de 2 anos</strong>.</p>
 
-<p>Como dietista, veo las consecuencias de estas dietas a diario en mi consulta. Personas frustradas, con el metabolismo ralentizado y una relacion rota con la comida. Por eso quiero explicarte que esta pasando realmente y que puedes hacer de forma diferente.</p>
+<p class="reveal">Como dietista, veo las consecuencias de estas dietas a diario en mi consulta. Personas frustradas, con el metabolismo ralentizado y una relacion rota con la comida. Por eso quiero explicarte que esta pasando realmente y que puedes hacer de forma diferente.</p>
 
-<h2>Que le pasa a tu cuerpo cuando haces una dieta muy restrictiva</h2>
+<h2 class="reveal">Que le pasa a tu cuerpo cuando haces una dieta muy restrictiva</h2>
 
 <h3>Tu metabolismo se ralentiza</h3>
-<p>Cuando reduces drasticamente las calorias, tu cuerpo baja el gasto energetico en reposo. Es un mecanismo de supervivencia: si entra menos energia, el cuerpo gasta menos para sobrevivir. El problema es que cuando vuelves a comer normal, tu metabolismo sigue "en modo ahorro" y almacenas grasa con mas facilidad.</p>
+<p class="reveal">Cuando reduces drasticamente las calorias, tu cuerpo baja el gasto energetico en reposo. Es un mecanismo de supervivencia: si entra menos energia, el cuerpo gasta menos para sobrevivir. El problema es que cuando vuelves a comer normal, tu metabolismo sigue "en modo ahorro" y almacenas grasa con mas facilidad.</p>
 
 <h3>Tus hormonas del hambre se disparan</h3>
-<p>La grelina (hormona del hambre) aumenta y la leptina (hormona de la saciedad) disminuye. Resultado: tienes mas hambre que antes de empezar la dieta y necesitas comer mas para sentirte satisfecha.</p>
+<p class="reveal">La grelina (hormona del hambre) aumenta y la leptina (hormona de la saciedad) disminuye. Resultado: tienes mas hambre que antes de empezar la dieta y necesitas comer mas para sentirte satisfecha.</p>
 
 <h3>Pierdes musculo, no solo grasa</h3>
-<p>Las dietas muy bajas en calorias no distinguen: el cuerpo consume tanto grasa como musculo. Perder musculo significa perder metabolismo activo, lo que hace aun mas facil recuperar peso despues.</p>
+<p class="reveal">Las dietas muy bajas en calorias no distinguen: el cuerpo consume tanto grasa como musculo. Perder musculo significa perder metabolismo activo, lo que hace aun mas facil recuperar peso despues.</p>
 
-<h2>La alternativa: cambiar habitos de verdad</h2>
+<h2 class="reveal">La alternativa: cambiar habitos de verdad</h2>
 
-<p>La <a href="reeducacion-alimentaria-guia.html">reeducacion alimentaria</a> parte de una premisa muy distinta: <strong>no se trata de comer menos, sino de comer mejor, de forma que puedas mantener toda la vida</strong>.</p>
+<p class="reveal">La <a href="reeducacion-alimentaria-guia.html">reeducacion alimentaria</a> parte de una premisa muy distinta: <strong>no se trata de comer menos, sino de comer mejor, de forma que puedas mantener toda la vida</strong>.</p>
 
-<p>Esto implica:</p>
+<p class="reveal">Esto implica:</p>
 
-<ul>
+<ul class="reveal">
   <li>Un plan personalizado que respete tus gustos y tu estilo de vida</li>
   <li>Sin alimentos prohibidos: todo cabe en un patron alimentario equilibrado</li>
   <li>Cambios graduales que se integran sin esfuerzo heroico</li>
@@ -255,13 +310,13 @@
   <li>Apoyo real entre consultas (WhatsApp, dudas del dia a dia)</li>
 </ul>
 
-<p>Cuando trabajas asi, los cambios son mas lentos pero <strong>permanentes</strong>. Mi metodo se centra en la salud y el bienestar: mejorar digestiones, reducir inflamacion, mejorar energia. Y como consecuencia natural de mejorar los habitos, se produce una perdida de volumen y peso sostenida.</p>
+<p class="reveal">Cuando trabajas asi, los cambios son mas lentos pero <strong>permanentes</strong>. Mi metodo se centra en la salud y el bienestar: mejorar digestiones, reducir inflamacion, mejorar energia. Y como consecuencia natural de mejorar los habitos, se produce una perdida de volumen y peso sostenida.</p>
 
-<h2>Como saber si necesitas un cambio de enfoque</h2>
+<h2 class="reveal">Como saber si necesitas un cambio de enfoque</h2>
 
-<p>Si te identificas con alguna de estas situaciones, probablemente necesites dejar las dietas y empezar un proceso de <a href="cambiar-habitos-sin-hambre.html">cambio de habitos real</a>:</p>
+<p class="reveal">Si te identificas con alguna de estas situaciones, probablemente necesites dejar las dietas y empezar un proceso de <a href="cambiar-habitos-sin-hambre.html">cambio de habitos real</a>:</p>
 
-<ul>
+<ul class="reveal">
   <li>Has hecho mas de 3 dietas en los ultimos 5 anos</li>
   <li>Siempre recuperas el peso que pierdes (y a veces mas)</li>
   <li>Te sientes culpable cuando comes algo "prohibido"</li>
@@ -271,26 +326,28 @@
 
 <div class="blog-cta-box reveal">
   <h3>Deja de hacer dietas. Empieza a comer bien de verdad.</h3>
-  <p>Primera consulta de nutricion: online o presencial en Guadalajara.</p>
+  <p class="reveal">Primera consulta de nutricion: online o presencial en Guadalajara.</p>
   <a href="../contacto.html" class="btn-primary">Reservar consulta</a>
 </div>
 
-<nav class="blog-related reveal" aria-label="Articulos relacionados">
+<aside class="blog-related reveal" aria-label="Articulos relacionados">
   <h3>Sigue leyendo</h3>
-  <ul>
+  <ul class="reveal">
     <li><a href="reeducacion-alimentaria-guia.html">Guia completa de reeducacion alimentaria</a></li>
     <li><a href="cambiar-habitos-sin-hambre.html">Como cambiar habitos sin pasar hambre</a></li>
     <li><a href="hinchaz%C3%B3n-abdominal-que-comer.html">Hinchazon abdominal: que comer para reducirla</a></li>
   </ul>
-</nav>
+</aside>
 
 </article>
 
 <footer>
-  <span class="footer-logo"><img src="../logo.png" alt="Eva Vidal Nutricion" style="height:45px;width:auto;object-fit:contain;"></span>
+  <span class="footer-logo"><img src="../logo.png" alt="Eva Vidal Nutricion" loading="lazy" style="height:45px;width:auto;object-fit:contain;"></span>
   <span class="footer-copy">Dietista - Auxiliar de Enfermeria - Guadalajara</span>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="../script.js"></script>
 </body>
 </html>
