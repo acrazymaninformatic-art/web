@@ -88,22 +88,26 @@ class TalleresHandler(SimpleHTTPRequestHandler):
                     ["git", "commit", "-m", "Actualizar talleres desde panel de control"],
                     cwd=BASE_DIR, capture_output=True, text=True
                 )
-                git_log.append(f"commit: {r_commit.returncode} -> {r_commit.stdout.strip()}")
+                commit_out = (r_commit.stdout + " " + r_commit.stderr).lower()
+                nada_nuevo = "nothing to commit" in commit_out or "nada para confirmar" in commit_out
 
                 # git push
                 r_push = subprocess.run(
                     ["git", "push", "origin", "main"],
                     cwd=BASE_DIR, capture_output=True, text=True
                 )
-                git_log.append(f"push: {r_push.returncode} -> {r_push.stderr.strip() or r_push.stdout.strip()}")
+
+                mensaje_final = "Talleres actualizados y subidos a la web correctamente."
+                if nada_nuevo:
+                    mensaje_final = "Tus talleres ya estaban al día con la web."
 
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json; charset=utf-8")
                 self.end_headers()
                 resp = {
                     "success": True,
-                    "message": "Talleres guardados y subidos a la web correctamente.",
-                    "git_status": git_log
+                    "message": mensaje_final,
+                    "git_status": r_push.stderr.strip() or r_push.stdout.strip()
                 }
                 self.wfile.write(json.dumps(resp, ensure_ascii=False).encode("utf-8"))
 
