@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="color-scheme" content="dark">
+<title>Blog de Nutricion | Eva Vidal Nutricion - Dietista en Guadalajara</title>
+<meta name="description" content="Articulos sobre reeducacion alimentaria, salud digestiva, perdida de peso saludable y recetas. Blog de Eva Vidal, dietista colegiada en Guadalajara.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://evavidalnutricion.com/blog/">
+<link rel="stylesheet" href="../style.css">
+<style>
+.blog-index {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 60px) 2rem 5rem;
+}
+.blog-index-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.blog-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.blog-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 2rem;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px var(--shadow-color);
+}
+.blog-card-tag {
+  display: inline-block;
+  background: var(--sage-light);
+  color: var(--accent);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+}
+.blog-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+.blog-card p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  font-weight: 300;
+}
+.blog-card-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  opacity: 0.7;
+}
+.blog-card-pillar {
+  border-left: 3px solid var(--sage);
+}
+@media (max-width: 768px) {
+  .blog-index { padding: calc(var(--nav-h) + 40px) 1.25rem 3rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo"><img src="../logo.png" alt="Eva Vidal Nutricion"></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#sobre-mi">Sobre mi</a></li>
+    <li><a href="../servicios.html">Servicios</a></li>
+    <li><a href="../blog/">Blog</a></li>
+    <li><a href="../talleres.html">Talleres</a></li>
+    <li><a href="../testimonios.html">Opiniones</a></li>
+    <li><a href="../contacto.html">Contacto</a></li>
+  </ul>
+  <a href="../contacto.html" class="nav-cta">Reservar cita</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-drawer">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Menu" aria-modal="true" aria-hidden="true" inert>
+  <ul>
+    <li><a href="../index.html#sobre-mi" class="drawer-link">Sobre mi</a></li>
+    <li><a href="../servicios.html" class="drawer-link">Servicios</a></li>
+    <li><a href="../blog/" class="drawer-link">Blog</a></li>
+    <li><a href="../talleres.html" class="drawer-link">Talleres</a></li>
+    <li><a href="../testimonios.html" class="drawer-link">Opiniones</a></li>
+    <li><a href="../contacto.html" class="drawer-link">Contacto</a></li>
+  </ul>
+  <a href="../contacto.html" class="drawer-cta drawer-link">Reservar cita</a>
+</div>
+
+<div class="blog-index">
+  <div class="blog-index-header">
+    <div class="section-eyebrow" style="justify-content:center;">
+      <span class="section-eyebrow-dot"></span>
+      <span>Blog</span>
+    </div>
+    <h1 class="section-title">Articulos sobre <em>nutricion y salud</em></h1>
+  </div>
+
+  <div class="blog-cards">
+
+    <a href="reeducacion-alimentaria-guia.html" class="blog-card blog-card-pillar">
+      <span class="blog-card-tag">Guia completa</span>
+      <h3>Reeducacion Alimentaria: Guia Completa para Cambiar tu Relacion con la Comida</h3>
+      <p>Que es la reeducacion alimentaria, por que las dietas restrictivas no funcionan y como empezar un cambio de habitos real y duradero.</p>
+      <span class="blog-card-meta">12 min de lectura</span>
+    </a>
+
+    <a href="por-que-las-dietas-no-funcionan.html" class="blog-card">
+      <span class="blog-card-tag">Perdida de peso</span>
+      <h3>Por que las Dietas Milagro No Funcionan (y Que Hacer en su Lugar)</h3>
+      <p>El efecto yo-yo, el metabolismo ralentizado y la perdida de musculo. Que le pasa a tu cuerpo con las dietas extremas y cual es la alternativa real.</p>
+      <span class="blog-card-meta">7 min de lectura</span>
+    </a>
+
+    <a href="cambiar-habitos-sin-hambre.html" class="blog-card">
+      <span class="blog-card-tag">Reeducacion alimentaria</span>
+      <h3>Como Cambiar tus Habitos Alimenticios sin Pasar Hambre</h3>
+      <p>5 estrategias practicas para mejorar tu alimentacion sin restricciones, sin ansiedad y sin que tu cuerpo se rebele.</p>
+      <span class="blog-card-meta">6 min de lectura</span>
+    </a>
+
+    <a href="hinchaz%C3%B3n-abdominal-que-comer.html" class="blog-card">
+      <span class="blog-card-tag">Salud digestiva</span>
+      <h3>Hinchazon Abdominal: Que Comer para Reducirla</h3>
+      <p>Causas de la hinchazon, alimentos que ayudan, alimentos que la empeoran y habitos para mejorar tu digestion dia a dia.</p>
+      <span class="blog-card-meta">6 min de lectura</span>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo"><img src="../logo.png" alt="Eva Vidal Nutricion" style="height:45px;width:auto;object-fit:contain;"></span>
+  <span class="footer-copy">Dietista - Auxiliar de Enfermeria - Guadalajara</span>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
