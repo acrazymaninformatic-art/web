@@ -1,2 +1,2 @@
 // Generado por Gestor de Talleres
-window.MANTENIMIENTO = {"activo": false};
+window.MANTENIMIENTO = {"activo": true};

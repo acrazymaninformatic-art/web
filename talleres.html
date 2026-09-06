@@ -26,6 +26,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .maintenance-state { display:none; max-width:720px; margin:2rem auto 0; padding:4.5rem 2rem; text-align:center; background:linear-gradient(145deg, rgba(30,45,74,.96), rgba(14,19,32,.98)); border:1px solid rgba(184,223,245,.22); border-radius:14px; box-shadow:0 25px 70px rgba(0,0,0,.22); }
+  .maintenance-state.active { display:block; animation:maintenance-in .7s ease both; }
+  .maintenance-state-mark { width:48px; height:48px; margin:0 auto 1.5rem; border:1px solid rgba(184,223,245,.5); border-radius:50%; display:grid; place-items:center; color:#b8dff5; }
+  .maintenance-state-mark svg { width:22px; height:22px; }
+  .maintenance-state h3 { margin:0 0 .75rem; color:#edf2fc; font:400 clamp(2rem,5vw,3.2rem)/1.05 'Cormorant Garamond', Georgia, serif; }
+  .maintenance-state p { max-width:470px; margin:0 auto; color:#9bb0d6; font-size:1rem; line-height:1.8; }
+  @keyframes maintenance-in { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+</style>
 <!-- JSON-LD SEO -->
 <script type="application/ld+json">
 {
@@ -150,6 +159,13 @@
     </h2>
 
     <div class="talleres-layout reveal">
+      <div class="maintenance-state" id="talleres-maintenance" role="status" aria-live="polite">
+        <div class="maintenance-state-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Volveremos pronto</h3>
+        <p>Estamos realizando unos ajustes en esta sección. Gracias por tu paciencia; los talleres estarán disponibles de nuevo en breve.</p>
+      </div>
       
       <!-- Las tarjetas se generan automáticamente desde talleres-config.js -->
       <div class="talleres-grid" id="talleres-grid">
@@ -170,11 +186,20 @@
 </section>
 
 <!-- Sistema de talleres dinámico -->
-<script src="talleres-config.js"></script>
+<script src="talleres-config.js?v=1788696808"></script>
+<script src="mantenimiento-config.js?v=1788696808"></script>
 <script>
 (function() {
   const grid = document.getElementById('talleres-grid');
   const emptyMsg = document.getElementById('talleres-empty');
+  const maintenance = document.getElementById('talleres-maintenance');
+
+  if (window.MANTENIMIENTO && window.MANTENIMIENTO.activo) {
+    grid.style.display = 'none';
+    emptyMsg.style.display = 'none';
+    maintenance.classList.add('active');
+    return;
+  }
   
   if (!window.TALLERES || TALLERES.length === 0) {
     grid.style.display = 'none';
