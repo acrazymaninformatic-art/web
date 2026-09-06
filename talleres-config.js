@@ -9,6 +9,6 @@ window.TALLERES = [
     "duracion": "2 horas",
     "precio": 25,
     "modalidad": "Online (Zoom)",
-    "estado": "abierto"
+    "estado": "completo"
   }
 ];
