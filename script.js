@@ -113,6 +113,32 @@
   applyContent(); if (location.hash === '#panel-eva') openPanel();
 })();
 
+// ── MODO MANTENIMIENTO GLOBAL ───────────────────────────────────────────────
+(function() {
+  'use strict';
+  var style = document.createElement('style');
+  style.textContent = '#site-maintenance-gate{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;padding:1.5rem;background:radial-gradient(circle at 50% 0%,rgba(30,45,74,.96),rgba(14,19,32,.99) 68%);color:#edf2fc;text-align:center;opacity:0;animation:site-maintenance-in .6s ease forwards}#site-maintenance-gate .maintenance-card{width:min(680px,100%);padding:clamp(2.5rem,8vw,5rem) 2rem;border:1px solid rgba(184,223,245,.24);border-radius:16px;background:rgba(22,32,51,.66);box-shadow:0 30px 100px rgba(0,0,0,.35)}#site-maintenance-gate .maintenance-mark{width:52px;height:52px;margin:0 auto 1.5rem;border:1px solid rgba(184,223,245,.55);border-radius:50%;display:grid;place-items:center;color:#b8dff5;animation:site-maintenance-spin 8s linear infinite}#site-maintenance-gate svg{width:24px;height:24px}#site-maintenance-gate h1{margin:0 0 .8rem;font:400 clamp(2.5rem,7vw,4.6rem)/1.02 "Cormorant Garamond",Georgia,serif}#site-maintenance-gate p{max-width:480px;margin:0 auto;color:#9bb0d6;font:400 1rem/1.8 "DM Sans",system-ui,sans-serif}body.site-maintenance-active>*:not(#site-maintenance-gate){visibility:hidden}@keyframes site-maintenance-in{to{opacity:1}}@keyframes site-maintenance-spin{to{transform:rotate(360deg)}}';
+  document.head.appendChild(style);
+
+  function showMaintenance() {
+    if (document.getElementById('site-maintenance-gate')) return;
+    var gate = document.createElement('div');
+    gate.id = 'site-maintenance-gate';
+    gate.setAttribute('role', 'alert');
+    gate.innerHTML = '<div class="maintenance-card"><div class="maintenance-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg></div><h1>Volveremos pronto</h1><p>Estamos realizando unos ajustes en la web. Gracias por tu paciencia; estaremos de vuelta en breve.</p></div>';
+    document.body.appendChild(gate);
+    document.body.classList.add('site-maintenance-active');
+  }
+
+  fetch('/mantenimiento-config.js?v=' + Date.now(), { cache: 'no-store' })
+    .then(function(response) { return response.ok ? response.text() : ''; })
+    .then(function(source) {
+      var match = source.match(/window\.MANTENIMIENTO\s*=\s*(\{.*?\})\s*;/);
+      if (match && JSON.parse(match[1]).activo === true) showMaintenance();
+    })
+    .catch(function() {});
+})();
+
 // ════════════════════════════════════════════════════════════════════════════
 // SEGURIDAD Y RGPD
 //
