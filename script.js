@@ -127,7 +127,11 @@
     gate.setAttribute('role', 'alert');
     gate.innerHTML = '<div class="maintenance-card"><div class="maintenance-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg></div><h1>Volveremos pronto</h1><p>Estamos realizando unos ajustes en la web. Gracias por tu paciencia; estaremos de vuelta en breve.</p></div>';
     document.body.appendChild(gate);
+    Array.prototype.slice.call(document.body.children).forEach(function(child) {
+      if (child !== gate) child.remove();
+    });
     document.body.classList.add('site-maintenance-active');
+    document.body.style.overflow = 'hidden';
   }
 
   fetch('/mantenimiento-config.js?v=' + Date.now(), { cache: 'no-store' })
