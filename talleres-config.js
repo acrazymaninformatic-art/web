@@ -1,3 +1,14 @@
-// Archivo de datos para la web pública
-// Generado y actualizado automáticamente desde el Panel de Gestión de Talleres
-window.TALLERES = [];
+// Archivo generado por Gestor de Talleres
+window.TALLERES = [
+  {
+    "id": "taller-1788695299176",
+    "titulo": "saadaaadd",
+    "descripcion": "d",
+    "dia": "6",
+    "mes": "Oct",
+    "duracion": "2 horas",
+    "precio": 25,
+    "modalidad": "Online (Zoom)",
+    "estado": "abierto"
+  }
+];
