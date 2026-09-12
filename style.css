@@ -1,5 +1,4 @@
-
-  /* ─── DARK THEME (PERMANENT) ──────────────────────────────────────────────── */
+/* ─── DARK THEME (PERMANENT) ──────────────────────────────────────────────── */
   :root {
     color-scheme: dark;
 
@@ -30,61 +29,6 @@
     --input-bg: #141c2e;
   }
 
-  /* Universal Component Dynamic Adaptations */
-  .stat,
-  .pillar,
-  .service-card,
-  .payment-card,
-  .faq-inner,
-  .google-review-card,
-  .benefit-card,
-  .svc-panel,
-  .contact-card,
-  .faq-accordion-item {
-    background: var(--card-bg) !important;
-    border-color: var(--card-border) !important;
-    color: var(--text) !important;
-    box-shadow: 0 4px 20px var(--shadow-color) !important;
-  }
-
-  .creator-admin-card,
-  .creator-admin-sidebar,
-  .creator-admin-main {
-    background: var(--admin-card) !important;
-    color: var(--text) !important;
-    border-color: var(--card-border) !important;
-  }
-
-  #creator-admin-login,
-  #creator-admin-shell {
-    background: var(--admin-bg) !important;
-    color: var(--text) !important;
-  }
-
-  .legal-page-content,
-  #cookie-config-modal .cookie-modal-inner {
-    background: var(--modal-bg) !important;
-    color: var(--text) !important;
-    border-color: var(--card-border) !important;
-  }
-
-  input, select, textarea {
-    background-color: var(--input-bg) !important;
-    color: var(--text) !important;
-    border-color: var(--card-border) !important;
-  }
-
-  #main-nav {
-    background: var(--glass-bg) !important;
-    border-color: var(--glass-border) !important;
-  }
-
-  .nav-drawer {
-    background: var(--admin-card) !important;
-    border-color: var(--card-border) !important;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   /* NOTA: cursor nativo del SO siempre visible para accesibilidad.
      El cursor personalizado (#fx-cursor) es un efecto decorativo adicional
      que NO oculta el cursor del sistema. */
@@ -100,23 +44,12 @@
     overflow-x: hidden;
     max-width: 100vw;
     /* Degradado maestro continuo — cubre toda la altura de la página */
-    background:
-      linear-gradient(
-        180deg,
-        #0e1320        0%,    /* hero */
-        #1a2238        8%,    /* about top */
-        #131929        16%,   /* about bottom */
-        #0e1320        22%,   /* method */
-        #131929        30%,   /* services */
-        #1a2238        38%,   /* included */
-        #0e1320        46%,   /* process */
-        #131929        52%,   /* payment */
-        #1e2d4a        60%,   /* testimonials */
-        #1a2238        68%,   /* faq */
-        #131929        76%,   /* talleres */
-        #1e2d4a        84%,   /* cta */
-        #2a3d52        100%
-      );
+    background-color: #0e1320 !important;
+    background-image: 
+      radial-gradient(ellipse at 20% 30%, rgba(26, 34, 56, 0.8) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(19, 25, 41, 0.9) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 50%, rgba(20, 28, 45, 0.5) 0%, transparent 80%) !important;
+    background-attachment: fixed !important;
     color: var(--text);
     overflow-x: hidden;
   }
@@ -131,9 +64,6 @@
     width: calc(100% - 3rem);
     max-width: 1200px;
     z-index: 200;
-    background: rgba(14,19,32,0.65);
-    backdrop-filter: saturate(200%) blur(28px);
-    -webkit-backdrop-filter: saturate(200%) blur(28px);
     border: 1px solid rgba(126,168,232,0.14);
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(30,48,64,0.12);
@@ -143,7 +73,6 @@
     transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   #main-nav.nav-scrolled {
-    background: rgba(14,19,32,0.92);
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     border-color: rgba(126,168,232,0.22);
   }
@@ -1249,7 +1178,7 @@
   }
   .nav-drawer.open {
     visibility: visible;
-    transform: translateY(0);
+    
     opacity: 1;
     pointer-events: auto;
     transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s, visibility 0s linear 0s;
@@ -1499,7 +1428,7 @@
   .svc-panel.active { display: block; }
   @keyframes svcFadeIn {
     from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1;  }
   }
 
   .svc-panel-content {
@@ -2387,3 +2316,174 @@
   }
 
 
+/* =========================================================================
+   ✨ SISTEMA DE DISEÑO UNIFICADO (NAVBAR GLASS + CLEAN CARDS)
+   ========================================================================= */
+
+/* ── 1. BARRA DE NAVEGACIÓN (LIQUID GLASS) ─────────────────────────────────── */
+#main-nav {
+  border-radius: 22px !important;
+  isolation: isolate !important;
+  box-shadow: 0px 0px 21px -8px rgba(255, 255, 255, 0.3), 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+#main-nav::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  border-radius: inherit !important;
+  box-shadow: inset 0 0 12px -4px rgba(255, 255, 255, 0.15) !important;
+  background-color: rgba(14, 20, 34, 0.1) !important;
+  pointer-events: none !important;
+  transition: background-color 0.35s ease !important;
+}
+
+#main-nav::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  border-radius: inherit !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  filter: url(#glass-distortion) !important;
+  -webkit-filter: url(#glass-distortion) !important;
+  isolation: isolate !important;
+  pointer-events: none !important;
+  transform: translateZ(0) !important;
+  will-change: transform, backdrop-filter !important;
+}
+
+#main-nav.nav-scrolled::before {
+  background-color: rgba(10, 15, 26, 0.25) !important;
+}
+
+#main-nav > * {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* ── 2. TARJETAS MODERNAS Y PROFESIONALES (SIN GLASSMORPHISM) ──────────────────────── */
+.stat, .pillar, .service-card, .payment-card, .google-review-card, .benefit-card, .svc-panel, .contact-card, .taller-card, .reviews-hero-box, .landing-card, .blog-card, .blog-cta-box, .health-consent, .about-quote, .creator-admin-card, .patient-card, .c3d-card, .included-grid > div {
+    background: #101726 !important; /* Azul oscuro profundo y profesional */
+    border: 1px solid rgba(136, 180, 240, 0.08) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.6) !important;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease !important;
+    isolation: isolate;
+    /* position removed to prevent overriding .c3d-card absolute */
+    overflow: hidden;
+}
+
+/* Brillo sutil interno estilo Apple/Moderno */
+.stat::before, .pillar::before, .service-card::before, .payment-card::before, .google-review-card::before, .benefit-card::before, .svc-panel::before, .contact-card::before, .taller-card::before, .reviews-hero-box::before, .landing-card::before, .blog-card::before, .blog-cta-box::before, .health-consent::before, .about-quote::before, .creator-admin-card::before, .patient-card::before, .c3d-card::before, .included-grid > div::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: inherit !important;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* Hover moderno */
+.stat:hover, .pillar:hover, .service-card:hover, .payment-card:hover, .google-review-card:hover, .benefit-card:hover, .svc-panel:hover, .contact-card:hover, .taller-card:hover, .reviews-hero-box:hover, .landing-card:hover, .blog-card:hover, .included-grid > div:hover {
+    border-color: rgba(136, 180, 240, 0.25) !important;
+    box-shadow: 0 14px 40px -8px rgba(0,0,0,0.8), 0 0 20px -5px rgba(136, 180, 240, 0.15) !important;
+    background: #141c2d !important;
+}
+
+/* Mantener el contenido por encima del gradiente interno */
+.stat > *, .pillar > *, .service-card > *, .payment-card > *, .google-review-card > *, .benefit-card > *, .svc-panel > *, .contact-card > *, .taller-card > *, .reviews-hero-box > *, .landing-card > *, .blog-card > *, .blog-cta-box > *, .health-consent > *, .about-quote > *, .creator-admin-card > *, .patient-card > *, .c3d-card > *, .included-grid > div > * {
+    position: relative;
+    z-index: 2 !important;
+}
+
+/* Eliminar ::after porque ya no hay blur ni glassmorphism SVG en tarjetas */
+.stat::after, .pillar::after, .service-card::after, .payment-card::after, .google-review-card::after, .benefit-card::after, .svc-panel::after, .contact-card::after, .taller-card::after, .reviews-hero-box::after, .landing-card::after, .blog-card::after, .blog-cta-box::after, .health-consent::after, .about-quote::after, .creator-admin-card::after, .patient-card::after, .c3d-card::after, .included-grid > div::after {
+    display: none !important;
+}
+
+
+
+/* PREGUNTAS FRECUENTES REFINADAS (COMO TARJETAS) */
+.faq-item {
+    background: #101726 !important;
+    border: 1px solid rgba(136, 180, 240, 0.08) !important;
+    border-radius: 20px !important;
+    margin-bottom: 1.2rem !important;
+    padding: 0.5rem 1.8rem !important;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.6) !important;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease !important;
+}
+.faq-item:hover {
+    border-color: rgba(136, 180, 240, 0.25) !important;
+    box-shadow: 0 14px 40px -8px rgba(0,0,0,0.8), 0 0 20px -5px rgba(136, 180, 240, 0.15) !important;
+    background: #141c2d !important;
+}
+
+.faq-q { padding: 1.25rem 0; font-size: 1.05rem; }
+
+/* TRANSICIONES DE PÁGINA */
+body {
+    animation: fadeInPage 0.5s ease-out forwards;
+}
+body.page-exiting {
+    animation: fadeOutPage 0.35s ease-in forwards;
+}
+@keyframes fadeInPage {
+    from { opacity: 0;  }
+    to { opacity: 1;  }
+}
+@keyframes fadeOutPage {
+    from { opacity: 1;  }
+    to { opacity: 0;  }
+}
+
+/* BOTÓN VOLVER BLOG */
+.blog-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(136, 180, 240, 0.1);
+    color: var(--text);
+    border: 1px solid rgba(136, 180, 240, 0.2);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease;
+}
+.blog-back-btn:hover {
+    background: rgba(136, 180, 240, 0.2);
+    transform: translateX(-5px);
+}
+
+/* Fix testimonios overlap */
+.testimonials { padding-top: 140px !important; }
+
+/* FIX FAQ CONTAINER */
+.faq-inner {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+
+/* LIQUID GLASS NAVBAR */
+#main-nav {
+    background: rgba(16, 23, 38, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+#main-nav.nav-scrolled {
+    background: rgba(16, 23, 38, 0.75) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+}

@@ -1,0 +1,136 @@
+/* =========================================================================
+   ✨ EXPERIENCIA 3D ESPACIAL - EVA VIDAL NUTRICIÓN
+   Diseño de Lujo Sobrio y Minimalista (Estilo Apple / Linear / Quiet Luxury)
+   ========================================================================= */
+
+/* ── 1. CANVAS WEBGL 3D EN EL FONDO ──────────────────────────────────────── */
+#webgl-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+
+/* Ocultar elementos 2D redundantes */
+#fx-particles,
+#fx-blob {
+  display: none !important;
+}
+
+/* ── 2. CAPAS DE CONTENIDO Y Z-INDEX ─────────────────────────────────────── */
+.hero,
+.about,
+.services,
+.method,
+.talleres-preview,
+.testimonials,
+.site-footer {
+  position: relative;
+  z-index: 10;
+}
+
+body {
+    /* Fondo atmosférico de lujo con orbes de luz aurora en colores de marca */
+    background:
+      /* Orbe 1: Ice blue superior derecho (Hero & Barra) */
+      radial-gradient(ellipse 950px 650px at 85% 10%, rgba(136, 180, 240, 0.26) 0%, rgba(126, 168, 232, 0.08) 32%, transparent 65%),
+      /* Orbe 2: Sage medio izquierdo (Sobre mí, Pilares y Servicios) */
+      radial-gradient(ellipse 900px 700px at 12% 42%, rgba(126, 168, 232, 0.22) 0%, rgba(136, 180, 240, 0.06) 35%, transparent 65%),
+      /* Orbe 3: Azul zafiro medio derecho (Talleres, Testimonios y Proceso) */
+      radial-gradient(ellipse 950px 750px at 88% 68%, rgba(136, 180, 240, 0.18) 0%, rgba(30, 48, 78, 0.45) 40%, transparent 70%),
+      /* Orbe 4: Resplandor inferior (Contacto y Footer) */
+      radial-gradient(ellipse 900px 600px at 20% 92%, rgba(126, 168, 232, 0.18) 0%, rgba(136, 180, 240, 0.05) 35%, transparent 65%),
+      /* Base radial de profundidad medianoche */
+      radial-gradient(circle at 50% 15%, #152238 0%, #0c1220 50%, #060911 100%) !important;
+    background-attachment: fixed !important;
+    background-size: 100% 100% !important;
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Malla de constelación ambiental de micro-luz para refracción pura en todas las páginas */
+  body::before {
+    content: '' !important;
+    position: fixed !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    background-image:
+      radial-gradient(circle at 50% 50%, rgba(136, 180, 240, 0.16) 1.2px, transparent 1.2px) !important;
+    background-size: 38px 38px !important;
+    opacity: 0.55 !important;
+    mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 95%) !important;
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 95%) !important;
+  }
+
+.hero {
+  background: transparent !important;
+}
+
+/* ── 3. LAYOUT DEL HERO PARA LUCIR EL LOGO 3D ───────────────────────────── */
+@media (min-width: 992px) {
+  .hero {
+    min-height: 100vh;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-left: clamp(2.5rem, 8vw, 8.5rem) !important;
+  }
+
+  .hero-left {
+    margin: 0 !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    max-width: 620px !important;
+    padding: 2.5rem 0 !important;
+  }
+
+  .hero-eyebrow {
+    justify-content: flex-start !important;
+  }
+
+  .hero-title,
+  .hero-desc {
+    text-align: left !important;
+    margin-left: 0 !important;
+  }
+
+  .hero-actions {
+    justify-content: flex-start !important;
+  }
+}
+
+/* ── 4. BARRA DE NAVEGACIÓN (Controlada por Sistema Liquid Glass) ── */
+
+/* ── 5. SISTEMA LIQUID GLASS (TARJETAS Y BARRA) ──────────────── */
+
+/* =========================================================================
+   ✨ SISTEMA LIQUID GLASS OFICIAL (TARJETAS Y BARRA CON FILTRO SCALE="150")
+   ========================================================================= */
+
+/* ── 1. BARRA DE NAVEGACIÓN LIQUID GLASS ─────────────────────────────────── */
+/* ── 6. LENIS SMOOTH SCROLL INTEGRATION ──────────────────────────────────── */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

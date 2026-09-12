@@ -1,4 +1,31 @@
 
+// ── INYECTOR DINÁMICO DE FILTRO SVG PARA LIQUID GLASSMORPHISM (SCALE="150") ─
+(function ensureGlassFilter() {
+  if (document.getElementById('glass-distortion-svg')) return;
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.id = 'glass-distortion-svg';
+  svg.setAttribute('width', '0');
+  svg.setAttribute('height', '0');
+  svg.style.position = 'absolute';
+  svg.style.pointerEvents = 'none';
+  svg.setAttribute('aria-hidden', 'true');
+  svg.innerHTML = '<defs>' +
+    '<filter id="glass-distortion" color-interpolation-filters="sRGB" x="0%" y="0%" width="100%" height="100%">' +
+      '<feTurbulence type="fractalNoise" baseFrequency="0.006 0.006" numOctaves="2" seed="92" result="noise" />' +
+      '<feGaussianBlur in="noise" stdDeviation="2" result="blurred" />' +
+      '<feDisplacementMap in="SourceGraphic" in2="blurred" scale="45" xChannelSelector="R" yChannelSelector="G" />' +
+    '</filter>' +
+  '</defs>';
+  function insert() {
+    if (document.body && !document.getElementById('glass-distortion-svg')) {
+      document.body.insertBefore(svg, document.body.firstChild);
+    }
+  }
+  if (document.body) insert();
+  else document.addEventListener('DOMContentLoaded', insert);
+})();
+
+
 // --- PANEL PRIVADO CREADOR ---
 (function() {
   var root = document.getElementById('creator-admin');
@@ -352,6 +379,26 @@ function initAnimations() {
   document.fonts.ready.then(() => ScrollTrigger.refresh());
   window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
 
+  // ── Animación universal de tarjetas Liquid Glass con ScrollTrigger ─────────
+  var cardSelectors = '.stat, .pillar, .service-card, .taller-card, .benefit-card, .contact-card, .landing-card, .blog-card, .payment-card, .reviews-hero-box, .faq-inner';
+  document.querySelectorAll(cardSelectors).forEach(function(card) {
+    if (!card.classList.contains('reveal')) {
+      gsap.fromTo(card,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            end: 'bottom top',
+            toggleActions: 'play reverse play reverse'
+          }
+        }
+      );
+    }
+  });
+
+
   gsap.utils.toArray('.reveal').forEach(el => {
     gsap.fromTo(el,
       { opacity: 0, y: 28 },
@@ -360,7 +407,7 @@ function initAnimations() {
         scrollTrigger: {
           trigger: el,
           start: 'top 92%',
-          end: 'bottom top',
+          end: 'bottom 10%',
           toggleActions: 'play reverse play reverse'
         }
       }
@@ -815,16 +862,36 @@ document.addEventListener('keydown', function(e) {
 })();
 
 
-// ── SERVICES TABS ────────────────────────────────────────────────────────────
+// ── SERVICES TABS (TRANSICIONES SMOOTH Y LIMPIAS) ───────────────────────────
 function svcTab(idx) {
-  document.querySelectorAll('.svc-tab').forEach(function(t, i) {
+  var tabs = document.querySelectorAll('.svc-tab');
+  var panels = document.querySelectorAll('.svc-panel');
+  if (!panels.length || !panels[idx]) return;
+
+  tabs.forEach(function(t, i) {
     t.classList.toggle('active', i === idx);
     t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
   });
-  document.querySelectorAll('.svc-panel').forEach(function(p, i) {
-    p.classList.toggle('active', i === idx);
+
+  panels.forEach(function(p, i) {
+    if (i === idx) {
+      p.style.display = 'block';
+      p.classList.add('active');
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(p,
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.42, ease: 'power2.out', clearProps: 'transform' }
+        );
+      } else {
+        p.style.opacity = '1';
+        p.style.transform = 'none';
+      }
+    } else {
+      p.classList.remove('active');
+      p.style.display = 'none';
+    }
   });
-  // Ocultar el hint en cuanto el usuario selecciona cualquier tab
+
   var hint = document.querySelector('.svc-hint');
   if (hint) hint.style.display = 'none';
 }
@@ -908,10 +975,10 @@ function svcTab(idx) {
 
   // Offsets: posición, rotY, escala, opacidad para cada slot relativo al activo
   var slots = [
-    { z: 0,    ry: 0,   s: 1,    o: 1   },   // centro (activo)
-    { z: -140, ry: 38,  s: 0.82, o: 0.6 },   // derecha
-    { z: -260, ry: 55,  s: 0.65, o: 0.3 },   // más derecha
-    { z: -140, ry: -38, s: 0.82, o: 0.6 }    // izquierda
+    { x: 0,    z: 0,    ry: 0,   s: 1,    o: 1   },   // centro (activo)
+    { x: 300,  z: -120, ry: -25, s: 0.85, o: 0.6 },   // derecha
+    { x: 0,    z: -300, ry: 0,   s: 0.5,  o: 0.1 },   // atrás (oculto)
+    { x: -300, z: -120, ry: 25,  s: 0.85, o: 0.6 }    // izquierda
   ];
 
   function getSlot(cardIdx) {
@@ -924,9 +991,10 @@ function svcTab(idx) {
   }
 
   function render() {
+    var isMobile = window.innerWidth <= 768;
     cards.forEach(function(card, i) {
       var sl = getSlot(i);
-      card.style.transform = 'translateX(0) translateZ(' + sl.z + 'px) rotateY(' + sl.ry + 'deg) scale(' + sl.s + ')';
+      card.style.transform = 'translateX(' + (isMobile ? sl.x * 0.4 : sl.x) + 'px) translateZ(' + sl.z + 'px) rotateY(' + sl.ry + 'deg) scale(' + sl.s + ')';
       card.style.opacity   = sl.o;
       card.style.zIndex    = (i === cur) ? 10 : (sl.z === slots[1].z || sl.z === slots[3].z) ? 5 : 1;
       card.classList.toggle('c3d-active', i === cur);
@@ -1069,3 +1137,18 @@ function svcTab(idx) {
   });
 
 })();
+
+
+// SMOOTH PAGE TRANSITIONS
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('#main-nav a, .nav-drawer a, .blog-back-btn, .footer-col-links a').forEach(a => {
+        a.addEventListener('click', function(e) {
+            // Only transition for internal html links
+            if (a.hostname === window.location.hostname && a.pathname !== window.location.pathname && !a.hash.startsWith('#') && !a.target) {
+                e.preventDefault();
+                document.body.classList.add("page-exiting");
+                setTimeout(() => { window.location.href = a.href; }, 350);
+            }
+        });
+    });
+});
