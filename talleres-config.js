@@ -1,5 +1,4 @@
-// Archivo de datos para la web pública
-// Generado y actualizado automáticamente desde el Panel de Gestión de Talleres
+// Generado por Gestor de Talleres
 window.TALLERES = [
   {
     "id": "taller-1",
@@ -24,3 +23,4 @@ window.TALLERES = [
     "estado": "completo"
   }
 ];
+window.MANTENIMIENTO = {"activo": false};
