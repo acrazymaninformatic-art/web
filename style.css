@@ -7,18 +7,18 @@
     --sage-dark: #aed0f4;
     --sage-light: rgba(126, 168, 232, 0.12);
     --sage-mid: #6888a6;
-    --cream: #0a1628;
-    --warm: #0e1e38;
-    --warm-dark: #081425;
+    --cream: #0b1a33;
+    --warm: #0f2240;
+    --warm-dark: #091830;
     --text: #edf2fc;
     --text-muted: #a3bce0;
     --accent: #93bff8;
     --accent-light: #1e2d4a;
-    --white: #1a2238;
+    --white: #142844;
     --btn-text: #09111e;
     --nav-h: 68px;
 
-    --card-bg: #172440;
+    --card-bg: #132a4d;
     --card-border: rgba(140, 188, 255, 0.18);
     --shadow-color: rgba(0, 0, 0, 0.4);
     --glass-bg: rgba(14, 19, 32, 0.72);
@@ -44,11 +44,11 @@
     overflow-x: hidden;
     max-width: 100vw;
     /* Degradado maestro continuo — cubre toda la altura de la página */
-    background-color: #0a1628 !important;
+    background-color: #0b1a33 !important;
     background-image: 
-      radial-gradient(ellipse at 20% 30%, rgba(18, 50, 95, 0.7) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 70%, rgba(12, 35, 72, 0.8) 0%, transparent 55%),
-      radial-gradient(ellipse at 50% 50%, rgba(15, 40, 80, 0.4) 0%, transparent 80%) !important;
+      radial-gradient(ellipse at 20% 30%, rgba(20, 60, 120, 0.85) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 70%, rgba(15, 45, 100, 0.9) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(18, 55, 110, 0.5) 0%, transparent 80%) !important;
     background-attachment: fixed !important;
     color: var(--text);
     overflow-x: hidden;
@@ -2368,7 +2368,7 @@
 
 /* ── 2. TARJETAS MODERNAS Y PROFESIONALES (SIN GLASSMORPHISM) ──────────────────────── */
 .stat, .pillar, .service-card, .payment-card, .google-review-card, .benefit-card, .svc-panel, .contact-card, .taller-card, .reviews-hero-box, .landing-card, .blog-card, .blog-cta-box, .health-consent, .about-quote, .creator-admin-card, .patient-card, .c3d-card, .included-grid > div {
-    background: #101726 !important; /* Azul oscuro profundo y profesional */
+    background: #0f2240 !important; /* Azul oscuro profundo y profesional */
     border: 1px solid rgba(136, 180, 240, 0.08) !important;
     border-radius: 20px !important;
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.6) !important;
@@ -2411,7 +2411,7 @@
 
 /* PREGUNTAS FRECUENTES REFINADAS (COMO TARJETAS) */
 .faq-item {
-    background: #101726 !important;
+    background: #0f2240 !important;
     border: 1px solid rgba(136, 180, 240, 0.08) !important;
     border-radius: 20px !important;
     margin-bottom: 1.2rem !important;
@@ -2478,13 +2478,13 @@ body.page-exiting {
 
 /* NAVBAR CLEAN SOLID */
 #main-nav {
-    background: #101726 !important;
+    background: #0f2240 !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     border: 1px solid rgba(140, 188, 255, 0.12) !important;
 }
 #main-nav.nav-scrolled {
-    background: #0c1220 !important;
+    background: #0b1d3a !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     box-shadow: 0 8px 30px rgba(0,0,0,0.5) !important;
