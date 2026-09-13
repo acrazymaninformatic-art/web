@@ -2487,3 +2487,11 @@ body.page-exiting {
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
 }
+
+
+/* DISABLE 3D WEBGL ON MOBILE - Too heavy, use gradient fallback */
+@media (max-width: 768px) {
+    #webgl-canvas {
+        display: none !important;
+    }
+}

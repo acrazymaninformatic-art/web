@@ -202,6 +202,7 @@ function applyNoAnimationFallback() {
 // ── Inicializar animaciones GSAP + efectos interactivos avanzados ────────────
 function initAnimations() {
   if (typeof gsap === 'undefined') { applyNoAnimationFallback(); return; }
+  var isMobileDevice = window.innerWidth <= 768;
   gsap.registerPlugin(ScrollTrigger);
 
   // ── Nav entrada ──────────────────────────────────────────────────────────────
@@ -226,7 +227,7 @@ function initAnimations() {
         trigger: '.hero',
         start: 'top 85%',
         end: 'bottom 15%',
-        toggleActions: 'play reverse play reverse'
+        toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse'
       }
     });
     heroTl
@@ -367,7 +368,7 @@ function initAnimations() {
       trigger: stat,
       start: 'top 90%',
       end: 'bottom top',
-      toggleActions: 'play reverse play reverse',
+      toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse',
       animation: gsap.fromTo(stat,
         { scale: 0.85, opacity: 0.5 },
         { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.5)' }
@@ -391,7 +392,7 @@ function initAnimations() {
             trigger: card,
             start: 'top 90%',
             end: 'bottom top',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse'
           }
         }
       );
@@ -408,7 +409,7 @@ function initAnimations() {
           trigger: el,
           start: 'top 92%',
           end: 'bottom 10%',
-          toggleActions: 'play reverse play reverse'
+          toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse'
         }
       }
     );
@@ -428,7 +429,7 @@ function initAnimations() {
             trigger: card,
             start: 'top 88%',
             end: 'bottom top',
-            toggleActions: 'play reverse play reverse'
+            toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse'
           }
         }
       );

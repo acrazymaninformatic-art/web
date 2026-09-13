@@ -1,3 +1,5 @@
+// MOBILE GUARD: Skip entire 3D scene on mobile
+if (window.innerWidth > 768) {
 /* =========================================================================
    =========================================================================
    ✨ LOGO OFICIAL 'EV' EN PARTÍCULAS 3D · EVA VIDAL NUTRICIÓN
@@ -533,3 +535,5 @@ const SPATIAL_CONFIG = {
 
   console.log('[Spatial 3D] Logo oficial EV activado: silueta exacta, relieve táctil sin deformación y diseño sobrio.');
 })();
+
+} // end mobile guard
