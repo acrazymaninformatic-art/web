@@ -2,24 +2,24 @@
   :root {
     color-scheme: dark;
 
-    --sage: #7ea8cc;
+    --sage: #82b4e0;
     --sage-bg: #1c2a3d;
-    --sage-dark: #a2c4e6;
+    --sage-dark: #aed0f4;
     --sage-light: rgba(126, 168, 232, 0.12);
     --sage-mid: #6888a6;
     --cream: #0e1320;
     --warm: #131929;
     --warm-dark: #0b1019;
     --text: #edf2fc;
-    --text-muted: #9bb0d6;
-    --accent: #88b4f0;
+    --text-muted: #a3bce0;
+    --accent: #93bff8;
     --accent-light: #1e2d4a;
     --white: #1a2238;
     --btn-text: #09111e;
     --nav-h: 68px;
 
     --card-bg: #162033;
-    --card-border: rgba(136, 180, 240, 0.16);
+    --card-border: rgba(140, 188, 255, 0.18);
     --shadow-color: rgba(0, 0, 0, 0.4);
     --glass-bg: rgba(14, 19, 32, 0.72);
     --glass-border: rgba(136, 180, 240, 0.22);

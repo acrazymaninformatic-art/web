@@ -1142,14 +1142,36 @@ function svcTab(idx) {
 
 // SMOOTH PAGE TRANSITIONS
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('#main-nav a, .nav-drawer a, .blog-back-btn, .footer-col-links a').forEach(a => {
+    document.querySelectorAll('#main-nav a, .blog-back-btn, .footer-col-links a').forEach(a => {
         a.addEventListener('click', function(e) {
-            // Only transition for internal html links
-            if (a.hostname === window.location.hostname && a.pathname !== window.location.pathname && !a.hash.startsWith('#') && !a.target) {
+            // Only transition for internal html links (not hash anchors)
+            var href = a.getAttribute('href') || '';
+            if (href.startsWith('#') || href.indexOf('#') === 0) return;
+            if (a.hostname === window.location.hostname && a.pathname !== window.location.pathname && !a.target) {
                 e.preventDefault();
                 document.body.classList.add("page-exiting");
                 setTimeout(() => { window.location.href = a.href; }, 350);
             }
+        });
+    });
+
+    // Drawer links: close drawer first, then navigate with transition
+    document.querySelectorAll('.nav-drawer a').forEach(a => {
+        a.addEventListener('click', function(e) {
+            var href = a.getAttribute('href') || '';
+            if (href.startsWith('#')) return;
+            e.preventDefault();
+            var drawer = document.getElementById('nav-drawer');
+            var btn = document.getElementById('nav-hamburger');
+            if (drawer && drawer.classList.contains('open')) {
+                drawer.classList.remove('open');
+                drawer.setAttribute('aria-hidden', 'true');
+                drawer.setAttribute('inert', '');
+                if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Abrir menú'); }
+                document.body.style.overflow = '';
+            }
+            document.body.classList.add("page-exiting");
+            setTimeout(() => { window.location.href = a.href; }, 300);
         });
     });
 });
