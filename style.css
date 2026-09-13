@@ -18,7 +18,7 @@
     --btn-text: #09111e;
     --nav-h: 68px;
 
-    --card-bg: #162033;
+    --card-bg: #172440;
     --card-border: rgba(140, 188, 255, 0.18);
     --shadow-color: rgba(0, 0, 0, 0.4);
     --glass-bg: rgba(14, 19, 32, 0.72);
@@ -1178,7 +1178,7 @@
   }
   .nav-drawer.open {
     visibility: visible;
-    
+    transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
     transition: transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s, visibility 0s linear 0s;
@@ -2476,16 +2476,19 @@ body.page-exiting {
 }
 
 
-/* LIQUID GLASS NAVBAR */
+/* NAVBAR CLEAN SOLID */
 #main-nav {
-    background: rgba(16, 23, 38, 0.3) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
+    background: #101726 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(140, 188, 255, 0.12) !important;
 }
 #main-nav.nav-scrolled {
-    background: rgba(16, 23, 38, 0.75) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    background: #0c1220 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5) !important;
+    border-color: rgba(140, 188, 255, 0.18) !important;
 }
 
 
