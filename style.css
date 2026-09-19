@@ -2535,3 +2535,362 @@ body.page-exiting {
 .cta {
     background: transparent !important;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   MEGA MOBILE FIX - Responsive perfecto en todas las secciones
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+    /* --- HERO --- */
+    .hero {
+        padding: 7rem 1.25rem 2rem !important;
+        min-height: 100dvh !important;
+    }
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem) !important;
+    }
+    .hero-desc {
+        font-size: 0.92rem !important;
+        max-width: 100% !important;
+    }
+    .hero-actions {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        align-items: stretch !important;
+    }
+    .hero-actions a, .hero-actions button {
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* --- PATIENTS --- */
+    .patients-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+    
+    /* --- HUGE FONTS --- */
+    .pillar-num { font-size: 2.5rem !important; }
+    .c3d-num { font-size: 2.2rem !important; }
+    .svc-panel-price { font-size: 2rem !important; }
+    .service-price { font-size: 2rem !important; }
+    .stat-num { font-size: 2rem !important; }
+    .google-review-score { font-size: 1.5rem !important; }
+    .reviews-score-num { font-size: 2.5rem !important; }
+
+    /* --- STATS --- */
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    .stat {
+        padding: 1.25rem !important;
+    }
+
+    /* --- PILLARS --- */
+    .pillars-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    /* --- CAROUSEL 3D --- */
+    .carousel3d-scene {
+        height: 280px !important;
+    }
+    .c3d-card {
+        width: 200px !important;
+        margin-left: -100px !important;
+        min-height: 200px !important;
+        padding: 1.5rem 1.25rem !important;
+        font-size: 0.9rem !important;
+    }
+    .c3d-btn {
+        display: none !important;
+    }
+
+    /* --- SERVICE PANELS --- */
+    .svc-panels {
+        gap: 1.5rem !important;
+    }
+    .svc-panel {
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+    }
+    .svc-panel-left {
+        min-width: unset !important;
+        width: 100% !important;
+    }
+    .svc-panel-content {
+        width: 100% !important;
+    }
+    .svc-panel-price {
+        font-size: 2rem !important;
+    }
+
+    /* --- INCLUDED GRID --- */
+    .included-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    .included-grid > div {
+        padding: 1.25rem !important;
+    }
+
+    /* --- PAYMENT CARDS --- */
+    .payment-cards {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    .payment-card {
+        padding: 1.25rem !important;
+    }
+
+    /* --- BLOG CARDS --- */
+    .blog-cards {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+    .blog-card {
+        padding: 1.25rem !important;
+    }
+
+    /* --- TESTIMONIALS --- */
+    .testimonials {
+        padding: 100px 1rem 3rem !important;
+    }
+    .google-review-card {
+        padding: 1.25rem !important;
+        max-width: 100% !important;
+    }
+    .reviews-hero-box {
+        padding: 1.5rem !important;
+        margin: 0 auto 2rem !important;
+    }
+
+    /* --- FAQ --- */
+    .faq-item {
+        padding: 0.4rem 1.2rem !important;
+        border-radius: 14px !important;
+        margin-bottom: 0.8rem !important;
+    }
+    .faq-q {
+        font-size: 0.92rem !important;
+        padding: 1rem 0 !important;
+    }
+
+    /* --- CTA / CONTACT --- */
+    .cta {
+        padding: 4rem 1.25rem !important;
+    }
+    .cta-title {
+        font-size: clamp(1.6rem, 7vw, 2.5rem) !important;
+    }
+    .cta-contacts {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+    }
+    .cta-contact {
+        width: 100% !important;
+        max-width: 320px !important;
+        justify-content: center !important;
+        padding: 0.85rem 1.5rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* --- TALLERES --- */
+    .taller-card {
+        padding: 1.25rem !important;
+    }
+
+    /* --- SECTION TITLES (all pages) --- */
+    .section-title {
+        font-size: clamp(1.6rem, 7vw, 2.5rem) !important;
+        word-break: break-word !important;
+    }
+
+    /* --- GENERAL SPACING --- */
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .method-inner, .testimonials-inner, .process-inner {
+        padding: 0 0.5rem !important;
+    }
+
+    /* --- FOOTER --- */
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 2rem 1.25rem !important;
+    }
+    .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1rem !important;
+        padding: 1.5rem 1rem !important;
+    }
+    .footer-bottom-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    /* --- HEALTH CONSENT --- */
+    .health-consent {
+        padding: 1.5rem !important;
+    }
+
+    /* --- BLOG ARTICLE --- */
+    .blog-article {
+        padding: 100px 1.25rem 3rem !important;
+    }
+    .blog-back-btn {
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* --- BENEFIT CARDS --- */
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+}
+
+/* Extra small phones (< 380px) */
+@media (max-width: 380px) {
+    .c3d-card {
+        width: 170px !important;
+        margin-left: -85px !important;
+        padding: 1.25rem 1rem !important;
+    }
+    .svc-panel-price {
+        font-size: 1.75rem !important;
+    }
+    #main-nav {
+        width: calc(100% - 1.5rem) !important;
+        padding: 0 0.75rem !important;
+    }
+}
+
+
+/* ═══ EXTRA SMALL SCREENS (phones < 480px) ═══ */
+@media (max-width: 480px) {
+    /* Force all sections single column */
+    .about-stats,
+    .stats-grid,
+    .pillars-grid,
+    .services-grid,
+    .included-grid,
+    .benefits-grid,
+    .payment-cards,
+    .blog-cards,
+    .process-track,
+    .patients-grid,
+    .talleres-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* Reduce all section padding */
+    .about, .method, .services, .included, .process, .payment, .faq, .testimonials, .talleres-section {
+        padding: 3rem 1rem !important;
+    }
+
+    /* Smaller cards */
+    .stat, .pillar, .service-card, .benefit-card, .payment-card, .blog-card,
+    .google-review-card, .taller-card, .svc-panel, .included-grid > div {
+        padding: 1.1rem !important;
+        border-radius: 14px !important;
+    }
+
+    /* Hero adjustments */
+    .hero {
+        padding: 6rem 1rem 2rem !important;
+    }
+    .hero-title {
+        font-size: clamp(1.8rem, 9vw, 2.8rem) !important;
+        word-break: break-word !important;
+    }
+
+    /* Carousel: even tighter */
+    .carousel3d-scene {
+        height: 250px !important;
+    }
+    .c3d-card {
+        width: 180px !important;
+        margin-left: -90px !important;
+        padding: 1.25rem 1rem !important;
+    }
+
+    /* Navbar */
+    #main-nav {
+        width: calc(100% - 1.5rem) !important;
+        padding: 0 0.75rem !important;
+        height: 50px !important;
+        border-radius: 14px !important;
+    }
+    .nav-logo img {
+        height: 30px !important;
+    }
+
+    /* Footer compact */
+    .footer-container {
+        padding: 1.5rem 1rem !important;
+    }
+
+    /* FAQ */
+    .faq-q {
+        font-size: 0.85rem !important;
+    }
+
+    /* CTA contact pills */
+    .cta-contact {
+        padding: 0.75rem 1.25rem !important;
+        font-size: 0.82rem !important;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: clamp(1.5rem, 7vw, 2.2rem) !important;
+    }
+    .cta-title {
+        font-size: clamp(1.5rem, 7vw, 2.2rem) !important;
+    }
+}
+
+
+/* Override benefits to 1 column on all mobile */
+@media (max-width: 600px) {
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    .about-stats {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* Global overflow protection */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+img, video, iframe, canvas, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* iOS Safari fix: background-attachment: fixed breaks */
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll !important;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll !important;
+    }
+}
