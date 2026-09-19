@@ -23,10 +23,10 @@
     --shadow-color: rgba(0, 0, 0, 0.4);
     --glass-bg: rgba(14, 19, 32, 0.72);
     --glass-border: rgba(136, 180, 240, 0.22);
-    --modal-bg: #141c2e;
-    --admin-bg: #0d131f;
-    --admin-card: #182236;
-    --input-bg: #141c2e;
+    --modal-bg: #0e2444;
+    --admin-bg: #091833;
+    --admin-card: #0e2a52;
+    --input-bg: #0c2040;
   }
 
   /* NOTA: cursor nativo del SO siempre visible para accesibilidad.
@@ -531,12 +531,12 @@
   /* ─── CTA ─── */
   .cta {
     padding: 8rem 4rem;
-    background: #141f33;
-    box-shadow: inset 0 0 200px rgba(0,0,0,0.4);
+    background: transparent;
+    box-shadow: none;
     text-align: center;
     position: relative;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 80px, black 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 80px, black 100%);
+    
+    
   }
   /* Remove Eva watermark — only decorative pseudo */
   .cta::before { display: none; }
@@ -925,7 +925,7 @@
   /* COOKIE BANNER */
   #cookie-banner {
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-    background: #0d1424; color: var(--text);
+    background: #091833; color: var(--text);
     padding: 1.25rem 2rem;
     display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
     border-top: 1px solid var(--card-border);
@@ -2527,4 +2527,9 @@ body.page-exiting {
     background: #091833 !important;
     color: var(--text) !important;
     border-color: rgba(140, 188, 255, 0.2) !important;
+}
+
+/* CONTACTO CTA SECTION - same background */
+.cta {
+    background: transparent !important;
 }
