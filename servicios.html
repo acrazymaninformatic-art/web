@@ -163,38 +163,38 @@
 </div>
 
 <!-- PANEL CONFIGURACIÓN DE COOKIES (AEPD granular) -->
-<div id="cookie-config-panel" role="dialog" aria-modal="true" aria-label="Configuración de cookies" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(30,48,64,0.55);align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:#F0F3FA;border-radius:8px;max-width:520px;width:100%;padding:2rem;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.35);">
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#3a5a78;margin-bottom:0.5rem;">Configuración de <em style="font-style:italic;color:#5588aa;">cookies</em></h2>
-    <p style="font-size:0.82rem;color:#5c7385;line-height:1.65;margin-bottom:1.5rem;">Puedes activar o desactivar cada categoría de cookies. Las cookies técnicas siempre están activas porque son imprescindibles para el funcionamiento del sitio.</p>
+<div id="cookie-config-panel" role="dialog" aria-modal="true" aria-label="Configuración de cookies" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(9,24,51,0.85);align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#0e2a52;border-radius:8px;max-width:520px;width:100%;padding:1.25rem;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,0.35);">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--sage);margin-bottom:0.5rem;">Configuración de <em style="font-style:italic;color:var(--accent);">cookies</em></h2>
+    <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;margin-bottom:1.5rem;">Puedes activar o desactivar cada categoría de cookies. Las cookies técnicas siempre están activas porque son imprescindibles para el funcionamiento del sitio.</p>
 
     <!-- Técnicas: siempre activas -->
-    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+    <div style="background:#091833;border:1px solid rgba(140,188,255,0.15);border-radius:6px;padding:1rem 1.25rem;margin-bottom:0.75rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;">
         <div>
-          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies técnicas (siempre activas)</p>
-          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Guardan tu preferencia de cookies y son imprescindibles para la navegación. No requieren consentimiento (art. 22.2 LSSI-CE).</p>
+          <p style="font-weight:600;font-size:0.9rem;color:var(--sage);margin-bottom:0.2rem;">Cookies técnicas (siempre activas)</p>
+          <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;">Guardan tu preferencia de cookies y son imprescindibles para la navegación. No requieren consentimiento (art. 22.2 LSSI-CE).</p>
         </div>
-        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#5588aa;background:#ddeef8;padding:0.25rem 0.6rem;border-radius:3px;white-space:nowrap;flex-shrink:0;">Siempre activas</span>
+        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:#ddeef8;padding:0.25rem 0.6rem;border-radius:3px;white-space:nowrap;flex-shrink:0;">Siempre activas</span>
       </div>
     </div>
 
     <!-- Analíticas: toggle -->
-    <div style="background:#fff;border:1px solid rgba(30,48,64,0.12);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.5rem;">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+    <div style="background:#091833;border:1px solid rgba(140,188,255,0.15);border-radius:6px;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;">
         <div style="flex:1;">
-          <p style="font-weight:600;font-size:0.9rem;color:#3a5a78;margin-bottom:0.2rem;">Cookies analíticas (Google Analytics)</p>
-          <p style="font-size:0.78rem;color:#5c7385;line-height:1.5;">Miden el tráfico y el comportamiento de navegación de forma anónima. Nos ayudan a mejorar el sitio. Solo se activan con tu consentimiento.</p>
+          <p style="font-weight:600;font-size:0.9rem;color:var(--sage);margin-bottom:0.2rem;">Cookies analíticas (Google Analytics)</p>
+          <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;">Miden el tráfico y el comportamiento de navegación de forma anónima. Nos ayudan a mejorar el sitio. Solo se activan con tu consentimiento.</p>
         </div>
         <label style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;flex-shrink:0;" aria-label="Activar cookies analíticas">
-          <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;accent-color:#3a5a78;cursor:pointer;">
+          <input type="checkbox" id="cookie-analytics-toggle" style="width:18px;height:18px;accent-color:var(--sage);cursor:pointer;">
         </label>
       </div>
     </div>
 
     <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
       <button id="cookie-config-save" style="background:#3a5a78;color:#fff;border:none;cursor:pointer;padding:0.7rem 1.5rem;border-radius:3px;font-size:0.82rem;font-weight:500;font-family:inherit;letter-spacing:0.04em;transition:background 0.2s;flex:1;">Guardar preferencias</button>
-      <button id="cookie-config-cancel" style="background:transparent;color:#5c7385;border:1px solid rgba(30,48,64,0.2);cursor:pointer;padding:0.7rem 1.25rem;border-radius:3px;font-size:0.82rem;font-family:inherit;transition:border-color 0.2s;flex:1;">Cancelar</button>
+      <button id="cookie-config-cancel" style="background:transparent;color:var(--text-muted);border:1px solid rgba(30,48,64,0.2);cursor:pointer;padding:0.7rem 1.25rem;border-radius:3px;font-size:0.82rem;font-family:inherit;transition:border-color 0.2s;flex:1;">Cancelar</button>
     </div>
   </div>
 </div>

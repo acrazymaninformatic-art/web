@@ -995,7 +995,7 @@ function svcTab(idx) {
     var isMobile = window.innerWidth <= 768;
     cards.forEach(function(card, i) {
       var sl = getSlot(i);
-      card.style.transform = 'translateX(' + (isMobile ? sl.x * 0.4 : sl.x) + 'px) translateZ(' + sl.z + 'px) rotateY(' + sl.ry + 'deg) scale(' + sl.s + ')';
+      card.style.transform = 'translateX(' + (isMobile ? sl.x * 0.22 : sl.x) + 'px) translateZ(' + sl.z + 'px) rotateY(' + sl.ry + 'deg) scale(' + sl.s + ')';
       card.style.opacity   = sl.o;
       card.style.zIndex    = (i === cur) ? 10 : (sl.z === slots[1].z || sl.z === slots[3].z) ? 5 : 1;
       card.classList.toggle('c3d-active', i === cur);
