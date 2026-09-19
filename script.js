@@ -227,7 +227,7 @@ function initAnimations() {
         trigger: '.hero',
         start: 'top 85%',
         end: 'bottom 15%',
-        toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse'
+        toggleActions: isMobileDevice ? 'play none none reset' : 'play reverse play reverse'
       }
     });
     heroTl
@@ -368,7 +368,7 @@ function initAnimations() {
       trigger: stat,
       start: 'top 90%',
       end: 'bottom top',
-      toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse',
+      toggleActions: isMobileDevice ? 'play none none reset' : 'play reverse play reverse',
       animation: gsap.fromTo(stat,
         { scale: 0.85, opacity: 0.5 },
         { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.5)' }
@@ -385,14 +385,14 @@ function initAnimations() {
   document.querySelectorAll(cardSelectors).forEach(function(card) {
     if (!card.classList.contains('reveal')) {
       gsap.fromTo(card,
-        { opacity: 0, y: 24 },
+        { opacity: 0, y: isMobileDevice ? 20 : 24 },
         {
-          opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+          opacity: 1, y: 0, duration: isMobileDevice ? 0.5 : 0.7, ease: 'power3.out',
           scrollTrigger: {
             trigger: card,
             start: 'top 90%',
             end: 'bottom top',
-            toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse'
+            toggleActions: isMobileDevice ? 'play none none reset' : 'play reverse play reverse'
           }
         }
       );
@@ -402,14 +402,14 @@ function initAnimations() {
 
   gsap.utils.toArray('.reveal').forEach(el => {
     gsap.fromTo(el,
-      { opacity: 0, y: 28 },
+      { opacity: 0, y: isMobileDevice ? 18 : 28 },
       {
-        opacity: 1, y: 0, duration: 0.75, ease: 'power3.out',
+        opacity: 1, y: 0, duration: isMobileDevice ? 0.5 : 0.75, ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
           start: 'top 92%',
           end: 'bottom 10%',
-          toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse'
+          toggleActions: isMobileDevice ? 'play none none reset' : 'play reverse play reverse'
         }
       }
     );
@@ -429,7 +429,7 @@ function initAnimations() {
             trigger: card,
             start: 'top 88%',
             end: 'bottom top',
-            toggleActions: isMobileDevice ? 'play none none none' : 'play reverse play reverse'
+            toggleActions: isMobileDevice ? 'play none none reset' : 'play reverse play reverse'
           }
         }
       );
@@ -1172,6 +1172,23 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             document.body.classList.add("page-exiting");
             setTimeout(() => { window.location.href = a.href; }, 300);
+        });
+    });
+});
+
+
+// ── SMOOTH SCROLL MOBILE ─────────────────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", function() {
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 54;
+                var y = target.getBoundingClientRect().top + window.pageYOffset - navH - 20;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
         });
     });
 });
