@@ -1,3 +1,3 @@
 // Generado por Gestor de Talleres
 window.TALLERES = [];
-window.MANTENIMIENTO = {"activo": false};
+window.MANTENIMIENTO = {"activo": true};
