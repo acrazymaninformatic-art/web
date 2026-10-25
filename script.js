@@ -483,34 +483,50 @@ function initAnimations() {
   // section-title also has .reveal so it's already handled by the reveal loop above
 
   // ── Cursor personalizado ──────────────────────────────────────────────────────
-  if (!isMobile) {
+  var isTouchOrMobile = window.matchMedia('(hover: none), (pointer: coarse)').matches || window.innerWidth <= 1024;
+  if (!isTouchOrMobile) {
     var cur  = document.getElementById('fx-cursor');
     var ring = document.getElementById('fx-cursor-ring');
     if (cur && ring) {
-      var cx = window.innerWidth/2, cy = window.innerHeight/2;
-      var rx = cx, ry = cy;
+      var cx = -100, cy = -100;
+      var rx = -100, ry = -100;
+      var cursorVisible = false;
 
-    document.addEventListener('mousemove', function(e) {
-      cx = e.clientX; cy = e.clientY;
-      gsap.to(cur, { left: cx, top: cy, duration: 0.08, ease: 'none' });
-    });
+      document.addEventListener('mousemove', function(e) {
+        cx = e.clientX; cy = e.clientY;
+        if (!cursorVisible) {
+          cursorVisible = true;
+          rx = cx; ry = cy;
+          cur.style.opacity = '1';
+          ring.style.opacity = '1';
+        }
+        gsap.to(cur, { left: cx, top: cy, duration: 0.08, ease: 'none' });
+      });
 
-    // Ring sigue con lag suave
-    (function ringLoop() {
-      rx += (cx - rx) * 0.12;
-      ry += (cy - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-      requestAnimationFrame(ringLoop);
-    })();
+      document.addEventListener('mouseleave', function() {
+        cursorVisible = false;
+        cur.style.opacity = '0';
+        ring.style.opacity = '0';
+      });
 
-    // Hover state en links/botones
-    document.querySelectorAll('a, button, [role="button"]').forEach(el => {
-      el.addEventListener('mouseenter', () => { cur.classList.add('hovering'); ring.classList.add('hovering'); });
-      el.addEventListener('mouseleave', () => { cur.classList.remove('hovering'); ring.classList.remove('hovering'); });
-    });
-    document.addEventListener('mousedown', () => cur.classList.add('clicking'));
-    document.addEventListener('mouseup',   () => cur.classList.remove('clicking'));
+      // Ring sigue con lag suave
+      (function ringLoop() {
+        if (cursorVisible) {
+          rx += (cx - rx) * 0.12;
+          ry += (cy - ry) * 0.12;
+          ring.style.left = rx + 'px';
+          ring.style.top  = ry + 'px';
+        }
+        requestAnimationFrame(ringLoop);
+      })();
+
+      // Hover state en links/botones
+      document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+        el.addEventListener('mouseenter', () => { cur.classList.add('hovering'); ring.classList.add('hovering'); });
+        el.addEventListener('mouseleave', () => { cur.classList.remove('hovering'); ring.classList.remove('hovering'); });
+      });
+      document.addEventListener('mousedown', () => cur.classList.add('clicking'));
+      document.addEventListener('mouseup',   () => cur.classList.remove('clicking'));
     }
   }
 

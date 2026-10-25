@@ -1233,6 +1233,8 @@
   /* ELIMINADO: * { cursor: none !important; } — era una mala práctica de accesibilidad */
   #fx-cursor {
     position: fixed; z-index: 9998; pointer-events: none;
+    top: -100px; left: -100px;
+    opacity: 0;
     width: 12px; height: 12px; border-radius: 50%;
     background: var(--accent);
     transform: translate(-50%, -50%);
@@ -1240,6 +1242,8 @@
   }
   #fx-cursor-ring {
     position: fixed; z-index: 9997; pointer-events: none;
+    top: -100px; left: -100px;
+    opacity: 0;
     width: 40px; height: 40px; border-radius: 50%;
     border: 1px solid var(--glass-border);
     transform: translate(-50%, -50%);
@@ -1296,10 +1300,10 @@
   }
   #fx-blob path { fill: var(--sage-light); }
 
-  /* Cursor táctil — se oculta en touch */
-  @media (hover: none) {
+  /* Cursor táctil — se oculta en touch o pantallas no desktop */
+  @media (hover: none), (pointer: coarse), (max-width: 1024px) {
     * { cursor: auto !important; }
-    #fx-cursor, #fx-cursor-ring { display: none; }
+    #fx-cursor, #fx-cursor-ring { display: none !important; }
   }
 
   /* ─── CAROUSEL 3D ─── */
