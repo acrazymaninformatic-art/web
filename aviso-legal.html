@@ -2,23 +2,17 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <title>Aviso Legal | Eva Vidal Nutrición</title>
 <meta name="description" content="Aviso Legal e información legal de Eva Vidal Nutrición en cumplimiento del art. 10 de la Ley 34/2002 (LSSI-CE).">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Eva Vidal Nutrición">
 <link rel="canonical" href="https://evavidalnutricion.com/aviso-legal.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="spatial-3d.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="style.css?v=20261031">
+<link rel="stylesheet" href="spatial-3d.css?v=20261031">
 
 <style>
 .legal-standalone {
@@ -112,6 +106,7 @@
 <script src="/mantenimiento-config.js?v=1792932540"></script>
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <!-- SVG Filter (include once in your document) -->
 <svg id="glass-distortion-svg" width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
   <defs>
@@ -150,7 +145,7 @@
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Eva Vidal Nutricion"></a>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Eva Vidal Nutrición"></a>
   <ul class="nav-links">
     <li><a href="index.html#sobre-mi">Sobre mí</a></li>
     <li><a href="servicios.html">Servicios</a></li>
@@ -166,7 +161,7 @@
 </nav>
 
 <!-- Drawer móvil -->
-<div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Menú de navegación" aria-modal="true" aria-hidden="true" inert>
+<div class="nav-drawer" id="nav-drawer" data-lenis-prevent role="dialog" aria-label="Menú de navegación" aria-modal="true" aria-hidden="true" inert>
   <ul>
     <li><a href="index.html#sobre-mi" class="drawer-link">Sobre mí</a></li>
     <li><a href="servicios.html" class="drawer-link">Servicios</a></li>
@@ -178,7 +173,7 @@
   <a href="contacto.html" class="drawer-cta">Reservar cita</a>
 </div>
 
-<main class="legal-standalone">
+<main id="contenido" tabindex="-1" class="legal-standalone">
   <nav class="legal-breadcrumb" aria-label="Ruta de navegación">
     <a href="index.html">Inicio</a>
     <span>/</span>
@@ -269,7 +264,7 @@
       </p>
       <div class="footer-badge">
         <span class="footer-badge-dot"></span>
-        <span>Dietista colegiada · <strong>ASNADI Nº 1222</strong></span>
+        <span>Dietista asociada · <strong>ASNADI Nº 1222</strong></span>
       </div>
     </div>
 
@@ -335,21 +330,20 @@
   <div class="footer-bottom">
     <p class="footer-bottom-copy">© 2025-2026 Eva Vidal Nutrición · Todos los derechos reservados.</p>
     <div class="footer-bottom-links">
-      <a href="aviso-legal.html" onclick="if(typeof showLegalPage === 'function'){ showLegalPage('aviso'); return false; }">Aviso Legal</a>
+      <a href="aviso-legal.html" data-legal="aviso">Aviso Legal</a>
       <span class="footer-bottom-sep">·</span>
-      <a href="politica-privacidad.html" onclick="if(typeof showLegalPage === 'function'){ showLegalPage('privacidad'); return false; }">Política de Privacidad</a>
+      <a href="politica-privacidad.html" data-legal="privacidad">Política de Privacidad</a>
       <span class="footer-bottom-sep">·</span>
-      <a href="politica-cookies.html" onclick="if(typeof showLegalPage === 'function'){ showLegalPage('cookies'); return false; }">Política de Cookies</a>
+      <a href="politica-cookies.html" data-legal="cookies">Política de Cookies</a>
       <span class="footer-bottom-sep">·</span>
       <a href="#" id="cookie-settings">Gestionar cookies</a>
     </div>
   </div>
 </footer>
 
-<script src="script.js?v=202609061500"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="script.js?v=20261031"></script>
 
-<!-- EXPERIENCIA 3D ESPACIAL Y PARTICULAS -->
-<script src="ev_particles_data.js"></script>
-<script src="spatial-3d.js"></script>
 </body>
 </html>

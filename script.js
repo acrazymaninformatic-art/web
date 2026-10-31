@@ -1,4 +1,8 @@
 
+// Ruta base del sitio (funciona igual desde la raíz y desde /blog/)
+var _siteBase = document.currentScript ? document.currentScript.src.replace(/script\.js.*$/, '') : '';
+var _reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // ── INYECTOR DINÁMICO DE FILTRO SVG PARA LIQUID GLASSMORPHISM (SCALE="150") ─
 (function ensureGlassFilter() {
   if (document.getElementById('glass-distortion-svg')) return;
@@ -173,18 +177,13 @@
 // ════════════════════════════════════════════════════════════════════════════
 // SEGURIDAD Y RGPD
 //
-// Ningún recurso externo (Google Fonts, GSAP, Analytics, píxeles) se carga
-// hasta que el usuario acepta activamente las cookies.
+// Fuentes y librerías se sirven desde este dominio (fonts/ y vendor/): cargar
+// una página no contacta con terceros y la CSP de cada <head> solo permite
+// scripts propios. Por eso no se admiten <script> ni on* en línea.
 //
-// IMPORTANTE PARA EL SERVIDOR: replica estas cabeceras HTTP en tu servidor
-// web (Apache .htaccess, Nginx, Cloudflare, etc.) para máxima protección:
-//
-//   Content-Security-Policy: [ver directiva completa en el bloque de comentarios del <head>]
-//   X-Frame-Options: DENY
-//   X-Content-Type-Options: nosniff
-//   Referrer-Policy: no-referrer
-//   Permissions-Policy: camera=(), microphone=(), geolocation=()
-//   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+// La web está en GitHub Pages, que no permite cabeceras HTTP propias. La CSP va
+// en <meta>; X-Frame-Options, frame-ancestors y HSTS requerirían un proxy
+// delante (p. ej. Cloudflare) porque no funcionan desde el HTML.
 // ════════════════════════════════════════════════════════════════════════════
 
 // ── Fallback sin animaciones (se aplica si el usuario rechaza o aún no decide)
@@ -201,7 +200,7 @@ function applyNoAnimationFallback() {
 
 // ── Inicializar animaciones GSAP + efectos interactivos avanzados ────────────
 function initAnimations() {
-  if (typeof gsap === 'undefined') { applyNoAnimationFallback(); return; }
+  if (typeof gsap === 'undefined' || _reducedMotion) { applyNoAnimationFallback(); return; }
   var isMobileDevice = window.innerWidth <= 768;
   gsap.registerPlugin(ScrollTrigger);
 
@@ -235,8 +234,7 @@ function initAnimations() {
       .fromTo('.hero-eyebrow-line', { width: 0 }, { width: 32, duration: 0.5, ease: 'power2.out' }, '-=0.3')
       .fromTo('.hero-title .line', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: 'power4.out' }, '-=0.2')
       .fromTo('.hero-desc', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.35')
-      .fromTo('.hero-actions', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.3')
-      .fromTo('.hero-scroll-hint', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2');
+      .fromTo('.hero-actions', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.3');
   }
 
   // ── Blob morphing continuo ───────────────────────────────────────────────────
@@ -536,39 +534,8 @@ function initAnimations() {
   // (blob) donde el impacto en CLS es nulo.
 }
 
-// ── Carga de recursos visuales esenciales (Fonts + GSAP para animaciones)
-var _coreResourcesLoaded = false;
-function loadCoreResources(callback) {
-  if (_coreResourcesLoaded) { if (callback) callback(); return; }
-  _coreResourcesLoaded = true;
-
-  // 1. Google Fonts
-  var link = document.createElement('link');
-  link.rel  = 'stylesheet';
-  link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap';
-  document.head.appendChild(link);
-
-  // 2. GSAP + ScrollTrigger (carga encadenada)
-  if (typeof gsap === 'undefined') {
-    var gsapScript = document.createElement('script');
-    gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
-    gsapScript.onload = function() {
-      var stScript = document.createElement('script');
-      stScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
-      stScript.onload = function() { if (callback) callback(); };
-      document.head.appendChild(stScript);
-    };
-    gsapScript.onerror = function() {
-      applyNoAnimationFallback();
-    };
-    document.head.appendChild(gsapScript);
-  } else {
-    if (callback) callback();
-  }
-}
-
-// Iniciar recursos visuales y animaciones inmediatamente
-loadCoreResources(initAnimations);
+// Iniciar animaciones inmediatamente (GSAP se carga antes que este archivo)
+initAnimations();
 
 // ── COOKIE CONSENT (AEPD-compliant: granular config panel para Analytics) ────
 (function() {
@@ -679,8 +646,13 @@ loadCoreResources(initAnimations);
 (function() {
   var btns = document.querySelectorAll('.contact-btn');
   var hint = document.getElementById('consent-hint');
-  btns.forEach(function(btn) { btn.classList.add('disabled-contact'); });
+  var check = document.getElementById('health-consent-check');
+  btns.forEach(function(btn) {
+    btn.classList.add('disabled-contact');
+    btn.addEventListener('click', checkConsent);
+  });
   if (hint) hint.classList.remove('hidden');
+  if (check) check.addEventListener('change', toggleContactButtons);
 })();
 
 function toggleContactButtons() {
@@ -739,6 +711,8 @@ function checkConsent(e) {
 //     marcador), el bloque de inicialización lo detecta y abre el overlay correcto.
 //
 var _legalScrollPos = 0;
+var _legalTrigger   = null;
+var _pageTitle      = document.title;
 var _LEGAL_MAP      = { aviso: 'legal-aviso', privacidad: 'legal-privacidad', cookies: 'legal-cookies' };
 var _LEGAL_TITLES   = { aviso: 'Aviso Legal', privacidad: 'Política de Privacidad', cookies: 'Política de Cookies' };
 
@@ -762,6 +736,9 @@ function showLegalPage(page) {
     el.setAttribute('aria-hidden', 'false');
     el.scrollTop = 0;
     document.title = _LEGAL_TITLES[page] + ' · Eva Vidal Nutrición';
+    _legalTrigger = document.activeElement;
+    var closeBtn = el.querySelector('.legal-close');
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
   } else {
     var prefix = window.location.pathname.includes('/blog/') ? '../' : '';
     if (page === 'aviso') window.location.href = prefix + 'aviso-legal.html';
@@ -773,10 +750,31 @@ function showLegalPage(page) {
 function hideLegalPage() {
   _closeAllLegal();
   document.body.style.overflow = '';
-  document.title = 'Eva Vidal Nutrición | Dietista y Nutricionista en Guadalajara';
+  document.title = _pageTitle;
   // Sin pushState: simplemente cerramos el overlay.
   window.scrollTo({ top: _legalScrollPos, behavior: 'instant' });
+  if (_legalTrigger && _legalTrigger.focus) _legalTrigger.focus({ preventScroll: true });
+  _legalTrigger = null;
 }
+
+// Acciones declaradas con data-* en el HTML (la CSP bloquea los on* en línea)
+document.addEventListener('click', function(e) {
+  if (!e.target.closest) return;
+  var legal = e.target.closest('[data-legal]');
+  if (legal) {
+    if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+    e.preventDefault();
+    showLegalPage(legal.getAttribute('data-legal'));
+    return;
+  }
+  if (e.target.closest('[data-legal-close]')) { hideLegalPage(); return; }
+  var tab = e.target.closest('[data-svc-tab]');
+  if (tab) { svcTab(parseInt(tab.getAttribute('data-svc-tab'), 10)); return; }
+  var move = e.target.closest('[data-c3d-move]');
+  if (move) { c3dMove(parseInt(move.getAttribute('data-c3d-move'), 10)); return; }
+  var dot = e.target.closest('[data-c3d-goto]');
+  if (dot) c3dGoTo(parseInt(dot.getAttribute('data-c3d-goto'), 10));
+});
 
 // Soporte para llegada directa con hash en la URL
 // (p.ej. enlace desde email: miweb.es/#privacidad)
@@ -872,7 +870,7 @@ document.addEventListener('keydown', function(e) {
 
   // Cerrar si se redimensiona a escritorio
   window.addEventListener('resize', function() {
-    if (window.innerWidth > 720 && btn.getAttribute('aria-expanded') === 'true') {
+    if (window.innerWidth > 1024 && btn.getAttribute('aria-expanded') === 'true') {
       closeDrawer();
     }
   });
@@ -946,12 +944,12 @@ function svcTab(idx) {
 // ── STAT COUNTERS ────────────────────────────────────────────────────────────
 (function() {
   var counters = document.querySelectorAll('.count-num');
-  if (!counters.length) return;
+  if (!counters.length || _reducedMotion) return;
 
   function animateCounter(el) {
     var target = parseInt(el.dataset.target, 10);
     var suffix = el.dataset.suffix || '';
-    if (target === 0) return; // ∞ — already shows symbol, skip
+    if (target === 0) return; // ya muestra 0
     var start = 0;
     var duration = 1800;
     var startTime = null;
@@ -987,6 +985,7 @@ function svcTab(idx) {
   var cards = Array.from(document.querySelectorAll('.c3d-card'));
   var dots  = Array.from(document.querySelectorAll('.c3d-dot'));
   var n     = cards.length;
+  if (!n) return;
   var cur   = 0;
   var autoTimer;
 
@@ -1032,6 +1031,7 @@ function svcTab(idx) {
 
   function resetAuto() {
     clearInterval(autoTimer);
+    if (_reducedMotion) return;
     autoTimer = setInterval(function() { c3dMove(1); }, 4200);
   }
 
@@ -1076,93 +1076,26 @@ function svcTab(idx) {
 // ANIMATIONS & EFFECTS
 // ══════════════════════════════════════════
 
-// ════════════════════════════════════════════════════════════════════════════
-// 🛡️ SEGURIDAD Y PROTECCIÓN DE DATOS
-// ════════════════════════════════════════════════════════════════════════════
-(function() {
-  'use strict';
-
-  // ── 1. ANTI-XSS: sanitizar cualquier input en formularios ─────────────
-  function sanitizeInput(str) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
-  document.querySelectorAll('input, textarea').forEach(function(el) {
-    el.addEventListener('input', function() {
-      if (/<script|javascript:|on\w+\s*=/i.test(el.value)) {
-        el.value = sanitizeInput(el.value.replace(/<script.*?>.*?<\/script>/gi, '')
-          .replace(/javascript:/gi, '')
-          .replace(/on\w+\s*=/gi, ''));
-      }
-    });
-  });
-
-  // ── 2. ANTI-FORM-HIJACK: validar que los formularios apuntan al destino correcto ─
-  document.querySelectorAll('form').forEach(function(form) {
-    var originalAction = form.action;
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(m) {
-        if (m.type === 'attributes' && m.attributeName === 'action') {
-          if (form.action !== originalAction) {
-            form.action = originalAction;
-            console.warn('[SECURITY] Intento de manipulación de formulario corregido.');
-          }
-        }
-      });
-    });
-    observer.observe(form, { attributes: true });
-  });
-
-  // ── 3. ANTI-LINK-HIJACK: proteger enlaces externos ────────────────────
-  document.querySelectorAll('a[target="_blank"]').forEach(function(a) {
-    a.setAttribute('rel', 'noopener noreferrer');
-  });
-
-  // ── 4. INTEGRIDAD DE COOKIES: proteger contra manipulación ────────────
-  if (location.protocol === 'https:') {
-    var origCookie = Object.getOwnPropertyDescriptor(Document.prototype, 'cookie') ||
-                     Object.getOwnPropertyDescriptor(HTMLDocument.prototype, 'cookie');
-    if (origCookie) {
-      Object.defineProperty(document, 'cookie', {
-        get: function() { return origCookie.get.call(this); },
-        set: function(val) {
-          if (val.indexOf('Secure') === -1) val += '; Secure';
-          if (val.indexOf('SameSite') === -1) val += '; SameSite=Strict';
-          return origCookie.set.call(this, val);
-        }
-      });
-    }
-  }
-
-  // ── 5. ANTI-TAMPERING: verificar integridad de enlaces críticos ────────
-  var criticalLinks = document.querySelectorAll('#btn-whatsapp, #btn-email');
-  criticalLinks.forEach(function(link) {
-    var originalHref = link.getAttribute('href');
-    var linkObserver = new MutationObserver(function(mutations) {
-      mutations.forEach(function(m) {
-        if (m.attributeName === 'href') {
-          var newHref = link.getAttribute('href');
-          if (newHref !== originalHref) {
-            link.setAttribute('href', originalHref);
-            console.error('[SECURITY] Intento de manipulación de enlace de contacto bloqueado.');
-          }
-        }
-      });
-    });
-    linkObserver.observe(link, { attributes: true });
-  });
-
-})();
+// ── ENLACES EXTERNOS ─────────────────────────────────────────────────────────
+document.querySelectorAll('a[target="_blank"]').forEach(function(a) {
+  a.setAttribute('rel', 'noopener noreferrer');
+});
 
 
 // SMOOTH PAGE TRANSITIONS
+// Al volver con el botón Atrás el navegador restaura la página tal como quedó
+// (con el fundido de salida aplicado) si no se retira la clase.
+window.addEventListener('pageshow', function() {
+    document.body.classList.remove('page-exiting');
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('#main-nav a, .blog-back-btn, .footer-col-links a').forEach(a => {
         a.addEventListener('click', function(e) {
             // Only transition for internal html links (not hash anchors)
             var href = a.getAttribute('href') || '';
             if (href.startsWith('#') || href.indexOf('#') === 0) return;
+            if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
             if (a.hostname === window.location.hostname && a.pathname !== window.location.pathname && !a.target) {
                 e.preventDefault();
                 document.body.classList.add("page-exiting");
@@ -1176,6 +1109,7 @@ document.addEventListener("DOMContentLoaded", function() {
         a.addEventListener('click', function(e) {
             var href = a.getAttribute('href') || '';
             if (href.startsWith('#')) return;
+            if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
             e.preventDefault();
             var drawer = document.getElementById('nav-drawer');
             var btn = document.getElementById('nav-hamburger');
@@ -1198,7 +1132,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
-            var target = document.querySelector(this.getAttribute('href'));
+            var href = this.getAttribute('href');
+            var target = href.length > 1 ? document.querySelector(href) : null;
             if (target) {
                 e.preventDefault();
                 var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 54;
@@ -1208,3 +1143,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// ── EXPERIENCIA 3D (SOLO ESCRITORIO) ─────────────────────────────────────────
+// Three.js y las partículas superan 1 MB: en móvil no se usan, y solo la portada
+// necesita las partículas del logo. No se carga tampoco en mantenimiento.
+(function() {
+  if (window.innerWidth <= 768 || _reducedMotion) return;
+  if (window.MANTENIMIENTO && window.MANTENIMIENTO.activo) return;
+  var queue = ['vendor/three.min.js', 'vendor/lenis.min.js'];
+  if (document.getElementById('inicio')) queue.push('ev_particles_data.js');
+  queue.push('spatial-3d.js');
+
+  function loadNext() {
+    if (!queue.length) return;
+    var script = document.createElement('script');
+    script.src = _siteBase + queue.shift();
+    script.onload = loadNext;
+    document.body.appendChild(script);
+  }
+
+  window.addEventListener('load', loadNext, { once: true });
+})();

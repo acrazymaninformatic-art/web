@@ -1,0 +1,5 @@
+# GitHub Pages: ficheros del repositorio que no deben publicarse en la web.
+exclude:
+  - README.md
+  - wrangler.jsonc
+  - talleres.json
