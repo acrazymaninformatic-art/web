@@ -24,8 +24,6 @@
     --glass-bg: rgba(14, 19, 32, 0.72);
     --glass-border: rgba(136, 180, 240, 0.22);
     --modal-bg: #0e2444;
-    --admin-bg: #091833;
-    --admin-card: #0e2a52;
     --input-bg: #0c2040;
   }
 
@@ -260,9 +258,6 @@
   .reveal { will-change: opacity, transform; }
   /* .js-anim class is added by JS only, so without JS elements remain visible */
   .js-anim { opacity: 0; transform: translateY(28px); }
-
-
-
 
 
   /* ─── ABOUT ─── */
@@ -2014,7 +2009,6 @@
   }
 
 
-
   /* ═══════════════════════════════════════════════
      TALLERES Y NOVEDADES SECTION
      ═══════════════════════════════════════════════ */
@@ -2121,155 +2115,7 @@
   }
 
   /* --- PANEL PRIVADO CREADOR --- */
-  .creator-admin-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 12000;
-    display: none;
-    background: rgba(20, 32, 44, 0.72);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    color: var(--text);
-    padding: 1rem;
-  }
-  .creator-admin-overlay.open { display: flex; }
-  .creator-admin-shell {
-    width: min(1180px, 100%);
-    max-height: calc(100vh - 2rem);
-    margin: auto;
-    background: #f7f9fc;
-    border: 1px solid rgba(255,255,255,0.72);
-    border-radius: 8px;
-    box-shadow: 0 28px 90px rgba(0,0,0,0.34);
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 250px minmax(0, 1fr);
-  }
-  .creator-admin-sidebar {
-    background: #203447;
-    color: #fff;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .creator-admin-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    line-height: 1;
-    font-weight: 300;
-  }
-  .creator-admin-brand em { color: #b8dff5; font-style: italic; }
-  .creator-admin-note {
-    font-size: 0.76rem;
-    line-height: 1.55;
-    color: rgba(255,255,255,0.72);
-  }
-  .creator-admin-tabs { display: grid; gap: 0.35rem; margin-top: 0.5rem; }
-  .creator-admin-tab {
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.06);
-    color: #fff;
-    border-radius: 6px;
-    padding: 0.75rem 0.85rem;
-    text-align: left;
-    cursor: pointer;
-    font: inherit;
-    font-size: 0.84rem;
-  }
-  .creator-admin-tab.active,
-  .creator-admin-tab:hover { background: rgba(184,223,245,0.18); border-color: rgba(184,223,245,0.35); }
-  .creator-admin-main {
-    max-height: calc(100vh - 2rem);
-    overflow-y: auto;
-    padding: 1.25rem;
-  }
-  .creator-admin-topbar {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-  }
-  .creator-admin-title { font-size: 1.35rem; color: var(--sage); margin-bottom: 0.2rem; }
-  .creator-admin-subtitle { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
-  .creator-admin-close {
-    border: 1px solid rgba(30,48,64,0.15);
-    background: #fff;
-    color: var(--sage);
-    border-radius: 6px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    line-height: 1;
-  }
-  .creator-admin-login {
-    width: min(460px, 100%);
-    margin: auto;
-    background: #f7f9fc;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.28);
-  }
-  .creator-admin-login h2 { color: var(--sage); margin-bottom: 0.5rem; font-size: 1.35rem; }
-  .creator-admin-login p { color: var(--text-muted); font-size: 0.84rem; line-height: 1.55; margin-bottom: 1rem; }
-  .creator-admin-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
-  .creator-admin-card {
-    background: #fff;
-    border: 1px solid rgba(30,48,64,0.1);
-    border-radius: 8px;
-    padding: 1rem;
-  }
-  .creator-admin-card strong { display: block; color: var(--sage); font-size: 1.4rem; margin-bottom: 0.2rem; }
-  .creator-admin-card span { color: var(--text-muted); font-size: 0.76rem; }
-  .creator-admin-section { display: none; }
-  .creator-admin-section.active { display: block; }
-  .creator-admin-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
-  .creator-admin-field { display: grid; gap: 0.35rem; }
-  .creator-admin-field.full { grid-column: 1 / -1; }
-  .creator-admin-field label { color: var(--sage); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
-  .creator-admin-field input,
-  .creator-admin-field select,
-  .creator-admin-field textarea {
-    width: 100%;
-    border: 1px solid rgba(30,48,64,0.16);
-    border-radius: 6px;
-    background: #fff;
-    color: var(--text);
-    padding: 0.72rem 0.8rem;
-    font: inherit;
-    font-size: 0.86rem;
-  }
-  .creator-admin-field textarea { min-height: 92px; resize: vertical; line-height: 1.5; }
-  .creator-admin-actions { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1rem; }
-  .creator-admin-btn {
-    border: 1px solid rgba(30,48,64,0.15);
-    background: #fff;
-    color: var(--sage);
-    border-radius: 6px;
-    padding: 0.72rem 0.95rem;
-    cursor: pointer;
-    font: inherit;
-    font-size: 0.84rem;
-    font-weight: 700;
-  }
-  .creator-admin-btn.primary { background: var(--sage); color: #fff; border-color: var(--sage); }
-  .creator-admin-btn.danger { color: #b64040; }
-  .creator-admin-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
-  .creator-admin-table th,
-  .creator-admin-table td { padding: 0.78rem; border-bottom: 1px solid rgba(30,48,64,0.08); text-align: left; font-size: 0.82rem; vertical-align: top; }
-  .creator-admin-table th { color: var(--sage); background: #edf3f8; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; }
-  .creator-admin-muted { color: var(--text-muted); font-size: 0.78rem; line-height: 1.55; }
-  .creator-admin-status { min-height: 1.2rem; margin-top: 0.75rem; color: var(--accent); font-size: 0.82rem; }
-  @media (max-width: 820px) {
-    .creator-admin-shell { grid-template-columns: 1fr; }
-    .creator-admin-sidebar { padding: 1rem; }
-    .creator-admin-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .creator-admin-form-grid,
-    .creator-admin-grid { grid-template-columns: 1fr; }
-    .creator-admin-main { max-height: 70vh; }
-  }
+  
 
   /* ─── COOKIE CONFIG MODAL (DARK THEME OVERRIDES) ─── */
   #cookie-config-panel > div {
@@ -2377,7 +2223,7 @@
 }
 
 /* ── 2. TARJETAS MODERNAS Y PROFESIONALES (SIN GLASSMORPHISM) ──────────────────────── */
-.stat, .pillar, .service-card, .payment-card, .google-review-card, .benefit-card, .svc-panel, .contact-card, .taller-card, .reviews-hero-box, .landing-card, .blog-card, .blog-cta-box, .health-consent, .about-quote, .creator-admin-card, .patient-card, .c3d-card, .included-grid > div {
+.stat, .pillar, .service-card, .payment-card, .google-review-card, .benefit-card, .svc-panel, .contact-card, .taller-card, .reviews-hero-box, .landing-card, .blog-card, .blog-cta-box, .health-consent, .about-quote, .patient-card, .c3d-card, .included-grid > div {
     background: #0c2044 !important; /* Azul oscuro profundo y profesional */
     border: 1px solid rgba(136, 180, 240, 0.08) !important;
     border-radius: 20px !important;
@@ -2389,7 +2235,7 @@
 }
 
 /* Brillo sutil interno estilo Apple/Moderno */
-.stat::before, .pillar::before, .service-card::before, .payment-card::before, .google-review-card::before, .benefit-card::before, .svc-panel::before, .contact-card::before, .taller-card::before, .reviews-hero-box::before, .landing-card::before, .blog-card::before, .blog-cta-box::before, .health-consent::before, .about-quote::before, .creator-admin-card::before, .patient-card::before, .c3d-card::before, .included-grid > div::before {
+.stat::before, .pillar::before, .service-card::before, .payment-card::before, .google-review-card::before, .benefit-card::before, .svc-panel::before, .contact-card::before, .taller-card::before, .reviews-hero-box::before, .landing-card::before, .blog-card::before, .blog-cta-box::before, .health-consent::before, .about-quote::before, .patient-card::before, .c3d-card::before, .included-grid > div::before {
     content: '' !important;
     position: absolute !important;
     inset: 0 !important;
@@ -2407,16 +2253,15 @@
 }
 
 /* Mantener el contenido por encima del gradiente interno */
-.stat > *, .pillar > *, .service-card > *, .payment-card > *, .google-review-card > *, .benefit-card > *, .svc-panel > *, .contact-card > *, .taller-card > *, .reviews-hero-box > *, .landing-card > *, .blog-card > *, .blog-cta-box > *, .health-consent > *, .about-quote > *, .creator-admin-card > *, .patient-card > *, .c3d-card > *, .included-grid > div > * {
+.stat > *, .pillar > *, .service-card > *, .payment-card > *, .google-review-card > *, .benefit-card > *, .svc-panel > *, .contact-card > *, .taller-card > *, .reviews-hero-box > *, .landing-card > *, .blog-card > *, .blog-cta-box > *, .health-consent > *, .about-quote > *, .patient-card > *, .c3d-card > *, .included-grid > div > * {
     position: relative;
     z-index: 2 !important;
 }
 
 /* Eliminar ::after porque ya no hay blur ni glassmorphism SVG en tarjetas */
-.stat::after, .pillar::after, .service-card::after, .payment-card::after, .google-review-card::after, .benefit-card::after, .svc-panel::after, .contact-card::after, .taller-card::after, .reviews-hero-box::after, .landing-card::after, .blog-card::after, .blog-cta-box::after, .health-consent::after, .about-quote::after, .creator-admin-card::after, .patient-card::after, .c3d-card::after, .included-grid > div::after {
+.stat::after, .pillar::after, .service-card::after, .payment-card::after, .google-review-card::after, .benefit-card::after, .svc-panel::after, .contact-card::after, .taller-card::after, .reviews-hero-box::after, .landing-card::after, .blog-card::after, .blog-cta-box::after, .health-consent::after, .about-quote::after, .patient-card::after, .c3d-card::after, .included-grid > div::after {
     display: none !important;
 }
-
 
 
 /* PREGUNTAS FRECUENTES REFINADAS (COMO TARJETAS) */
@@ -3036,3 +2881,6 @@ textarea:focus-visible,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Destino de los enlaces de contacto del pie: libre de la barra fija */
+#health-consent-box { scroll-margin-top: 6rem; }
